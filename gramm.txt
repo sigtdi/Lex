@@ -1,0 +1,84 @@
+Start DeclareStmt
+E E7
+E7 E7 opor E6
+E7 E6
+E6 E6 opand E5
+E6 E5
+E5 E4 opeq E4
+E5 E4 opne E4
+E5 E4 opgt E4
+E5 E4 oplt E4
+E5 E4 ople E4
+E5 E4
+E4 E4 opplus E3
+E4 E4 opminus E3
+E4 E3
+E3 E3 opmul E2
+E3 E2
+E2 opnot E1
+E2 E1
+E1 opinc id
+E1 id opinc
+E1 lpar E rpar
+E1 num
+E1 id
+E1 id lpar ArgList rpar
+ArgList E ArgListl
+ArgList epsilon
+ArgListl comma E ArgListl
+Arglistl epsilon
+DeclareStmt Type id DeclareStmtl
+DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+DeclareStmtl opassign num DeclVarListl semicolon
+DeclareStmtl DeclVarListl semicolon
+Type kwchar
+Type kwint
+DeclVarListl comma id InitVar DeclVarListl
+DeclVarListl epsilon
+InitVar opassign num
+InitVar opassign kwchar
+InitVar epsilon
+ParamList Type id ParamListl
+ParamList epsilon
+ParamListl comma Type id ParamListl
+ParamListl epsilon
+StmtList Stmt StmtList
+StmtList epsilon
+Stmt DeclareStmt
+Stmt AssignOrCallOp
+Stmt WhileOp
+Stmt ForOp
+Stmt IfOp
+Stmt SwitchOp
+Stmt IOp
+Stmt OOp
+Stmt lbrace StmtList rbrace
+Stmt kwreturn E semicolon
+AssignOrCallOp AssignOrCall semicolon
+AssignOrCall id AssignOrCalll
+AssignOrCalll opassign E
+AssignOrCalll lpar ArgList rpar
+WhileOp kwwhile lpar E rpar Stmt
+ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+ForInit AssignOrCall
+ForInit epsilon
+ForExp E
+ForExp epsilon
+ForLoop AssignOrCall
+ForLoop opinc id
+ForLoop epsilon
+IfOp kwif lpar E rpar Stmt ElsePart
+ElsePart kwelse Stmt
+ElsePart epsilon
+SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+Cases ACase Casesl
+Cases epsilon
+Casesl ACase Casesl
+Casesl epsilon
+ACase kwcase num colon StmtList
+ACase kwdefault colon StmtList
+IOp kwin id semicolon
+OOp kwout OOpl semicolon
+OOpl E
+OOpl str
+E1 id

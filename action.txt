@@ -1,0 +1,3253 @@
+0 kwchar Shift 3  
+0 kwint Shift 4  
+1 end Accept -1 Start DeclareStmt
+2 id Shift 5  
+3 id Reduse -1 Type kwchar
+4 id Reduse -1 Type kwint
+5 comma Shift 8  
+5 epsilon Shift 9  
+5 lpar Shift 10  
+5 opassign Shift 11  
+5 semicolon Reduse -1 DeclVarListl epsilon
+6 semicolon Shift 12  
+7 end Reduse -1 DeclareStmt Type id DeclareStmtl
+8 id Shift 13  
+9 semicolon Reduse -1 DeclVarListl epsilon
+10 epsilon Shift 16  
+10 kwchar Shift 3  
+10 kwint Shift 4  
+10 rpar Reduse -1 ParamList epsilon
+11 num Shift 17  
+12 end Reduse -1 DeclareStmtl DeclVarListl semicolon
+13 comma Reduse -1 InitVar epsilon
+13 epsilon Shift 19  
+13 opassign Shift 20  
+13 semicolon Reduse -1 InitVar epsilon
+14 rpar Shift 21  
+15 id Shift 22  
+16 rpar Reduse -1 ParamList epsilon
+17 comma Shift 8  
+17 epsilon Shift 9  
+17 semicolon Reduse -1 DeclVarListl epsilon
+18 comma Shift 8  
+18 epsilon Shift 9  
+18 semicolon Reduse -1 DeclVarListl epsilon
+19 comma Reduse -1 InitVar epsilon
+19 semicolon Reduse -1 InitVar epsilon
+20 kwchar Shift 25  
+20 num Shift 26  
+21 lbrace Shift 27  
+22 comma Shift 29  
+22 epsilon Shift 30  
+22 rpar Reduse -1 ParamListl epsilon
+23 semicolon Shift 31  
+24 semicolon Reduse -1 DeclVarListl comma id InitVar DeclVarListl
+25 comma Reduse -1 InitVar opassign kwchar
+25 semicolon Reduse -1 InitVar opassign kwchar
+26 comma Reduse -1 InitVar opassign num
+26 semicolon Reduse -1 InitVar opassign num
+27 epsilon Shift 44  
+27 id Shift 45  
+27 kwchar Shift 3  
+27 kwfor Shift 46  
+27 kwif Shift 47  
+27 kwin Shift 48  
+27 kwint Shift 4  
+27 kwout Shift 49  
+27 kwreturn Shift 50  
+27 kwswitch Shift 51  
+27 kwwhile Shift 52  
+27 lbrace Shift 53  
+27 rbrace Reduse -1 StmtList epsilon
+28 rpar Reduse -1 ParamList Type id ParamListl
+29 kwchar Shift 3  
+29 kwint Shift 4  
+30 rpar Reduse -1 ParamListl epsilon
+31 end Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+32 semicolon Shift 55  
+33 id Reduse -1 Stmt AssignOrCallOp
+33 kwchar Reduse -1 Stmt AssignOrCallOp
+33 kwfor Reduse -1 Stmt AssignOrCallOp
+33 kwif Reduse -1 Stmt AssignOrCallOp
+33 kwin Reduse -1 Stmt AssignOrCallOp
+33 kwint Reduse -1 Stmt AssignOrCallOp
+33 kwout Reduse -1 Stmt AssignOrCallOp
+33 kwreturn Reduse -1 Stmt AssignOrCallOp
+33 kwswitch Reduse -1 Stmt AssignOrCallOp
+33 kwwhile Reduse -1 Stmt AssignOrCallOp
+33 lbrace Reduse -1 Stmt AssignOrCallOp
+33 rbrace Reduse -1 Stmt AssignOrCallOp
+34 id Reduse -1 Stmt DeclareStmt
+34 kwchar Reduse -1 Stmt DeclareStmt
+34 kwfor Reduse -1 Stmt DeclareStmt
+34 kwif Reduse -1 Stmt DeclareStmt
+34 kwin Reduse -1 Stmt DeclareStmt
+34 kwint Reduse -1 Stmt DeclareStmt
+34 kwout Reduse -1 Stmt DeclareStmt
+34 kwreturn Reduse -1 Stmt DeclareStmt
+34 kwswitch Reduse -1 Stmt DeclareStmt
+34 kwwhile Reduse -1 Stmt DeclareStmt
+34 lbrace Reduse -1 Stmt DeclareStmt
+34 rbrace Reduse -1 Stmt DeclareStmt
+35 id Reduse -1 Stmt ForOp
+35 kwchar Reduse -1 Stmt ForOp
+35 kwfor Reduse -1 Stmt ForOp
+35 kwif Reduse -1 Stmt ForOp
+35 kwin Reduse -1 Stmt ForOp
+35 kwint Reduse -1 Stmt ForOp
+35 kwout Reduse -1 Stmt ForOp
+35 kwreturn Reduse -1 Stmt ForOp
+35 kwswitch Reduse -1 Stmt ForOp
+35 kwwhile Reduse -1 Stmt ForOp
+35 lbrace Reduse -1 Stmt ForOp
+35 rbrace Reduse -1 Stmt ForOp
+36 id Reduse -1 Stmt IOp
+36 kwchar Reduse -1 Stmt IOp
+36 kwfor Reduse -1 Stmt IOp
+36 kwif Reduse -1 Stmt IOp
+36 kwin Reduse -1 Stmt IOp
+36 kwint Reduse -1 Stmt IOp
+36 kwout Reduse -1 Stmt IOp
+36 kwreturn Reduse -1 Stmt IOp
+36 kwswitch Reduse -1 Stmt IOp
+36 kwwhile Reduse -1 Stmt IOp
+36 lbrace Reduse -1 Stmt IOp
+36 rbrace Reduse -1 Stmt IOp
+37 id Reduse -1 Stmt IfOp
+37 kwchar Reduse -1 Stmt IfOp
+37 kwfor Reduse -1 Stmt IfOp
+37 kwif Reduse -1 Stmt IfOp
+37 kwin Reduse -1 Stmt IfOp
+37 kwint Reduse -1 Stmt IfOp
+37 kwout Reduse -1 Stmt IfOp
+37 kwreturn Reduse -1 Stmt IfOp
+37 kwswitch Reduse -1 Stmt IfOp
+37 kwwhile Reduse -1 Stmt IfOp
+37 lbrace Reduse -1 Stmt IfOp
+37 rbrace Reduse -1 Stmt IfOp
+38 id Reduse -1 Stmt OOp
+38 kwchar Reduse -1 Stmt OOp
+38 kwfor Reduse -1 Stmt OOp
+38 kwif Reduse -1 Stmt OOp
+38 kwin Reduse -1 Stmt OOp
+38 kwint Reduse -1 Stmt OOp
+38 kwout Reduse -1 Stmt OOp
+38 kwreturn Reduse -1 Stmt OOp
+38 kwswitch Reduse -1 Stmt OOp
+38 kwwhile Reduse -1 Stmt OOp
+38 lbrace Reduse -1 Stmt OOp
+38 rbrace Reduse -1 Stmt OOp
+39 epsilon Shift 44  
+39 id Shift 45  
+39 kwchar Shift 3  
+39 kwfor Shift 46  
+39 kwif Shift 47  
+39 kwin Shift 48  
+39 kwint Shift 4  
+39 kwout Shift 49  
+39 kwreturn Shift 50  
+39 kwswitch Shift 51  
+39 kwwhile Shift 52  
+39 lbrace Shift 53  
+39 rbrace Reduse -1 StmtList epsilon
+40 rbrace Shift 57  
+41 id Reduse -1 Stmt SwitchOp
+41 kwchar Reduse -1 Stmt SwitchOp
+41 kwfor Reduse -1 Stmt SwitchOp
+41 kwif Reduse -1 Stmt SwitchOp
+41 kwin Reduse -1 Stmt SwitchOp
+41 kwint Reduse -1 Stmt SwitchOp
+41 kwout Reduse -1 Stmt SwitchOp
+41 kwreturn Reduse -1 Stmt SwitchOp
+41 kwswitch Reduse -1 Stmt SwitchOp
+41 kwwhile Reduse -1 Stmt SwitchOp
+41 lbrace Reduse -1 Stmt SwitchOp
+41 rbrace Reduse -1 Stmt SwitchOp
+42 id Shift 58  
+43 id Reduse -1 Stmt WhileOp
+43 kwchar Reduse -1 Stmt WhileOp
+43 kwfor Reduse -1 Stmt WhileOp
+43 kwif Reduse -1 Stmt WhileOp
+43 kwin Reduse -1 Stmt WhileOp
+43 kwint Reduse -1 Stmt WhileOp
+43 kwout Reduse -1 Stmt WhileOp
+43 kwreturn Reduse -1 Stmt WhileOp
+43 kwswitch Reduse -1 Stmt WhileOp
+43 kwwhile Reduse -1 Stmt WhileOp
+43 lbrace Reduse -1 Stmt WhileOp
+43 rbrace Reduse -1 Stmt WhileOp
+44 rbrace Reduse -1 StmtList epsilon
+45 lpar Shift 60  
+45 opassign Shift 61  
+46 lpar Shift 62  
+47 lpar Shift 63  
+48 id Shift 64  
+49 id Shift 74  
+49 lpar Shift 75  
+49 num Shift 76  
+49 opinc Shift 77  
+49 opnot Shift 78  
+49 str Shift 79  
+50 id Shift 74  
+50 lpar Shift 75  
+50 num Shift 76  
+50 opinc Shift 77  
+50 opnot Shift 78  
+51 lpar Shift 81  
+52 lpar Shift 82  
+53 epsilon Shift 44  
+53 id Shift 45  
+53 kwchar Shift 3  
+53 kwfor Shift 46  
+53 kwif Shift 47  
+53 kwin Shift 48  
+53 kwint Shift 4  
+53 kwout Shift 49  
+53 kwreturn Shift 50  
+53 kwswitch Shift 51  
+53 kwwhile Shift 52  
+53 lbrace Shift 53  
+53 rbrace Reduse -1 StmtList epsilon
+54 id Shift 84  
+55 id Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 kwchar Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 kwfor Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 kwif Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 kwin Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 kwint Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 kwout Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 kwreturn Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 kwswitch Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 kwwhile Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 lbrace Reduse -1 AssignOrCallOp AssignOrCall semicolon
+55 rbrace Reduse -1 AssignOrCallOp AssignOrCall semicolon
+56 rbrace Reduse -1 StmtList Stmt StmtList
+57 end Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+58 comma Shift 8  
+58 epsilon Shift 9  
+58 lpar Shift 87  
+58 opassign Shift 88  
+58 semicolon Reduse -1 DeclVarListl epsilon
+59 semicolon Reduse -1 AssignOrCall id AssignOrCalll
+60 epsilon Shift 98  
+60 id Shift 99  
+60 lpar Shift 100  
+60 num Shift 101  
+60 opinc Shift 102  
+60 opnot Shift 103  
+60 rpar Reduse -1 ArgList epsilon
+61 id Shift 74  
+61 lpar Shift 75  
+61 num Shift 76  
+61 opinc Shift 77  
+61 opnot Shift 78  
+62 epsilon Shift 107  
+62 id Shift 45  
+62 semicolon Reduse -1 ForInit epsilon
+63 id Shift 116  
+63 lpar Shift 117  
+63 num Shift 118  
+63 opinc Shift 119  
+63 opnot Shift 120  
+64 semicolon Shift 121  
+65 semicolon Reduse -1 OOpl E
+66 opand Reduse -1 E2 E1
+66 opeq Reduse -1 E2 E1
+66 opgt Reduse -1 E2 E1
+66 ople Reduse -1 E2 E1
+66 oplt Reduse -1 E2 E1
+66 opminus Reduse -1 E2 E1
+66 opmul Reduse -1 E2 E1
+66 opne Reduse -1 E2 E1
+66 opor Reduse -1 E2 E1
+66 opplus Reduse -1 E2 E1
+66 semicolon Reduse -1 E2 E1
+67 opand Reduse -1 E3 E2
+67 opeq Reduse -1 E3 E2
+67 opgt Reduse -1 E3 E2
+67 ople Reduse -1 E3 E2
+67 oplt Reduse -1 E3 E2
+67 opminus Reduse -1 E3 E2
+67 opmul Reduse -1 E3 E2
+67 opne Reduse -1 E3 E2
+67 opor Reduse -1 E3 E2
+67 opplus Reduse -1 E3 E2
+67 semicolon Reduse -1 E3 E2
+68 opand Reduse -1 E4 E3
+68 opeq Reduse -1 E4 E3
+68 opgt Reduse -1 E4 E3
+68 ople Reduse -1 E4 E3
+68 oplt Reduse -1 E4 E3
+68 opminus Reduse -1 E4 E3
+68 opmul Shift 122  
+68 opne Reduse -1 E4 E3
+68 opor Reduse -1 E4 E3
+68 opplus Reduse -1 E4 E3
+68 semicolon Reduse -1 E4 E3
+69 opand Reduse -1 E5 E4
+69 opeq Shift 123  
+69 opgt Shift 124  
+69 ople Shift 125  
+69 oplt Shift 126  
+69 opminus Shift 127  
+69 opne Shift 128  
+69 opor Reduse -1 E5 E4
+69 opplus Shift 129  
+69 semicolon Reduse -1 E5 E4
+70 opand Reduse -1 E6 E5
+70 opor Reduse -1 E6 E5
+70 semicolon Reduse -1 E6 E5
+71 opand Shift 130  
+71 opor Reduse -1 E7 E6
+71 semicolon Reduse -1 E7 E6
+72 opor Shift 131  
+72 semicolon Reduse -1 E E7
+73 semicolon Shift 132  
+74 lpar Shift 133  
+74 opand Reduse -1 E1 id
+74 opeq Reduse -1 E1 id
+74 opgt Reduse -1 E1 id
+74 opinc Shift 134  
+74 ople Reduse -1 E1 id
+74 oplt Reduse -1 E1 id
+74 opminus Reduse -1 E1 id
+74 opmul Reduse -1 E1 id
+74 opne Reduse -1 E1 id
+74 opor Reduse -1 E1 id
+74 opplus Reduse -1 E1 id
+74 semicolon Reduse -1 E1 id
+75 id Shift 116  
+75 lpar Shift 117  
+75 num Shift 118  
+75 opinc Shift 119  
+75 opnot Shift 120  
+76 opand Reduse -1 E1 num
+76 opeq Reduse -1 E1 num
+76 opgt Reduse -1 E1 num
+76 ople Reduse -1 E1 num
+76 oplt Reduse -1 E1 num
+76 opminus Reduse -1 E1 num
+76 opmul Reduse -1 E1 num
+76 opne Reduse -1 E1 num
+76 opor Reduse -1 E1 num
+76 opplus Reduse -1 E1 num
+76 semicolon Reduse -1 E1 num
+77 id Shift 136  
+78 id Shift 74  
+78 lpar Shift 75  
+78 num Shift 76  
+78 opinc Shift 77  
+79 semicolon Reduse -1 OOpl str
+80 semicolon Shift 138  
+81 id Shift 116  
+81 lpar Shift 117  
+81 num Shift 118  
+81 opinc Shift 119  
+81 opnot Shift 120  
+82 id Shift 116  
+82 lpar Shift 117  
+82 num Shift 118  
+82 opinc Shift 119  
+82 opnot Shift 120  
+83 rbrace Shift 141  
+84 comma Shift 29  
+84 epsilon Shift 30  
+84 rpar Reduse -1 ParamListl epsilon
+85 semicolon Shift 143  
+86 id Reduse -1 DeclareStmt Type id DeclareStmtl
+86 kwchar Reduse -1 DeclareStmt Type id DeclareStmtl
+86 kwfor Reduse -1 DeclareStmt Type id DeclareStmtl
+86 kwif Reduse -1 DeclareStmt Type id DeclareStmtl
+86 kwin Reduse -1 DeclareStmt Type id DeclareStmtl
+86 kwint Reduse -1 DeclareStmt Type id DeclareStmtl
+86 kwout Reduse -1 DeclareStmt Type id DeclareStmtl
+86 kwreturn Reduse -1 DeclareStmt Type id DeclareStmtl
+86 kwswitch Reduse -1 DeclareStmt Type id DeclareStmtl
+86 kwwhile Reduse -1 DeclareStmt Type id DeclareStmtl
+86 lbrace Reduse -1 DeclareStmt Type id DeclareStmtl
+86 rbrace Reduse -1 DeclareStmt Type id DeclareStmtl
+87 epsilon Shift 16  
+87 kwchar Shift 3  
+87 kwint Shift 4  
+87 rpar Reduse -1 ParamList epsilon
+88 num Shift 145  
+89 rpar Shift 146  
+90 comma Shift 148  
+91 comma Reduse -1 E2 E1
+91 opand Reduse -1 E2 E1
+91 opeq Reduse -1 E2 E1
+91 opgt Reduse -1 E2 E1
+91 ople Reduse -1 E2 E1
+91 oplt Reduse -1 E2 E1
+91 opminus Reduse -1 E2 E1
+91 opmul Reduse -1 E2 E1
+91 opne Reduse -1 E2 E1
+91 opor Reduse -1 E2 E1
+91 opplus Reduse -1 E2 E1
+92 comma Reduse -1 E3 E2
+92 opand Reduse -1 E3 E2
+92 opeq Reduse -1 E3 E2
+92 opgt Reduse -1 E3 E2
+92 ople Reduse -1 E3 E2
+92 oplt Reduse -1 E3 E2
+92 opminus Reduse -1 E3 E2
+92 opmul Reduse -1 E3 E2
+92 opne Reduse -1 E3 E2
+92 opor Reduse -1 E3 E2
+92 opplus Reduse -1 E3 E2
+93 comma Reduse -1 E4 E3
+93 opand Reduse -1 E4 E3
+93 opeq Reduse -1 E4 E3
+93 opgt Reduse -1 E4 E3
+93 ople Reduse -1 E4 E3
+93 oplt Reduse -1 E4 E3
+93 opminus Reduse -1 E4 E3
+93 opmul Shift 149  
+93 opne Reduse -1 E4 E3
+93 opor Reduse -1 E4 E3
+93 opplus Reduse -1 E4 E3
+94 comma Reduse -1 E5 E4
+94 opand Reduse -1 E5 E4
+94 opeq Shift 150  
+94 opgt Shift 151  
+94 ople Shift 152  
+94 oplt Shift 153  
+94 opminus Shift 154  
+94 opne Shift 155  
+94 opor Reduse -1 E5 E4
+94 opplus Shift 156  
+95 comma Reduse -1 E6 E5
+95 opand Reduse -1 E6 E5
+95 opor Reduse -1 E6 E5
+96 comma Reduse -1 E7 E6
+96 opand Shift 157  
+96 opor Reduse -1 E7 E6
+97 comma Reduse -1 E E7
+97 opor Shift 158  
+98 rpar Reduse -1 ArgList epsilon
+99 comma Reduse -1 E1 id
+99 lpar Shift 159  
+99 opand Reduse -1 E1 id
+99 opeq Reduse -1 E1 id
+99 opgt Reduse -1 E1 id
+99 opinc Shift 160  
+99 ople Reduse -1 E1 id
+99 oplt Reduse -1 E1 id
+99 opminus Reduse -1 E1 id
+99 opmul Reduse -1 E1 id
+99 opne Reduse -1 E1 id
+99 opor Reduse -1 E1 id
+99 opplus Reduse -1 E1 id
+100 id Shift 116  
+100 lpar Shift 117  
+100 num Shift 118  
+100 opinc Shift 119  
+100 opnot Shift 120  
+101 comma Reduse -1 E1 num
+101 opand Reduse -1 E1 num
+101 opeq Reduse -1 E1 num
+101 opgt Reduse -1 E1 num
+101 ople Reduse -1 E1 num
+101 oplt Reduse -1 E1 num
+101 opminus Reduse -1 E1 num
+101 opmul Reduse -1 E1 num
+101 opne Reduse -1 E1 num
+101 opor Reduse -1 E1 num
+101 opplus Reduse -1 E1 num
+102 id Shift 162  
+103 id Shift 99  
+103 lpar Shift 100  
+103 num Shift 101  
+103 opinc Shift 102  
+104 semicolon Reduse -1 AssignOrCalll opassign E
+105 semicolon Reduse -1 ForInit AssignOrCall
+106 semicolon Shift 164  
+107 semicolon Reduse -1 ForInit epsilon
+108 rpar Shift 165  
+109 opand Reduse -1 E2 E1
+109 opeq Reduse -1 E2 E1
+109 opgt Reduse -1 E2 E1
+109 ople Reduse -1 E2 E1
+109 oplt Reduse -1 E2 E1
+109 opminus Reduse -1 E2 E1
+109 opmul Reduse -1 E2 E1
+109 opne Reduse -1 E2 E1
+109 opor Reduse -1 E2 E1
+109 opplus Reduse -1 E2 E1
+109 rpar Reduse -1 E2 E1
+110 opand Reduse -1 E3 E2
+110 opeq Reduse -1 E3 E2
+110 opgt Reduse -1 E3 E2
+110 ople Reduse -1 E3 E2
+110 oplt Reduse -1 E3 E2
+110 opminus Reduse -1 E3 E2
+110 opmul Reduse -1 E3 E2
+110 opne Reduse -1 E3 E2
+110 opor Reduse -1 E3 E2
+110 opplus Reduse -1 E3 E2
+110 rpar Reduse -1 E3 E2
+111 opand Reduse -1 E4 E3
+111 opeq Reduse -1 E4 E3
+111 opgt Reduse -1 E4 E3
+111 ople Reduse -1 E4 E3
+111 oplt Reduse -1 E4 E3
+111 opminus Reduse -1 E4 E3
+111 opmul Shift 166  
+111 opne Reduse -1 E4 E3
+111 opor Reduse -1 E4 E3
+111 opplus Reduse -1 E4 E3
+111 rpar Reduse -1 E4 E3
+112 opand Reduse -1 E5 E4
+112 opeq Shift 167  
+112 opgt Shift 168  
+112 ople Shift 169  
+112 oplt Shift 170  
+112 opminus Shift 171  
+112 opne Shift 172  
+112 opor Reduse -1 E5 E4
+112 opplus Shift 173  
+112 rpar Reduse -1 E5 E4
+113 opand Reduse -1 E6 E5
+113 opor Reduse -1 E6 E5
+113 rpar Reduse -1 E6 E5
+114 opand Shift 174  
+114 opor Reduse -1 E7 E6
+114 rpar Reduse -1 E7 E6
+115 opor Shift 175  
+115 rpar Reduse -1 E E7
+116 lpar Shift 176  
+116 opand Reduse -1 E1 id
+116 opeq Reduse -1 E1 id
+116 opgt Reduse -1 E1 id
+116 opinc Shift 177  
+116 ople Reduse -1 E1 id
+116 oplt Reduse -1 E1 id
+116 opminus Reduse -1 E1 id
+116 opmul Reduse -1 E1 id
+116 opne Reduse -1 E1 id
+116 opor Reduse -1 E1 id
+116 opplus Reduse -1 E1 id
+116 rpar Reduse -1 E1 id
+117 id Shift 116  
+117 lpar Shift 117  
+117 num Shift 118  
+117 opinc Shift 119  
+117 opnot Shift 120  
+118 opand Reduse -1 E1 num
+118 opeq Reduse -1 E1 num
+118 opgt Reduse -1 E1 num
+118 ople Reduse -1 E1 num
+118 oplt Reduse -1 E1 num
+118 opminus Reduse -1 E1 num
+118 opmul Reduse -1 E1 num
+118 opne Reduse -1 E1 num
+118 opor Reduse -1 E1 num
+118 opplus Reduse -1 E1 num
+118 rpar Reduse -1 E1 num
+119 id Shift 179  
+120 id Shift 116  
+120 lpar Shift 117  
+120 num Shift 118  
+120 opinc Shift 119  
+121 id Reduse -1 IOp kwin id semicolon
+121 kwchar Reduse -1 IOp kwin id semicolon
+121 kwfor Reduse -1 IOp kwin id semicolon
+121 kwif Reduse -1 IOp kwin id semicolon
+121 kwin Reduse -1 IOp kwin id semicolon
+121 kwint Reduse -1 IOp kwin id semicolon
+121 kwout Reduse -1 IOp kwin id semicolon
+121 kwreturn Reduse -1 IOp kwin id semicolon
+121 kwswitch Reduse -1 IOp kwin id semicolon
+121 kwwhile Reduse -1 IOp kwin id semicolon
+121 lbrace Reduse -1 IOp kwin id semicolon
+121 rbrace Reduse -1 IOp kwin id semicolon
+122 id Shift 74  
+122 lpar Shift 75  
+122 num Shift 76  
+122 opinc Shift 77  
+122 opnot Shift 78  
+123 id Shift 186  
+123 lpar Shift 187  
+123 num Shift 188  
+123 opinc Shift 189  
+123 opnot Shift 190  
+124 id Shift 186  
+124 lpar Shift 187  
+124 num Shift 188  
+124 opinc Shift 189  
+124 opnot Shift 190  
+125 id Shift 186  
+125 lpar Shift 187  
+125 num Shift 188  
+125 opinc Shift 189  
+125 opnot Shift 190  
+126 id Shift 186  
+126 lpar Shift 187  
+126 num Shift 188  
+126 opinc Shift 189  
+126 opnot Shift 190  
+127 id Shift 74  
+127 lpar Shift 75  
+127 num Shift 76  
+127 opinc Shift 77  
+127 opnot Shift 78  
+128 id Shift 186  
+128 lpar Shift 187  
+128 num Shift 188  
+128 opinc Shift 189  
+128 opnot Shift 190  
+129 id Shift 74  
+129 lpar Shift 75  
+129 num Shift 76  
+129 opinc Shift 77  
+129 opnot Shift 78  
+130 id Shift 74  
+130 lpar Shift 75  
+130 num Shift 76  
+130 opinc Shift 77  
+130 opnot Shift 78  
+131 id Shift 74  
+131 lpar Shift 75  
+131 num Shift 76  
+131 opinc Shift 77  
+131 opnot Shift 78  
+132 id Reduse -1 OOp kwout OOpl semicolon
+132 kwchar Reduse -1 OOp kwout OOpl semicolon
+132 kwfor Reduse -1 OOp kwout OOpl semicolon
+132 kwif Reduse -1 OOp kwout OOpl semicolon
+132 kwin Reduse -1 OOp kwout OOpl semicolon
+132 kwint Reduse -1 OOp kwout OOpl semicolon
+132 kwout Reduse -1 OOp kwout OOpl semicolon
+132 kwreturn Reduse -1 OOp kwout OOpl semicolon
+132 kwswitch Reduse -1 OOp kwout OOpl semicolon
+132 kwwhile Reduse -1 OOp kwout OOpl semicolon
+132 lbrace Reduse -1 OOp kwout OOpl semicolon
+132 rbrace Reduse -1 OOp kwout OOpl semicolon
+133 epsilon Shift 98  
+133 id Shift 99  
+133 lpar Shift 100  
+133 num Shift 101  
+133 opinc Shift 102  
+133 opnot Shift 103  
+133 rpar Reduse -1 ArgList epsilon
+134 opand Reduse -1 E1 id opinc
+134 opeq Reduse -1 E1 id opinc
+134 opgt Reduse -1 E1 id opinc
+134 ople Reduse -1 E1 id opinc
+134 oplt Reduse -1 E1 id opinc
+134 opminus Reduse -1 E1 id opinc
+134 opmul Reduse -1 E1 id opinc
+134 opne Reduse -1 E1 id opinc
+134 opor Reduse -1 E1 id opinc
+134 opplus Reduse -1 E1 id opinc
+134 semicolon Reduse -1 E1 id opinc
+135 rpar Shift 200  
+136 opand Reduse -1 E1 opinc id
+136 opeq Reduse -1 E1 opinc id
+136 opgt Reduse -1 E1 opinc id
+136 ople Reduse -1 E1 opinc id
+136 oplt Reduse -1 E1 opinc id
+136 opminus Reduse -1 E1 opinc id
+136 opmul Reduse -1 E1 opinc id
+136 opne Reduse -1 E1 opinc id
+136 opor Reduse -1 E1 opinc id
+136 opplus Reduse -1 E1 opinc id
+136 semicolon Reduse -1 E1 opinc id
+137 opand Reduse -1 E2 opnot E1
+137 opeq Reduse -1 E2 opnot E1
+137 opgt Reduse -1 E2 opnot E1
+137 ople Reduse -1 E2 opnot E1
+137 oplt Reduse -1 E2 opnot E1
+137 opminus Reduse -1 E2 opnot E1
+137 opmul Reduse -1 E2 opnot E1
+137 opne Reduse -1 E2 opnot E1
+137 opor Reduse -1 E2 opnot E1
+137 opplus Reduse -1 E2 opnot E1
+137 semicolon Reduse -1 E2 opnot E1
+138 id Reduse -1 Stmt kwreturn E semicolon
+138 kwchar Reduse -1 Stmt kwreturn E semicolon
+138 kwfor Reduse -1 Stmt kwreturn E semicolon
+138 kwif Reduse -1 Stmt kwreturn E semicolon
+138 kwin Reduse -1 Stmt kwreturn E semicolon
+138 kwint Reduse -1 Stmt kwreturn E semicolon
+138 kwout Reduse -1 Stmt kwreturn E semicolon
+138 kwreturn Reduse -1 Stmt kwreturn E semicolon
+138 kwswitch Reduse -1 Stmt kwreturn E semicolon
+138 kwwhile Reduse -1 Stmt kwreturn E semicolon
+138 lbrace Reduse -1 Stmt kwreturn E semicolon
+138 rbrace Reduse -1 Stmt kwreturn E semicolon
+139 rpar Shift 201  
+140 rpar Shift 202  
+141 id Reduse -1 Stmt lbrace StmtList rbrace
+141 kwchar Reduse -1 Stmt lbrace StmtList rbrace
+141 kwfor Reduse -1 Stmt lbrace StmtList rbrace
+141 kwif Reduse -1 Stmt lbrace StmtList rbrace
+141 kwin Reduse -1 Stmt lbrace StmtList rbrace
+141 kwint Reduse -1 Stmt lbrace StmtList rbrace
+141 kwout Reduse -1 Stmt lbrace StmtList rbrace
+141 kwreturn Reduse -1 Stmt lbrace StmtList rbrace
+141 kwswitch Reduse -1 Stmt lbrace StmtList rbrace
+141 kwwhile Reduse -1 Stmt lbrace StmtList rbrace
+141 lbrace Reduse -1 Stmt lbrace StmtList rbrace
+141 rbrace Reduse -1 Stmt lbrace StmtList rbrace
+142 rpar Reduse -1 ParamListl comma Type id ParamListl
+143 id Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 kwchar Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 kwfor Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 kwif Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 kwin Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 kwint Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 kwout Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 kwreturn Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 kwswitch Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 kwwhile Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 lbrace Reduse -1 DeclareStmtl DeclVarListl semicolon
+143 rbrace Reduse -1 DeclareStmtl DeclVarListl semicolon
+144 rpar Shift 203  
+145 comma Shift 8  
+145 epsilon Shift 9  
+145 semicolon Reduse -1 DeclVarListl epsilon
+146 semicolon Reduse -1 AssignOrCalll lpar ArgList rpar
+147 rpar Reduse -1 ArgList E ArgListl
+148 id Shift 99  
+148 lpar Shift 100  
+148 num Shift 101  
+148 opinc Shift 102  
+148 opnot Shift 103  
+149 id Shift 99  
+149 lpar Shift 100  
+149 num Shift 101  
+149 opinc Shift 102  
+149 opnot Shift 103  
+150 id Shift 211  
+150 lpar Shift 212  
+150 num Shift 213  
+150 opinc Shift 214  
+150 opnot Shift 215  
+151 id Shift 211  
+151 lpar Shift 212  
+151 num Shift 213  
+151 opinc Shift 214  
+151 opnot Shift 215  
+152 id Shift 211  
+152 lpar Shift 212  
+152 num Shift 213  
+152 opinc Shift 214  
+152 opnot Shift 215  
+153 id Shift 211  
+153 lpar Shift 212  
+153 num Shift 213  
+153 opinc Shift 214  
+153 opnot Shift 215  
+154 id Shift 99  
+154 lpar Shift 100  
+154 num Shift 101  
+154 opinc Shift 102  
+154 opnot Shift 103  
+155 id Shift 211  
+155 lpar Shift 212  
+155 num Shift 213  
+155 opinc Shift 214  
+155 opnot Shift 215  
+156 id Shift 99  
+156 lpar Shift 100  
+156 num Shift 101  
+156 opinc Shift 102  
+156 opnot Shift 103  
+157 id Shift 99  
+157 lpar Shift 100  
+157 num Shift 101  
+157 opinc Shift 102  
+157 opnot Shift 103  
+158 id Shift 99  
+158 lpar Shift 100  
+158 num Shift 101  
+158 opinc Shift 102  
+158 opnot Shift 103  
+159 epsilon Shift 98  
+159 id Shift 99  
+159 lpar Shift 100  
+159 num Shift 101  
+159 opinc Shift 102  
+159 opnot Shift 103  
+159 rpar Reduse -1 ArgList epsilon
+160 comma Reduse -1 E1 id opinc
+160 opand Reduse -1 E1 id opinc
+160 opeq Reduse -1 E1 id opinc
+160 opgt Reduse -1 E1 id opinc
+160 ople Reduse -1 E1 id opinc
+160 oplt Reduse -1 E1 id opinc
+160 opminus Reduse -1 E1 id opinc
+160 opmul Reduse -1 E1 id opinc
+160 opne Reduse -1 E1 id opinc
+160 opor Reduse -1 E1 id opinc
+160 opplus Reduse -1 E1 id opinc
+161 rpar Shift 225  
+162 comma Reduse -1 E1 opinc id
+162 opand Reduse -1 E1 opinc id
+162 opeq Reduse -1 E1 opinc id
+162 opgt Reduse -1 E1 opinc id
+162 ople Reduse -1 E1 opinc id
+162 oplt Reduse -1 E1 opinc id
+162 opminus Reduse -1 E1 opinc id
+162 opmul Reduse -1 E1 opinc id
+162 opne Reduse -1 E1 opinc id
+162 opor Reduse -1 E1 opinc id
+162 opplus Reduse -1 E1 opinc id
+163 comma Reduse -1 E2 opnot E1
+163 opand Reduse -1 E2 opnot E1
+163 opeq Reduse -1 E2 opnot E1
+163 opgt Reduse -1 E2 opnot E1
+163 ople Reduse -1 E2 opnot E1
+163 oplt Reduse -1 E2 opnot E1
+163 opminus Reduse -1 E2 opnot E1
+163 opmul Reduse -1 E2 opnot E1
+163 opne Reduse -1 E2 opnot E1
+163 opor Reduse -1 E2 opnot E1
+163 opplus Reduse -1 E2 opnot E1
+164 epsilon Shift 228  
+164 id Shift 74  
+164 lpar Shift 75  
+164 num Shift 76  
+164 opinc Shift 77  
+164 opnot Shift 78  
+164 semicolon Reduse -1 ForExp epsilon
+165 id Shift 45  
+165 kwchar Shift 3  
+165 kwfor Shift 240  
+165 kwif Shift 241  
+165 kwin Shift 242  
+165 kwint Shift 4  
+165 kwout Shift 243  
+165 kwreturn Shift 244  
+165 kwswitch Shift 245  
+165 kwwhile Shift 246  
+165 lbrace Shift 247  
+166 id Shift 116  
+166 lpar Shift 117  
+166 num Shift 118  
+166 opinc Shift 119  
+166 opnot Shift 120  
+167 id Shift 253  
+167 lpar Shift 254  
+167 num Shift 255  
+167 opinc Shift 256  
+167 opnot Shift 257  
+168 id Shift 253  
+168 lpar Shift 254  
+168 num Shift 255  
+168 opinc Shift 256  
+168 opnot Shift 257  
+169 id Shift 253  
+169 lpar Shift 254  
+169 num Shift 255  
+169 opinc Shift 256  
+169 opnot Shift 257  
+170 id Shift 253  
+170 lpar Shift 254  
+170 num Shift 255  
+170 opinc Shift 256  
+170 opnot Shift 257  
+171 id Shift 116  
+171 lpar Shift 117  
+171 num Shift 118  
+171 opinc Shift 119  
+171 opnot Shift 120  
+172 id Shift 253  
+172 lpar Shift 254  
+172 num Shift 255  
+172 opinc Shift 256  
+172 opnot Shift 257  
+173 id Shift 116  
+173 lpar Shift 117  
+173 num Shift 118  
+173 opinc Shift 119  
+173 opnot Shift 120  
+174 id Shift 116  
+174 lpar Shift 117  
+174 num Shift 118  
+174 opinc Shift 119  
+174 opnot Shift 120  
+175 id Shift 116  
+175 lpar Shift 117  
+175 num Shift 118  
+175 opinc Shift 119  
+175 opnot Shift 120  
+176 epsilon Shift 98  
+176 id Shift 99  
+176 lpar Shift 100  
+176 num Shift 101  
+176 opinc Shift 102  
+176 opnot Shift 103  
+176 rpar Reduse -1 ArgList epsilon
+177 opand Reduse -1 E1 id opinc
+177 opeq Reduse -1 E1 id opinc
+177 opgt Reduse -1 E1 id opinc
+177 ople Reduse -1 E1 id opinc
+177 oplt Reduse -1 E1 id opinc
+177 opminus Reduse -1 E1 id opinc
+177 opmul Reduse -1 E1 id opinc
+177 opne Reduse -1 E1 id opinc
+177 opor Reduse -1 E1 id opinc
+177 opplus Reduse -1 E1 id opinc
+177 rpar Reduse -1 E1 id opinc
+178 rpar Shift 267  
+179 opand Reduse -1 E1 opinc id
+179 opeq Reduse -1 E1 opinc id
+179 opgt Reduse -1 E1 opinc id
+179 ople Reduse -1 E1 opinc id
+179 oplt Reduse -1 E1 opinc id
+179 opminus Reduse -1 E1 opinc id
+179 opmul Reduse -1 E1 opinc id
+179 opne Reduse -1 E1 opinc id
+179 opor Reduse -1 E1 opinc id
+179 opplus Reduse -1 E1 opinc id
+179 rpar Reduse -1 E1 opinc id
+180 opand Reduse -1 E2 opnot E1
+180 opeq Reduse -1 E2 opnot E1
+180 opgt Reduse -1 E2 opnot E1
+180 ople Reduse -1 E2 opnot E1
+180 oplt Reduse -1 E2 opnot E1
+180 opminus Reduse -1 E2 opnot E1
+180 opmul Reduse -1 E2 opnot E1
+180 opne Reduse -1 E2 opnot E1
+180 opor Reduse -1 E2 opnot E1
+180 opplus Reduse -1 E2 opnot E1
+180 rpar Reduse -1 E2 opnot E1
+181 opand Reduse -1 E3 E3 opmul E2
+181 opeq Reduse -1 E3 E3 opmul E2
+181 opgt Reduse -1 E3 E3 opmul E2
+181 ople Reduse -1 E3 E3 opmul E2
+181 oplt Reduse -1 E3 E3 opmul E2
+181 opminus Reduse -1 E3 E3 opmul E2
+181 opmul Reduse -1 E3 E3 opmul E2
+181 opne Reduse -1 E3 E3 opmul E2
+181 opor Reduse -1 E3 E3 opmul E2
+181 opplus Reduse -1 E3 E3 opmul E2
+181 semicolon Reduse -1 E3 E3 opmul E2
+182 opand Reduse -1 E2 E1
+182 opminus Reduse -1 E2 E1
+182 opmul Reduse -1 E2 E1
+182 opor Reduse -1 E2 E1
+182 opplus Reduse -1 E2 E1
+182 semicolon Reduse -1 E2 E1
+183 opand Reduse -1 E3 E2
+183 opminus Reduse -1 E3 E2
+183 opmul Reduse -1 E3 E2
+183 opor Reduse -1 E3 E2
+183 opplus Reduse -1 E3 E2
+183 semicolon Reduse -1 E3 E2
+184 opand Reduse -1 E4 E3
+184 opminus Reduse -1 E4 E3
+184 opmul Shift 268  
+184 opor Reduse -1 E4 E3
+184 opplus Reduse -1 E4 E3
+184 semicolon Reduse -1 E4 E3
+185 opand Reduse -1 E5 E4 opeq E4
+185 opminus Shift 269  
+185 opor Reduse -1 E5 E4 opeq E4
+185 opplus Shift 270  
+185 semicolon Reduse -1 E5 E4 opeq E4
+186 lpar Shift 271  
+186 opand Reduse -1 E1 id
+186 opinc Shift 272  
+186 opminus Reduse -1 E1 id
+186 opmul Reduse -1 E1 id
+186 opor Reduse -1 E1 id
+186 opplus Reduse -1 E1 id
+186 semicolon Reduse -1 E1 id
+187 id Shift 116  
+187 lpar Shift 117  
+187 num Shift 118  
+187 opinc Shift 119  
+187 opnot Shift 120  
+188 opand Reduse -1 E1 num
+188 opminus Reduse -1 E1 num
+188 opmul Reduse -1 E1 num
+188 opor Reduse -1 E1 num
+188 opplus Reduse -1 E1 num
+188 semicolon Reduse -1 E1 num
+189 id Shift 274  
+190 id Shift 186  
+190 lpar Shift 187  
+190 num Shift 188  
+190 opinc Shift 189  
+191 opand Reduse -1 E5 E4 opgt E4
+191 opminus Shift 269  
+191 opor Reduse -1 E5 E4 opgt E4
+191 opplus Shift 270  
+191 semicolon Reduse -1 E5 E4 opgt E4
+192 opand Reduse -1 E5 E4 ople E4
+192 opminus Shift 269  
+192 opor Reduse -1 E5 E4 ople E4
+192 opplus Shift 270  
+192 semicolon Reduse -1 E5 E4 ople E4
+193 opand Reduse -1 E5 E4 oplt E4
+193 opminus Shift 269  
+193 opor Reduse -1 E5 E4 oplt E4
+193 opplus Shift 270  
+193 semicolon Reduse -1 E5 E4 oplt E4
+194 opand Reduse -1 E4 E4 opminus E3
+194 opeq Reduse -1 E4 E4 opminus E3
+194 opgt Reduse -1 E4 E4 opminus E3
+194 ople Reduse -1 E4 E4 opminus E3
+194 oplt Reduse -1 E4 E4 opminus E3
+194 opminus Reduse -1 E4 E4 opminus E3
+194 opmul Shift 122  
+194 opne Reduse -1 E4 E4 opminus E3
+194 opor Reduse -1 E4 E4 opminus E3
+194 opplus Reduse -1 E4 E4 opminus E3
+194 semicolon Reduse -1 E4 E4 opminus E3
+195 opand Reduse -1 E5 E4 opne E4
+195 opminus Shift 269  
+195 opor Reduse -1 E5 E4 opne E4
+195 opplus Shift 270  
+195 semicolon Reduse -1 E5 E4 opne E4
+196 opand Reduse -1 E4 E4 opplus E3
+196 opeq Reduse -1 E4 E4 opplus E3
+196 opgt Reduse -1 E4 E4 opplus E3
+196 ople Reduse -1 E4 E4 opplus E3
+196 oplt Reduse -1 E4 E4 opplus E3
+196 opminus Reduse -1 E4 E4 opplus E3
+196 opmul Shift 122  
+196 opne Reduse -1 E4 E4 opplus E3
+196 opor Reduse -1 E4 E4 opplus E3
+196 opplus Reduse -1 E4 E4 opplus E3
+196 semicolon Reduse -1 E4 E4 opplus E3
+197 opand Reduse -1 E6 E6 opand E5
+197 opor Reduse -1 E6 E6 opand E5
+197 semicolon Reduse -1 E6 E6 opand E5
+198 opand Shift 130  
+198 opor Reduse -1 E7 E7 opor E6
+198 semicolon Reduse -1 E7 E7 opor E6
+199 rpar Shift 276  
+200 opand Reduse -1 E1 lpar E rpar
+200 opeq Reduse -1 E1 lpar E rpar
+200 opgt Reduse -1 E1 lpar E rpar
+200 ople Reduse -1 E1 lpar E rpar
+200 oplt Reduse -1 E1 lpar E rpar
+200 opminus Reduse -1 E1 lpar E rpar
+200 opmul Reduse -1 E1 lpar E rpar
+200 opne Reduse -1 E1 lpar E rpar
+200 opor Reduse -1 E1 lpar E rpar
+200 opplus Reduse -1 E1 lpar E rpar
+200 semicolon Reduse -1 E1 lpar E rpar
+201 lbrace Shift 277  
+202 id Shift 45  
+202 kwchar Shift 3  
+202 kwfor Shift 46  
+202 kwif Shift 47  
+202 kwin Shift 48  
+202 kwint Shift 4  
+202 kwout Shift 49  
+202 kwreturn Shift 50  
+202 kwswitch Shift 51  
+202 kwwhile Shift 52  
+202 lbrace Shift 53  
+203 lbrace Shift 279  
+204 semicolon Shift 280  
+205 comma Shift 148  
+206 comma Reduse -1 E3 E3 opmul E2
+206 opand Reduse -1 E3 E3 opmul E2
+206 opeq Reduse -1 E3 E3 opmul E2
+206 opgt Reduse -1 E3 E3 opmul E2
+206 ople Reduse -1 E3 E3 opmul E2
+206 oplt Reduse -1 E3 E3 opmul E2
+206 opminus Reduse -1 E3 E3 opmul E2
+206 opmul Reduse -1 E3 E3 opmul E2
+206 opne Reduse -1 E3 E3 opmul E2
+206 opor Reduse -1 E3 E3 opmul E2
+206 opplus Reduse -1 E3 E3 opmul E2
+207 comma Reduse -1 E2 E1
+207 opand Reduse -1 E2 E1
+207 opminus Reduse -1 E2 E1
+207 opmul Reduse -1 E2 E1
+207 opor Reduse -1 E2 E1
+207 opplus Reduse -1 E2 E1
+208 comma Reduse -1 E3 E2
+208 opand Reduse -1 E3 E2
+208 opminus Reduse -1 E3 E2
+208 opmul Reduse -1 E3 E2
+208 opor Reduse -1 E3 E2
+208 opplus Reduse -1 E3 E2
+209 comma Reduse -1 E4 E3
+209 opand Reduse -1 E4 E3
+209 opminus Reduse -1 E4 E3
+209 opmul Shift 282  
+209 opor Reduse -1 E4 E3
+209 opplus Reduse -1 E4 E3
+210 comma Reduse -1 E5 E4 opeq E4
+210 opand Reduse -1 E5 E4 opeq E4
+210 opminus Shift 283  
+210 opor Reduse -1 E5 E4 opeq E4
+210 opplus Shift 284  
+211 comma Reduse -1 E1 id
+211 lpar Shift 285  
+211 opand Reduse -1 E1 id
+211 opinc Shift 286  
+211 opminus Reduse -1 E1 id
+211 opmul Reduse -1 E1 id
+211 opor Reduse -1 E1 id
+211 opplus Reduse -1 E1 id
+212 id Shift 116  
+212 lpar Shift 117  
+212 num Shift 118  
+212 opinc Shift 119  
+212 opnot Shift 120  
+213 comma Reduse -1 E1 num
+213 opand Reduse -1 E1 num
+213 opminus Reduse -1 E1 num
+213 opmul Reduse -1 E1 num
+213 opor Reduse -1 E1 num
+213 opplus Reduse -1 E1 num
+214 id Shift 288  
+215 id Shift 211  
+215 lpar Shift 212  
+215 num Shift 213  
+215 opinc Shift 214  
+216 comma Reduse -1 E5 E4 opgt E4
+216 opand Reduse -1 E5 E4 opgt E4
+216 opminus Shift 283  
+216 opor Reduse -1 E5 E4 opgt E4
+216 opplus Shift 284  
+217 comma Reduse -1 E5 E4 ople E4
+217 opand Reduse -1 E5 E4 ople E4
+217 opminus Shift 283  
+217 opor Reduse -1 E5 E4 ople E4
+217 opplus Shift 284  
+218 comma Reduse -1 E5 E4 oplt E4
+218 opand Reduse -1 E5 E4 oplt E4
+218 opminus Shift 283  
+218 opor Reduse -1 E5 E4 oplt E4
+218 opplus Shift 284  
+219 comma Reduse -1 E4 E4 opminus E3
+219 opand Reduse -1 E4 E4 opminus E3
+219 opeq Reduse -1 E4 E4 opminus E3
+219 opgt Reduse -1 E4 E4 opminus E3
+219 ople Reduse -1 E4 E4 opminus E3
+219 oplt Reduse -1 E4 E4 opminus E3
+219 opminus Reduse -1 E4 E4 opminus E3
+219 opmul Shift 149  
+219 opne Reduse -1 E4 E4 opminus E3
+219 opor Reduse -1 E4 E4 opminus E3
+219 opplus Reduse -1 E4 E4 opminus E3
+220 comma Reduse -1 E5 E4 opne E4
+220 opand Reduse -1 E5 E4 opne E4
+220 opminus Shift 283  
+220 opor Reduse -1 E5 E4 opne E4
+220 opplus Shift 284  
+221 comma Reduse -1 E4 E4 opplus E3
+221 opand Reduse -1 E4 E4 opplus E3
+221 opeq Reduse -1 E4 E4 opplus E3
+221 opgt Reduse -1 E4 E4 opplus E3
+221 ople Reduse -1 E4 E4 opplus E3
+221 oplt Reduse -1 E4 E4 opplus E3
+221 opminus Reduse -1 E4 E4 opplus E3
+221 opmul Shift 149  
+221 opne Reduse -1 E4 E4 opplus E3
+221 opor Reduse -1 E4 E4 opplus E3
+221 opplus Reduse -1 E4 E4 opplus E3
+222 comma Reduse -1 E6 E6 opand E5
+222 opand Reduse -1 E6 E6 opand E5
+222 opor Reduse -1 E6 E6 opand E5
+223 comma Reduse -1 E7 E7 opor E6
+223 opand Shift 157  
+223 opor Reduse -1 E7 E7 opor E6
+224 rpar Shift 290  
+225 comma Reduse -1 E1 lpar E rpar
+225 opand Reduse -1 E1 lpar E rpar
+225 opeq Reduse -1 E1 lpar E rpar
+225 opgt Reduse -1 E1 lpar E rpar
+225 ople Reduse -1 E1 lpar E rpar
+225 oplt Reduse -1 E1 lpar E rpar
+225 opminus Reduse -1 E1 lpar E rpar
+225 opmul Reduse -1 E1 lpar E rpar
+225 opne Reduse -1 E1 lpar E rpar
+225 opor Reduse -1 E1 lpar E rpar
+225 opplus Reduse -1 E1 lpar E rpar
+226 semicolon Reduse -1 ForExp E
+227 semicolon Shift 291  
+228 semicolon Reduse -1 ForExp epsilon
+229 semicolon Shift 292  
+230 id Reduse -1 Stmt AssignOrCallOp
+230 kwchar Reduse -1 Stmt AssignOrCallOp
+230 kwelse Reduse -1 Stmt AssignOrCallOp
+230 kwfor Reduse -1 Stmt AssignOrCallOp
+230 kwif Reduse -1 Stmt AssignOrCallOp
+230 kwin Reduse -1 Stmt AssignOrCallOp
+230 kwint Reduse -1 Stmt AssignOrCallOp
+230 kwout Reduse -1 Stmt AssignOrCallOp
+230 kwreturn Reduse -1 Stmt AssignOrCallOp
+230 kwswitch Reduse -1 Stmt AssignOrCallOp
+230 kwwhile Reduse -1 Stmt AssignOrCallOp
+230 lbrace Reduse -1 Stmt AssignOrCallOp
+230 rbrace Reduse -1 Stmt AssignOrCallOp
+231 id Reduse -1 Stmt DeclareStmt
+231 kwchar Reduse -1 Stmt DeclareStmt
+231 kwelse Reduse -1 Stmt DeclareStmt
+231 kwfor Reduse -1 Stmt DeclareStmt
+231 kwif Reduse -1 Stmt DeclareStmt
+231 kwin Reduse -1 Stmt DeclareStmt
+231 kwint Reduse -1 Stmt DeclareStmt
+231 kwout Reduse -1 Stmt DeclareStmt
+231 kwreturn Reduse -1 Stmt DeclareStmt
+231 kwswitch Reduse -1 Stmt DeclareStmt
+231 kwwhile Reduse -1 Stmt DeclareStmt
+231 lbrace Reduse -1 Stmt DeclareStmt
+231 rbrace Reduse -1 Stmt DeclareStmt
+232 id Reduse -1 Stmt ForOp
+232 kwchar Reduse -1 Stmt ForOp
+232 kwelse Reduse -1 Stmt ForOp
+232 kwfor Reduse -1 Stmt ForOp
+232 kwif Reduse -1 Stmt ForOp
+232 kwin Reduse -1 Stmt ForOp
+232 kwint Reduse -1 Stmt ForOp
+232 kwout Reduse -1 Stmt ForOp
+232 kwreturn Reduse -1 Stmt ForOp
+232 kwswitch Reduse -1 Stmt ForOp
+232 kwwhile Reduse -1 Stmt ForOp
+232 lbrace Reduse -1 Stmt ForOp
+232 rbrace Reduse -1 Stmt ForOp
+233 id Reduse -1 Stmt IOp
+233 kwchar Reduse -1 Stmt IOp
+233 kwelse Reduse -1 Stmt IOp
+233 kwfor Reduse -1 Stmt IOp
+233 kwif Reduse -1 Stmt IOp
+233 kwin Reduse -1 Stmt IOp
+233 kwint Reduse -1 Stmt IOp
+233 kwout Reduse -1 Stmt IOp
+233 kwreturn Reduse -1 Stmt IOp
+233 kwswitch Reduse -1 Stmt IOp
+233 kwwhile Reduse -1 Stmt IOp
+233 lbrace Reduse -1 Stmt IOp
+233 rbrace Reduse -1 Stmt IOp
+234 id Reduse -1 Stmt IfOp
+234 kwchar Reduse -1 Stmt IfOp
+234 kwelse Reduse -1 Stmt IfOp
+234 kwfor Reduse -1 Stmt IfOp
+234 kwif Reduse -1 Stmt IfOp
+234 kwin Reduse -1 Stmt IfOp
+234 kwint Reduse -1 Stmt IfOp
+234 kwout Reduse -1 Stmt IfOp
+234 kwreturn Reduse -1 Stmt IfOp
+234 kwswitch Reduse -1 Stmt IfOp
+234 kwwhile Reduse -1 Stmt IfOp
+234 lbrace Reduse -1 Stmt IfOp
+234 rbrace Reduse -1 Stmt IfOp
+235 id Reduse -1 Stmt OOp
+235 kwchar Reduse -1 Stmt OOp
+235 kwelse Reduse -1 Stmt OOp
+235 kwfor Reduse -1 Stmt OOp
+235 kwif Reduse -1 Stmt OOp
+235 kwin Reduse -1 Stmt OOp
+235 kwint Reduse -1 Stmt OOp
+235 kwout Reduse -1 Stmt OOp
+235 kwreturn Reduse -1 Stmt OOp
+235 kwswitch Reduse -1 Stmt OOp
+235 kwwhile Reduse -1 Stmt OOp
+235 lbrace Reduse -1 Stmt OOp
+235 rbrace Reduse -1 Stmt OOp
+236 epsilon Shift 294  
+236 id Reduse -1 ElsePart epsilon
+236 kwchar Reduse -1 ElsePart epsilon
+236 kwelse Shift 295  
+236 kwfor Reduse -1 ElsePart epsilon
+236 kwif Reduse -1 ElsePart epsilon
+236 kwin Reduse -1 ElsePart epsilon
+236 kwint Reduse -1 ElsePart epsilon
+236 kwout Reduse -1 ElsePart epsilon
+236 kwreturn Reduse -1 ElsePart epsilon
+236 kwswitch Reduse -1 ElsePart epsilon
+236 kwwhile Reduse -1 ElsePart epsilon
+236 lbrace Reduse -1 ElsePart epsilon
+236 rbrace Reduse -1 ElsePart epsilon
+237 id Reduse -1 Stmt SwitchOp
+237 kwchar Reduse -1 Stmt SwitchOp
+237 kwelse Reduse -1 Stmt SwitchOp
+237 kwfor Reduse -1 Stmt SwitchOp
+237 kwif Reduse -1 Stmt SwitchOp
+237 kwin Reduse -1 Stmt SwitchOp
+237 kwint Reduse -1 Stmt SwitchOp
+237 kwout Reduse -1 Stmt SwitchOp
+237 kwreturn Reduse -1 Stmt SwitchOp
+237 kwswitch Reduse -1 Stmt SwitchOp
+237 kwwhile Reduse -1 Stmt SwitchOp
+237 lbrace Reduse -1 Stmt SwitchOp
+237 rbrace Reduse -1 Stmt SwitchOp
+238 id Shift 296  
+239 id Reduse -1 Stmt WhileOp
+239 kwchar Reduse -1 Stmt WhileOp
+239 kwelse Reduse -1 Stmt WhileOp
+239 kwfor Reduse -1 Stmt WhileOp
+239 kwif Reduse -1 Stmt WhileOp
+239 kwin Reduse -1 Stmt WhileOp
+239 kwint Reduse -1 Stmt WhileOp
+239 kwout Reduse -1 Stmt WhileOp
+239 kwreturn Reduse -1 Stmt WhileOp
+239 kwswitch Reduse -1 Stmt WhileOp
+239 kwwhile Reduse -1 Stmt WhileOp
+239 lbrace Reduse -1 Stmt WhileOp
+239 rbrace Reduse -1 Stmt WhileOp
+240 lpar Shift 297  
+241 lpar Shift 298  
+242 id Shift 299  
+243 id Shift 74  
+243 lpar Shift 75  
+243 num Shift 76  
+243 opinc Shift 77  
+243 opnot Shift 78  
+243 str Shift 79  
+244 id Shift 74  
+244 lpar Shift 75  
+244 num Shift 76  
+244 opinc Shift 77  
+244 opnot Shift 78  
+245 lpar Shift 302  
+246 lpar Shift 303  
+247 epsilon Shift 44  
+247 id Shift 45  
+247 kwchar Shift 3  
+247 kwfor Shift 46  
+247 kwif Shift 47  
+247 kwin Shift 48  
+247 kwint Shift 4  
+247 kwout Shift 49  
+247 kwreturn Shift 50  
+247 kwswitch Shift 51  
+247 kwwhile Shift 52  
+247 lbrace Shift 53  
+247 rbrace Reduse -1 StmtList epsilon
+248 opand Reduse -1 E3 E3 opmul E2
+248 opeq Reduse -1 E3 E3 opmul E2
+248 opgt Reduse -1 E3 E3 opmul E2
+248 ople Reduse -1 E3 E3 opmul E2
+248 oplt Reduse -1 E3 E3 opmul E2
+248 opminus Reduse -1 E3 E3 opmul E2
+248 opmul Reduse -1 E3 E3 opmul E2
+248 opne Reduse -1 E3 E3 opmul E2
+248 opor Reduse -1 E3 E3 opmul E2
+248 opplus Reduse -1 E3 E3 opmul E2
+248 rpar Reduse -1 E3 E3 opmul E2
+249 opand Reduse -1 E2 E1
+249 opminus Reduse -1 E2 E1
+249 opmul Reduse -1 E2 E1
+249 opor Reduse -1 E2 E1
+249 opplus Reduse -1 E2 E1
+249 rpar Reduse -1 E2 E1
+250 opand Reduse -1 E3 E2
+250 opminus Reduse -1 E3 E2
+250 opmul Reduse -1 E3 E2
+250 opor Reduse -1 E3 E2
+250 opplus Reduse -1 E3 E2
+250 rpar Reduse -1 E3 E2
+251 opand Reduse -1 E4 E3
+251 opminus Reduse -1 E4 E3
+251 opmul Shift 305  
+251 opor Reduse -1 E4 E3
+251 opplus Reduse -1 E4 E3
+251 rpar Reduse -1 E4 E3
+252 opand Reduse -1 E5 E4 opeq E4
+252 opminus Shift 306  
+252 opor Reduse -1 E5 E4 opeq E4
+252 opplus Shift 307  
+252 rpar Reduse -1 E5 E4 opeq E4
+253 lpar Shift 308  
+253 opand Reduse -1 E1 id
+253 opinc Shift 309  
+253 opminus Reduse -1 E1 id
+253 opmul Reduse -1 E1 id
+253 opor Reduse -1 E1 id
+253 opplus Reduse -1 E1 id
+253 rpar Reduse -1 E1 id
+254 id Shift 116  
+254 lpar Shift 117  
+254 num Shift 118  
+254 opinc Shift 119  
+254 opnot Shift 120  
+255 opand Reduse -1 E1 num
+255 opminus Reduse -1 E1 num
+255 opmul Reduse -1 E1 num
+255 opor Reduse -1 E1 num
+255 opplus Reduse -1 E1 num
+255 rpar Reduse -1 E1 num
+256 id Shift 311  
+257 id Shift 253  
+257 lpar Shift 254  
+257 num Shift 255  
+257 opinc Shift 256  
+258 opand Reduse -1 E5 E4 opgt E4
+258 opminus Shift 306  
+258 opor Reduse -1 E5 E4 opgt E4
+258 opplus Shift 307  
+258 rpar Reduse -1 E5 E4 opgt E4
+259 opand Reduse -1 E5 E4 ople E4
+259 opminus Shift 306  
+259 opor Reduse -1 E5 E4 ople E4
+259 opplus Shift 307  
+259 rpar Reduse -1 E5 E4 ople E4
+260 opand Reduse -1 E5 E4 oplt E4
+260 opminus Shift 306  
+260 opor Reduse -1 E5 E4 oplt E4
+260 opplus Shift 307  
+260 rpar Reduse -1 E5 E4 oplt E4
+261 opand Reduse -1 E4 E4 opminus E3
+261 opeq Reduse -1 E4 E4 opminus E3
+261 opgt Reduse -1 E4 E4 opminus E3
+261 ople Reduse -1 E4 E4 opminus E3
+261 oplt Reduse -1 E4 E4 opminus E3
+261 opminus Reduse -1 E4 E4 opminus E3
+261 opmul Shift 166  
+261 opne Reduse -1 E4 E4 opminus E3
+261 opor Reduse -1 E4 E4 opminus E3
+261 opplus Reduse -1 E4 E4 opminus E3
+261 rpar Reduse -1 E4 E4 opminus E3
+262 opand Reduse -1 E5 E4 opne E4
+262 opminus Shift 306  
+262 opor Reduse -1 E5 E4 opne E4
+262 opplus Shift 307  
+262 rpar Reduse -1 E5 E4 opne E4
+263 opand Reduse -1 E4 E4 opplus E3
+263 opeq Reduse -1 E4 E4 opplus E3
+263 opgt Reduse -1 E4 E4 opplus E3
+263 ople Reduse -1 E4 E4 opplus E3
+263 oplt Reduse -1 E4 E4 opplus E3
+263 opminus Reduse -1 E4 E4 opplus E3
+263 opmul Shift 166  
+263 opne Reduse -1 E4 E4 opplus E3
+263 opor Reduse -1 E4 E4 opplus E3
+263 opplus Reduse -1 E4 E4 opplus E3
+263 rpar Reduse -1 E4 E4 opplus E3
+264 opand Reduse -1 E6 E6 opand E5
+264 opor Reduse -1 E6 E6 opand E5
+264 rpar Reduse -1 E6 E6 opand E5
+265 opand Shift 174  
+265 opor Reduse -1 E7 E7 opor E6
+265 rpar Reduse -1 E7 E7 opor E6
+266 rpar Shift 313  
+267 opand Reduse -1 E1 lpar E rpar
+267 opeq Reduse -1 E1 lpar E rpar
+267 opgt Reduse -1 E1 lpar E rpar
+267 ople Reduse -1 E1 lpar E rpar
+267 oplt Reduse -1 E1 lpar E rpar
+267 opminus Reduse -1 E1 lpar E rpar
+267 opmul Reduse -1 E1 lpar E rpar
+267 opne Reduse -1 E1 lpar E rpar
+267 opor Reduse -1 E1 lpar E rpar
+267 opplus Reduse -1 E1 lpar E rpar
+267 rpar Reduse -1 E1 lpar E rpar
+268 id Shift 186  
+268 lpar Shift 187  
+268 num Shift 188  
+268 opinc Shift 189  
+268 opnot Shift 190  
+269 id Shift 186  
+269 lpar Shift 187  
+269 num Shift 188  
+269 opinc Shift 189  
+269 opnot Shift 190  
+270 id Shift 186  
+270 lpar Shift 187  
+270 num Shift 188  
+270 opinc Shift 189  
+270 opnot Shift 190  
+271 epsilon Shift 98  
+271 id Shift 99  
+271 lpar Shift 100  
+271 num Shift 101  
+271 opinc Shift 102  
+271 opnot Shift 103  
+271 rpar Reduse -1 ArgList epsilon
+272 opand Reduse -1 E1 id opinc
+272 opminus Reduse -1 E1 id opinc
+272 opmul Reduse -1 E1 id opinc
+272 opor Reduse -1 E1 id opinc
+272 opplus Reduse -1 E1 id opinc
+272 semicolon Reduse -1 E1 id opinc
+273 rpar Shift 318  
+274 opand Reduse -1 E1 opinc id
+274 opminus Reduse -1 E1 opinc id
+274 opmul Reduse -1 E1 opinc id
+274 opor Reduse -1 E1 opinc id
+274 opplus Reduse -1 E1 opinc id
+274 semicolon Reduse -1 E1 opinc id
+275 opand Reduse -1 E2 opnot E1
+275 opminus Reduse -1 E2 opnot E1
+275 opmul Reduse -1 E2 opnot E1
+275 opor Reduse -1 E2 opnot E1
+275 opplus Reduse -1 E2 opnot E1
+275 semicolon Reduse -1 E2 opnot E1
+276 opand Reduse -1 E1 id lpar ArgList rpar
+276 opeq Reduse -1 E1 id lpar ArgList rpar
+276 opgt Reduse -1 E1 id lpar ArgList rpar
+276 ople Reduse -1 E1 id lpar ArgList rpar
+276 oplt Reduse -1 E1 id lpar ArgList rpar
+276 opminus Reduse -1 E1 id lpar ArgList rpar
+276 opmul Reduse -1 E1 id lpar ArgList rpar
+276 opne Reduse -1 E1 id lpar ArgList rpar
+276 opor Reduse -1 E1 id lpar ArgList rpar
+276 opplus Reduse -1 E1 id lpar ArgList rpar
+276 semicolon Reduse -1 E1 id lpar ArgList rpar
+277 epsilon Shift 321  
+277 kwcase Shift 322  
+277 kwdefault Shift 323  
+277 rbrace Reduse -1 Cases epsilon
+278 id Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 kwchar Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 kwfor Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 kwif Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 kwin Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 kwint Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 kwout Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 kwreturn Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 kwswitch Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 kwwhile Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 lbrace Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+278 rbrace Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+279 epsilon Shift 44  
+279 id Shift 45  
+279 kwchar Shift 3  
+279 kwfor Shift 46  
+279 kwif Shift 47  
+279 kwin Shift 48  
+279 kwint Shift 4  
+279 kwout Shift 49  
+279 kwreturn Shift 50  
+279 kwswitch Shift 51  
+279 kwwhile Shift 52  
+279 lbrace Shift 53  
+279 rbrace Reduse -1 StmtList epsilon
+280 id Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 kwchar Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 kwfor Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 kwif Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 kwin Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 kwint Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 kwout Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 kwreturn Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 kwswitch Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 kwwhile Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 lbrace Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+280 rbrace Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+281 rpar Reduse -1 ArgListl comma E ArgListl
+282 id Shift 211  
+282 lpar Shift 212  
+282 num Shift 213  
+282 opinc Shift 214  
+282 opnot Shift 215  
+283 id Shift 211  
+283 lpar Shift 212  
+283 num Shift 213  
+283 opinc Shift 214  
+283 opnot Shift 215  
+284 id Shift 211  
+284 lpar Shift 212  
+284 num Shift 213  
+284 opinc Shift 214  
+284 opnot Shift 215  
+285 epsilon Shift 98  
+285 id Shift 99  
+285 lpar Shift 100  
+285 num Shift 101  
+285 opinc Shift 102  
+285 opnot Shift 103  
+285 rpar Reduse -1 ArgList epsilon
+286 comma Reduse -1 E1 id opinc
+286 opand Reduse -1 E1 id opinc
+286 opminus Reduse -1 E1 id opinc
+286 opmul Reduse -1 E1 id opinc
+286 opor Reduse -1 E1 id opinc
+286 opplus Reduse -1 E1 id opinc
+287 rpar Shift 329  
+288 comma Reduse -1 E1 opinc id
+288 opand Reduse -1 E1 opinc id
+288 opminus Reduse -1 E1 opinc id
+288 opmul Reduse -1 E1 opinc id
+288 opor Reduse -1 E1 opinc id
+288 opplus Reduse -1 E1 opinc id
+289 comma Reduse -1 E2 opnot E1
+289 opand Reduse -1 E2 opnot E1
+289 opminus Reduse -1 E2 opnot E1
+289 opmul Reduse -1 E2 opnot E1
+289 opor Reduse -1 E2 opnot E1
+289 opplus Reduse -1 E2 opnot E1
+290 comma Reduse -1 E1 id lpar ArgList rpar
+290 opand Reduse -1 E1 id lpar ArgList rpar
+290 opeq Reduse -1 E1 id lpar ArgList rpar
+290 opgt Reduse -1 E1 id lpar ArgList rpar
+290 ople Reduse -1 E1 id lpar ArgList rpar
+290 oplt Reduse -1 E1 id lpar ArgList rpar
+290 opminus Reduse -1 E1 id lpar ArgList rpar
+290 opmul Reduse -1 E1 id lpar ArgList rpar
+290 opne Reduse -1 E1 id lpar ArgList rpar
+290 opor Reduse -1 E1 id lpar ArgList rpar
+290 opplus Reduse -1 E1 id lpar ArgList rpar
+291 epsilon Shift 332  
+291 id Shift 333  
+291 opinc Shift 334  
+291 rpar Reduse -1 ForLoop epsilon
+292 id Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwchar Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwelse Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwfor Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwif Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwin Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwint Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwout Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwreturn Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwswitch Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 kwwhile Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 lbrace Reduse -1 AssignOrCallOp AssignOrCall semicolon
+292 rbrace Reduse -1 AssignOrCallOp AssignOrCall semicolon
+293 id Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 kwchar Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 kwfor Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 kwif Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 kwin Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 kwint Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 kwout Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 kwreturn Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 kwswitch Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 kwwhile Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 lbrace Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+293 rbrace Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+294 id Reduse -1 ElsePart epsilon
+294 kwchar Reduse -1 ElsePart epsilon
+294 kwfor Reduse -1 ElsePart epsilon
+294 kwif Reduse -1 ElsePart epsilon
+294 kwin Reduse -1 ElsePart epsilon
+294 kwint Reduse -1 ElsePart epsilon
+294 kwout Reduse -1 ElsePart epsilon
+294 kwreturn Reduse -1 ElsePart epsilon
+294 kwswitch Reduse -1 ElsePart epsilon
+294 kwwhile Reduse -1 ElsePart epsilon
+294 lbrace Reduse -1 ElsePart epsilon
+294 rbrace Reduse -1 ElsePart epsilon
+295 id Shift 45  
+295 kwchar Shift 3  
+295 kwfor Shift 46  
+295 kwif Shift 47  
+295 kwin Shift 48  
+295 kwint Shift 4  
+295 kwout Shift 49  
+295 kwreturn Shift 50  
+295 kwswitch Shift 51  
+295 kwwhile Shift 52  
+295 lbrace Shift 53  
+296 comma Shift 8  
+296 epsilon Shift 9  
+296 lpar Shift 338  
+296 opassign Shift 339  
+296 semicolon Reduse -1 DeclVarListl epsilon
+297 epsilon Shift 107  
+297 id Shift 45  
+297 semicolon Reduse -1 ForInit epsilon
+298 id Shift 116  
+298 lpar Shift 117  
+298 num Shift 118  
+298 opinc Shift 119  
+298 opnot Shift 120  
+299 semicolon Shift 342  
+300 semicolon Shift 343  
+301 semicolon Shift 344  
+302 id Shift 116  
+302 lpar Shift 117  
+302 num Shift 118  
+302 opinc Shift 119  
+302 opnot Shift 120  
+303 id Shift 116  
+303 lpar Shift 117  
+303 num Shift 118  
+303 opinc Shift 119  
+303 opnot Shift 120  
+304 rbrace Shift 347  
+305 id Shift 253  
+305 lpar Shift 254  
+305 num Shift 255  
+305 opinc Shift 256  
+305 opnot Shift 257  
+306 id Shift 253  
+306 lpar Shift 254  
+306 num Shift 255  
+306 opinc Shift 256  
+306 opnot Shift 257  
+307 id Shift 253  
+307 lpar Shift 254  
+307 num Shift 255  
+307 opinc Shift 256  
+307 opnot Shift 257  
+308 epsilon Shift 98  
+308 id Shift 99  
+308 lpar Shift 100  
+308 num Shift 101  
+308 opinc Shift 102  
+308 opnot Shift 103  
+308 rpar Reduse -1 ArgList epsilon
+309 opand Reduse -1 E1 id opinc
+309 opminus Reduse -1 E1 id opinc
+309 opmul Reduse -1 E1 id opinc
+309 opor Reduse -1 E1 id opinc
+309 opplus Reduse -1 E1 id opinc
+309 rpar Reduse -1 E1 id opinc
+310 rpar Shift 352  
+311 opand Reduse -1 E1 opinc id
+311 opminus Reduse -1 E1 opinc id
+311 opmul Reduse -1 E1 opinc id
+311 opor Reduse -1 E1 opinc id
+311 opplus Reduse -1 E1 opinc id
+311 rpar Reduse -1 E1 opinc id
+312 opand Reduse -1 E2 opnot E1
+312 opminus Reduse -1 E2 opnot E1
+312 opmul Reduse -1 E2 opnot E1
+312 opor Reduse -1 E2 opnot E1
+312 opplus Reduse -1 E2 opnot E1
+312 rpar Reduse -1 E2 opnot E1
+313 opand Reduse -1 E1 id lpar ArgList rpar
+313 opeq Reduse -1 E1 id lpar ArgList rpar
+313 opgt Reduse -1 E1 id lpar ArgList rpar
+313 ople Reduse -1 E1 id lpar ArgList rpar
+313 oplt Reduse -1 E1 id lpar ArgList rpar
+313 opminus Reduse -1 E1 id lpar ArgList rpar
+313 opmul Reduse -1 E1 id lpar ArgList rpar
+313 opne Reduse -1 E1 id lpar ArgList rpar
+313 opor Reduse -1 E1 id lpar ArgList rpar
+313 opplus Reduse -1 E1 id lpar ArgList rpar
+313 rpar Reduse -1 E1 id lpar ArgList rpar
+314 opand Reduse -1 E3 E3 opmul E2
+314 opminus Reduse -1 E3 E3 opmul E2
+314 opmul Reduse -1 E3 E3 opmul E2
+314 opor Reduse -1 E3 E3 opmul E2
+314 opplus Reduse -1 E3 E3 opmul E2
+314 semicolon Reduse -1 E3 E3 opmul E2
+315 opand Reduse -1 E4 E4 opminus E3
+315 opminus Reduse -1 E4 E4 opminus E3
+315 opmul Shift 268  
+315 opor Reduse -1 E4 E4 opminus E3
+315 opplus Reduse -1 E4 E4 opminus E3
+315 semicolon Reduse -1 E4 E4 opminus E3
+316 opand Reduse -1 E4 E4 opplus E3
+316 opminus Reduse -1 E4 E4 opplus E3
+316 opmul Shift 268  
+316 opor Reduse -1 E4 E4 opplus E3
+316 opplus Reduse -1 E4 E4 opplus E3
+316 semicolon Reduse -1 E4 E4 opplus E3
+317 rpar Shift 353  
+318 opand Reduse -1 E1 lpar E rpar
+318 opminus Reduse -1 E1 lpar E rpar
+318 opmul Reduse -1 E1 lpar E rpar
+318 opor Reduse -1 E1 lpar E rpar
+318 opplus Reduse -1 E1 lpar E rpar
+318 semicolon Reduse -1 E1 lpar E rpar
+319 epsilon Shift 356  
+319 kwcase Shift 322  
+319 kwdefault Shift 323  
+319 rbrace Reduse -1 Casesl epsilon
+320 rbrace Shift 357  
+321 rbrace Reduse -1 Cases epsilon
+322 num Shift 358  
+323 colon Shift 359  
+324 rbrace Shift 360  
+325 comma Reduse -1 E3 E3 opmul E2
+325 opand Reduse -1 E3 E3 opmul E2
+325 opminus Reduse -1 E3 E3 opmul E2
+325 opmul Reduse -1 E3 E3 opmul E2
+325 opor Reduse -1 E3 E3 opmul E2
+325 opplus Reduse -1 E3 E3 opmul E2
+326 comma Reduse -1 E4 E4 opminus E3
+326 opand Reduse -1 E4 E4 opminus E3
+326 opminus Reduse -1 E4 E4 opminus E3
+326 opmul Shift 282  
+326 opor Reduse -1 E4 E4 opminus E3
+326 opplus Reduse -1 E4 E4 opminus E3
+327 comma Reduse -1 E4 E4 opplus E3
+327 opand Reduse -1 E4 E4 opplus E3
+327 opminus Reduse -1 E4 E4 opplus E3
+327 opmul Shift 282  
+327 opor Reduse -1 E4 E4 opplus E3
+327 opplus Reduse -1 E4 E4 opplus E3
+328 rpar Shift 361  
+329 comma Reduse -1 E1 lpar E rpar
+329 opand Reduse -1 E1 lpar E rpar
+329 opminus Reduse -1 E1 lpar E rpar
+329 opmul Reduse -1 E1 lpar E rpar
+329 opor Reduse -1 E1 lpar E rpar
+329 opplus Reduse -1 E1 lpar E rpar
+330 rpar Reduse -1 ForLoop AssignOrCall
+331 rpar Shift 362  
+332 rpar Reduse -1 ForLoop epsilon
+333 lpar Shift 364  
+333 opassign Shift 365  
+334 id Shift 366  
+335 id Reduse -1 ElsePart kwelse Stmt
+335 kwchar Reduse -1 ElsePart kwelse Stmt
+335 kwfor Reduse -1 ElsePart kwelse Stmt
+335 kwif Reduse -1 ElsePart kwelse Stmt
+335 kwin Reduse -1 ElsePart kwelse Stmt
+335 kwint Reduse -1 ElsePart kwelse Stmt
+335 kwout Reduse -1 ElsePart kwelse Stmt
+335 kwreturn Reduse -1 ElsePart kwelse Stmt
+335 kwswitch Reduse -1 ElsePart kwelse Stmt
+335 kwwhile Reduse -1 ElsePart kwelse Stmt
+335 lbrace Reduse -1 ElsePart kwelse Stmt
+335 rbrace Reduse -1 ElsePart kwelse Stmt
+336 semicolon Shift 367  
+337 id Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwchar Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwelse Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwfor Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwif Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwin Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwint Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwout Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwreturn Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwswitch Reduse -1 DeclareStmt Type id DeclareStmtl
+337 kwwhile Reduse -1 DeclareStmt Type id DeclareStmtl
+337 lbrace Reduse -1 DeclareStmt Type id DeclareStmtl
+337 rbrace Reduse -1 DeclareStmt Type id DeclareStmtl
+338 epsilon Shift 16  
+338 kwchar Shift 3  
+338 kwint Shift 4  
+338 rpar Reduse -1 ParamList epsilon
+339 num Shift 369  
+340 semicolon Shift 370  
+341 rpar Shift 371  
+342 id Reduse -1 IOp kwin id semicolon
+342 kwchar Reduse -1 IOp kwin id semicolon
+342 kwelse Reduse -1 IOp kwin id semicolon
+342 kwfor Reduse -1 IOp kwin id semicolon
+342 kwif Reduse -1 IOp kwin id semicolon
+342 kwin Reduse -1 IOp kwin id semicolon
+342 kwint Reduse -1 IOp kwin id semicolon
+342 kwout Reduse -1 IOp kwin id semicolon
+342 kwreturn Reduse -1 IOp kwin id semicolon
+342 kwswitch Reduse -1 IOp kwin id semicolon
+342 kwwhile Reduse -1 IOp kwin id semicolon
+342 lbrace Reduse -1 IOp kwin id semicolon
+342 rbrace Reduse -1 IOp kwin id semicolon
+343 id Reduse -1 OOp kwout OOpl semicolon
+343 kwchar Reduse -1 OOp kwout OOpl semicolon
+343 kwelse Reduse -1 OOp kwout OOpl semicolon
+343 kwfor Reduse -1 OOp kwout OOpl semicolon
+343 kwif Reduse -1 OOp kwout OOpl semicolon
+343 kwin Reduse -1 OOp kwout OOpl semicolon
+343 kwint Reduse -1 OOp kwout OOpl semicolon
+343 kwout Reduse -1 OOp kwout OOpl semicolon
+343 kwreturn Reduse -1 OOp kwout OOpl semicolon
+343 kwswitch Reduse -1 OOp kwout OOpl semicolon
+343 kwwhile Reduse -1 OOp kwout OOpl semicolon
+343 lbrace Reduse -1 OOp kwout OOpl semicolon
+343 rbrace Reduse -1 OOp kwout OOpl semicolon
+344 id Reduse -1 Stmt kwreturn E semicolon
+344 kwchar Reduse -1 Stmt kwreturn E semicolon
+344 kwelse Reduse -1 Stmt kwreturn E semicolon
+344 kwfor Reduse -1 Stmt kwreturn E semicolon
+344 kwif Reduse -1 Stmt kwreturn E semicolon
+344 kwin Reduse -1 Stmt kwreturn E semicolon
+344 kwint Reduse -1 Stmt kwreturn E semicolon
+344 kwout Reduse -1 Stmt kwreturn E semicolon
+344 kwreturn Reduse -1 Stmt kwreturn E semicolon
+344 kwswitch Reduse -1 Stmt kwreturn E semicolon
+344 kwwhile Reduse -1 Stmt kwreturn E semicolon
+344 lbrace Reduse -1 Stmt kwreturn E semicolon
+344 rbrace Reduse -1 Stmt kwreturn E semicolon
+345 rpar Shift 372  
+346 rpar Shift 373  
+347 id Reduse -1 Stmt lbrace StmtList rbrace
+347 kwchar Reduse -1 Stmt lbrace StmtList rbrace
+347 kwelse Reduse -1 Stmt lbrace StmtList rbrace
+347 kwfor Reduse -1 Stmt lbrace StmtList rbrace
+347 kwif Reduse -1 Stmt lbrace StmtList rbrace
+347 kwin Reduse -1 Stmt lbrace StmtList rbrace
+347 kwint Reduse -1 Stmt lbrace StmtList rbrace
+347 kwout Reduse -1 Stmt lbrace StmtList rbrace
+347 kwreturn Reduse -1 Stmt lbrace StmtList rbrace
+347 kwswitch Reduse -1 Stmt lbrace StmtList rbrace
+347 kwwhile Reduse -1 Stmt lbrace StmtList rbrace
+347 lbrace Reduse -1 Stmt lbrace StmtList rbrace
+347 rbrace Reduse -1 Stmt lbrace StmtList rbrace
+348 opand Reduse -1 E3 E3 opmul E2
+348 opminus Reduse -1 E3 E3 opmul E2
+348 opmul Reduse -1 E3 E3 opmul E2
+348 opor Reduse -1 E3 E3 opmul E2
+348 opplus Reduse -1 E3 E3 opmul E2
+348 rpar Reduse -1 E3 E3 opmul E2
+349 opand Reduse -1 E4 E4 opminus E3
+349 opminus Reduse -1 E4 E4 opminus E3
+349 opmul Shift 305  
+349 opor Reduse -1 E4 E4 opminus E3
+349 opplus Reduse -1 E4 E4 opminus E3
+349 rpar Reduse -1 E4 E4 opminus E3
+350 opand Reduse -1 E4 E4 opplus E3
+350 opminus Reduse -1 E4 E4 opplus E3
+350 opmul Shift 305  
+350 opor Reduse -1 E4 E4 opplus E3
+350 opplus Reduse -1 E4 E4 opplus E3
+350 rpar Reduse -1 E4 E4 opplus E3
+351 rpar Shift 374  
+352 opand Reduse -1 E1 lpar E rpar
+352 opminus Reduse -1 E1 lpar E rpar
+352 opmul Reduse -1 E1 lpar E rpar
+352 opor Reduse -1 E1 lpar E rpar
+352 opplus Reduse -1 E1 lpar E rpar
+352 rpar Reduse -1 E1 lpar E rpar
+353 opand Reduse -1 E1 id lpar ArgList rpar
+353 opminus Reduse -1 E1 id lpar ArgList rpar
+353 opmul Reduse -1 E1 id lpar ArgList rpar
+353 opor Reduse -1 E1 id lpar ArgList rpar
+353 opplus Reduse -1 E1 id lpar ArgList rpar
+353 semicolon Reduse -1 E1 id lpar ArgList rpar
+354 epsilon Shift 356  
+354 kwcase Shift 322  
+354 kwdefault Shift 323  
+354 rbrace Reduse -1 Casesl epsilon
+355 rbrace Reduse -1 Cases ACase Casesl
+356 rbrace Reduse -1 Casesl epsilon
+357 id Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 kwchar Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 kwfor Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 kwif Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 kwin Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 kwint Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 kwout Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 kwreturn Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 kwswitch Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 kwwhile Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 lbrace Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+357 rbrace Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+358 colon Shift 376  
+359 epsilon Shift 389  
+359 id Shift 45  
+359 kwcase Reduse -1 StmtList epsilon
+359 kwchar Shift 3  
+359 kwdefault Reduse -1 StmtList epsilon
+359 kwfor Shift 390  
+359 kwif Shift 391  
+359 kwin Shift 392  
+359 kwint Shift 4  
+359 kwout Shift 393  
+359 kwreturn Shift 394  
+359 kwswitch Shift 395  
+359 kwwhile Shift 396  
+359 lbrace Shift 397  
+359 rbrace Reduse -1 StmtList epsilon
+360 id Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 kwchar Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 kwfor Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 kwif Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 kwin Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 kwint Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 kwout Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 kwreturn Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 kwswitch Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 kwwhile Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 lbrace Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+360 rbrace Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+361 comma Reduse -1 E1 id lpar ArgList rpar
+361 opand Reduse -1 E1 id lpar ArgList rpar
+361 opminus Reduse -1 E1 id lpar ArgList rpar
+361 opmul Reduse -1 E1 id lpar ArgList rpar
+361 opor Reduse -1 E1 id lpar ArgList rpar
+361 opplus Reduse -1 E1 id lpar ArgList rpar
+362 id Shift 45  
+362 kwchar Shift 3  
+362 kwfor Shift 46  
+362 kwif Shift 47  
+362 kwin Shift 48  
+362 kwint Shift 4  
+362 kwout Shift 49  
+362 kwreturn Shift 50  
+362 kwswitch Shift 51  
+362 kwwhile Shift 52  
+362 lbrace Shift 53  
+363 rpar Reduse -1 AssignOrCall id AssignOrCalll
+364 epsilon Shift 98  
+364 id Shift 99  
+364 lpar Shift 100  
+364 num Shift 101  
+364 opinc Shift 102  
+364 opnot Shift 103  
+364 rpar Reduse -1 ArgList epsilon
+365 id Shift 116  
+365 lpar Shift 117  
+365 num Shift 118  
+365 opinc Shift 119  
+365 opnot Shift 120  
+366 rpar Reduse -1 ForLoop opinc id
+367 id Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwchar Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwelse Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwfor Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwif Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwin Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwint Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwout Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwreturn Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwswitch Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 kwwhile Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 lbrace Reduse -1 DeclareStmtl DeclVarListl semicolon
+367 rbrace Reduse -1 DeclareStmtl DeclVarListl semicolon
+368 rpar Shift 401  
+369 comma Shift 8  
+369 epsilon Shift 9  
+369 semicolon Reduse -1 DeclVarListl epsilon
+370 epsilon Shift 228  
+370 id Shift 74  
+370 lpar Shift 75  
+370 num Shift 76  
+370 opinc Shift 77  
+370 opnot Shift 78  
+370 semicolon Reduse -1 ForExp epsilon
+371 id Shift 45  
+371 kwchar Shift 3  
+371 kwfor Shift 240  
+371 kwif Shift 241  
+371 kwin Shift 242  
+371 kwint Shift 4  
+371 kwout Shift 243  
+371 kwreturn Shift 244  
+371 kwswitch Shift 245  
+371 kwwhile Shift 246  
+371 lbrace Shift 247  
+372 lbrace Shift 405  
+373 id Shift 45  
+373 kwchar Shift 3  
+373 kwfor Shift 240  
+373 kwif Shift 241  
+373 kwin Shift 242  
+373 kwint Shift 4  
+373 kwout Shift 243  
+373 kwreturn Shift 244  
+373 kwswitch Shift 245  
+373 kwwhile Shift 246  
+373 lbrace Shift 247  
+374 opand Reduse -1 E1 id lpar ArgList rpar
+374 opminus Reduse -1 E1 id lpar ArgList rpar
+374 opmul Reduse -1 E1 id lpar ArgList rpar
+374 opor Reduse -1 E1 id lpar ArgList rpar
+374 opplus Reduse -1 E1 id lpar ArgList rpar
+374 rpar Reduse -1 E1 id lpar ArgList rpar
+375 rbrace Reduse -1 Casesl ACase Casesl
+376 epsilon Shift 389  
+376 id Shift 45  
+376 kwcase Reduse -1 StmtList epsilon
+376 kwchar Shift 3  
+376 kwdefault Reduse -1 StmtList epsilon
+376 kwfor Shift 390  
+376 kwif Shift 391  
+376 kwin Shift 392  
+376 kwint Shift 4  
+376 kwout Shift 393  
+376 kwreturn Shift 394  
+376 kwswitch Shift 395  
+376 kwwhile Shift 396  
+376 lbrace Shift 397  
+376 rbrace Reduse -1 StmtList epsilon
+377 semicolon Shift 408  
+378 id Reduse -1 Stmt AssignOrCallOp
+378 kwcase Reduse -1 Stmt AssignOrCallOp
+378 kwchar Reduse -1 Stmt AssignOrCallOp
+378 kwdefault Reduse -1 Stmt AssignOrCallOp
+378 kwfor Reduse -1 Stmt AssignOrCallOp
+378 kwif Reduse -1 Stmt AssignOrCallOp
+378 kwin Reduse -1 Stmt AssignOrCallOp
+378 kwint Reduse -1 Stmt AssignOrCallOp
+378 kwout Reduse -1 Stmt AssignOrCallOp
+378 kwreturn Reduse -1 Stmt AssignOrCallOp
+378 kwswitch Reduse -1 Stmt AssignOrCallOp
+378 kwwhile Reduse -1 Stmt AssignOrCallOp
+378 lbrace Reduse -1 Stmt AssignOrCallOp
+378 rbrace Reduse -1 Stmt AssignOrCallOp
+379 id Reduse -1 Stmt DeclareStmt
+379 kwcase Reduse -1 Stmt DeclareStmt
+379 kwchar Reduse -1 Stmt DeclareStmt
+379 kwdefault Reduse -1 Stmt DeclareStmt
+379 kwfor Reduse -1 Stmt DeclareStmt
+379 kwif Reduse -1 Stmt DeclareStmt
+379 kwin Reduse -1 Stmt DeclareStmt
+379 kwint Reduse -1 Stmt DeclareStmt
+379 kwout Reduse -1 Stmt DeclareStmt
+379 kwreturn Reduse -1 Stmt DeclareStmt
+379 kwswitch Reduse -1 Stmt DeclareStmt
+379 kwwhile Reduse -1 Stmt DeclareStmt
+379 lbrace Reduse -1 Stmt DeclareStmt
+379 rbrace Reduse -1 Stmt DeclareStmt
+380 id Reduse -1 Stmt ForOp
+380 kwcase Reduse -1 Stmt ForOp
+380 kwchar Reduse -1 Stmt ForOp
+380 kwdefault Reduse -1 Stmt ForOp
+380 kwfor Reduse -1 Stmt ForOp
+380 kwif Reduse -1 Stmt ForOp
+380 kwin Reduse -1 Stmt ForOp
+380 kwint Reduse -1 Stmt ForOp
+380 kwout Reduse -1 Stmt ForOp
+380 kwreturn Reduse -1 Stmt ForOp
+380 kwswitch Reduse -1 Stmt ForOp
+380 kwwhile Reduse -1 Stmt ForOp
+380 lbrace Reduse -1 Stmt ForOp
+380 rbrace Reduse -1 Stmt ForOp
+381 id Reduse -1 Stmt IOp
+381 kwcase Reduse -1 Stmt IOp
+381 kwchar Reduse -1 Stmt IOp
+381 kwdefault Reduse -1 Stmt IOp
+381 kwfor Reduse -1 Stmt IOp
+381 kwif Reduse -1 Stmt IOp
+381 kwin Reduse -1 Stmt IOp
+381 kwint Reduse -1 Stmt IOp
+381 kwout Reduse -1 Stmt IOp
+381 kwreturn Reduse -1 Stmt IOp
+381 kwswitch Reduse -1 Stmt IOp
+381 kwwhile Reduse -1 Stmt IOp
+381 lbrace Reduse -1 Stmt IOp
+381 rbrace Reduse -1 Stmt IOp
+382 id Reduse -1 Stmt IfOp
+382 kwcase Reduse -1 Stmt IfOp
+382 kwchar Reduse -1 Stmt IfOp
+382 kwdefault Reduse -1 Stmt IfOp
+382 kwfor Reduse -1 Stmt IfOp
+382 kwif Reduse -1 Stmt IfOp
+382 kwin Reduse -1 Stmt IfOp
+382 kwint Reduse -1 Stmt IfOp
+382 kwout Reduse -1 Stmt IfOp
+382 kwreturn Reduse -1 Stmt IfOp
+382 kwswitch Reduse -1 Stmt IfOp
+382 kwwhile Reduse -1 Stmt IfOp
+382 lbrace Reduse -1 Stmt IfOp
+382 rbrace Reduse -1 Stmt IfOp
+383 id Reduse -1 Stmt OOp
+383 kwcase Reduse -1 Stmt OOp
+383 kwchar Reduse -1 Stmt OOp
+383 kwdefault Reduse -1 Stmt OOp
+383 kwfor Reduse -1 Stmt OOp
+383 kwif Reduse -1 Stmt OOp
+383 kwin Reduse -1 Stmt OOp
+383 kwint Reduse -1 Stmt OOp
+383 kwout Reduse -1 Stmt OOp
+383 kwreturn Reduse -1 Stmt OOp
+383 kwswitch Reduse -1 Stmt OOp
+383 kwwhile Reduse -1 Stmt OOp
+383 lbrace Reduse -1 Stmt OOp
+383 rbrace Reduse -1 Stmt OOp
+384 epsilon Shift 389  
+384 id Shift 45  
+384 kwcase Reduse -1 StmtList epsilon
+384 kwchar Shift 3  
+384 kwdefault Reduse -1 StmtList epsilon
+384 kwfor Shift 390  
+384 kwif Shift 391  
+384 kwin Shift 392  
+384 kwint Shift 4  
+384 kwout Shift 393  
+384 kwreturn Shift 394  
+384 kwswitch Shift 395  
+384 kwwhile Shift 396  
+384 lbrace Shift 397  
+384 rbrace Reduse -1 StmtList epsilon
+385 kwcase Reduse -1 ACase kwdefault colon StmtList
+385 kwdefault Reduse -1 ACase kwdefault colon StmtList
+385 rbrace Reduse -1 ACase kwdefault colon StmtList
+386 id Reduse -1 Stmt SwitchOp
+386 kwcase Reduse -1 Stmt SwitchOp
+386 kwchar Reduse -1 Stmt SwitchOp
+386 kwdefault Reduse -1 Stmt SwitchOp
+386 kwfor Reduse -1 Stmt SwitchOp
+386 kwif Reduse -1 Stmt SwitchOp
+386 kwin Reduse -1 Stmt SwitchOp
+386 kwint Reduse -1 Stmt SwitchOp
+386 kwout Reduse -1 Stmt SwitchOp
+386 kwreturn Reduse -1 Stmt SwitchOp
+386 kwswitch Reduse -1 Stmt SwitchOp
+386 kwwhile Reduse -1 Stmt SwitchOp
+386 lbrace Reduse -1 Stmt SwitchOp
+386 rbrace Reduse -1 Stmt SwitchOp
+387 id Shift 410  
+388 id Reduse -1 Stmt WhileOp
+388 kwcase Reduse -1 Stmt WhileOp
+388 kwchar Reduse -1 Stmt WhileOp
+388 kwdefault Reduse -1 Stmt WhileOp
+388 kwfor Reduse -1 Stmt WhileOp
+388 kwif Reduse -1 Stmt WhileOp
+388 kwin Reduse -1 Stmt WhileOp
+388 kwint Reduse -1 Stmt WhileOp
+388 kwout Reduse -1 Stmt WhileOp
+388 kwreturn Reduse -1 Stmt WhileOp
+388 kwswitch Reduse -1 Stmt WhileOp
+388 kwwhile Reduse -1 Stmt WhileOp
+388 lbrace Reduse -1 Stmt WhileOp
+388 rbrace Reduse -1 Stmt WhileOp
+389 kwcase Reduse -1 StmtList epsilon
+389 kwdefault Reduse -1 StmtList epsilon
+389 rbrace Reduse -1 StmtList epsilon
+390 lpar Shift 411  
+391 lpar Shift 412  
+392 id Shift 413  
+393 id Shift 74  
+393 lpar Shift 75  
+393 num Shift 76  
+393 opinc Shift 77  
+393 opnot Shift 78  
+393 str Shift 79  
+394 id Shift 74  
+394 lpar Shift 75  
+394 num Shift 76  
+394 opinc Shift 77  
+394 opnot Shift 78  
+395 lpar Shift 416  
+396 lpar Shift 417  
+397 epsilon Shift 44  
+397 id Shift 45  
+397 kwchar Shift 3  
+397 kwfor Shift 46  
+397 kwif Shift 47  
+397 kwin Shift 48  
+397 kwint Shift 4  
+397 kwout Shift 49  
+397 kwreturn Shift 50  
+397 kwswitch Shift 51  
+397 kwwhile Shift 52  
+397 lbrace Shift 53  
+397 rbrace Reduse -1 StmtList epsilon
+398 id Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 kwchar Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 kwfor Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 kwif Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 kwin Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 kwint Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 kwout Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 kwreturn Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 kwswitch Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 kwwhile Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 lbrace Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+398 rbrace Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+399 rpar Shift 419  
+400 rpar Reduse -1 AssignOrCalll opassign E
+401 lbrace Shift 420  
+402 semicolon Shift 421  
+403 semicolon Shift 422  
+404 epsilon Shift 424  
+404 id Reduse -1 ElsePart epsilon
+404 kwchar Reduse -1 ElsePart epsilon
+404 kwelse Shift 425  
+404 kwfor Reduse -1 ElsePart epsilon
+404 kwif Reduse -1 ElsePart epsilon
+404 kwin Reduse -1 ElsePart epsilon
+404 kwint Reduse -1 ElsePart epsilon
+404 kwout Reduse -1 ElsePart epsilon
+404 kwreturn Reduse -1 ElsePart epsilon
+404 kwswitch Reduse -1 ElsePart epsilon
+404 kwwhile Reduse -1 ElsePart epsilon
+404 lbrace Reduse -1 ElsePart epsilon
+404 rbrace Reduse -1 ElsePart epsilon
+405 epsilon Shift 321  
+405 kwcase Shift 322  
+405 kwdefault Shift 323  
+405 rbrace Reduse -1 Cases epsilon
+406 id Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwchar Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwelse Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwfor Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwif Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwin Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwint Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwout Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwreturn Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwswitch Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 kwwhile Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 lbrace Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+406 rbrace Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+407 kwcase Reduse -1 ACase kwcase num colon StmtList
+407 kwdefault Reduse -1 ACase kwcase num colon StmtList
+407 rbrace Reduse -1 ACase kwcase num colon StmtList
+408 id Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwcase Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwchar Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwdefault Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwfor Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwif Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwin Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwint Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwout Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwreturn Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwswitch Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 kwwhile Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 lbrace Reduse -1 AssignOrCallOp AssignOrCall semicolon
+408 rbrace Reduse -1 AssignOrCallOp AssignOrCall semicolon
+409 kwcase Reduse -1 StmtList Stmt StmtList
+409 kwdefault Reduse -1 StmtList Stmt StmtList
+409 rbrace Reduse -1 StmtList Stmt StmtList
+410 comma Shift 8  
+410 epsilon Shift 9  
+410 lpar Shift 429  
+410 opassign Shift 430  
+410 semicolon Reduse -1 DeclVarListl epsilon
+411 epsilon Shift 107  
+411 id Shift 45  
+411 semicolon Reduse -1 ForInit epsilon
+412 id Shift 116  
+412 lpar Shift 117  
+412 num Shift 118  
+412 opinc Shift 119  
+412 opnot Shift 120  
+413 semicolon Shift 433  
+414 semicolon Shift 434  
+415 semicolon Shift 435  
+416 id Shift 116  
+416 lpar Shift 117  
+416 num Shift 118  
+416 opinc Shift 119  
+416 opnot Shift 120  
+417 id Shift 116  
+417 lpar Shift 117  
+417 num Shift 118  
+417 opinc Shift 119  
+417 opnot Shift 120  
+418 rbrace Shift 438  
+419 rpar Reduse -1 AssignOrCalll lpar ArgList rpar
+420 epsilon Shift 44  
+420 id Shift 45  
+420 kwchar Shift 3  
+420 kwfor Shift 46  
+420 kwif Shift 47  
+420 kwin Shift 48  
+420 kwint Shift 4  
+420 kwout Shift 49  
+420 kwreturn Shift 50  
+420 kwswitch Shift 51  
+420 kwwhile Shift 52  
+420 lbrace Shift 53  
+420 rbrace Reduse -1 StmtList epsilon
+421 id Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwchar Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwelse Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwfor Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwif Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwin Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwint Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwout Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwreturn Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwswitch Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 kwwhile Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 lbrace Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+421 rbrace Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+422 epsilon Shift 332  
+422 id Shift 333  
+422 opinc Shift 334  
+422 rpar Reduse -1 ForLoop epsilon
+423 id Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwchar Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwelse Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwfor Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwif Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwin Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwint Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwout Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwreturn Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwswitch Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 kwwhile Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 lbrace Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+423 rbrace Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+424 id Reduse -1 ElsePart epsilon
+424 kwchar Reduse -1 ElsePart epsilon
+424 kwelse Reduse -1 ElsePart epsilon
+424 kwfor Reduse -1 ElsePart epsilon
+424 kwif Reduse -1 ElsePart epsilon
+424 kwin Reduse -1 ElsePart epsilon
+424 kwint Reduse -1 ElsePart epsilon
+424 kwout Reduse -1 ElsePart epsilon
+424 kwreturn Reduse -1 ElsePart epsilon
+424 kwswitch Reduse -1 ElsePart epsilon
+424 kwwhile Reduse -1 ElsePart epsilon
+424 lbrace Reduse -1 ElsePart epsilon
+424 rbrace Reduse -1 ElsePart epsilon
+425 id Shift 45  
+425 kwchar Shift 3  
+425 kwfor Shift 240  
+425 kwif Shift 241  
+425 kwin Shift 242  
+425 kwint Shift 4  
+425 kwout Shift 243  
+425 kwreturn Shift 244  
+425 kwswitch Shift 245  
+425 kwwhile Shift 246  
+425 lbrace Shift 247  
+426 rbrace Shift 442  
+427 semicolon Shift 443  
+428 id Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwcase Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwchar Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwdefault Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwfor Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwif Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwin Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwint Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwout Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwreturn Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwswitch Reduse -1 DeclareStmt Type id DeclareStmtl
+428 kwwhile Reduse -1 DeclareStmt Type id DeclareStmtl
+428 lbrace Reduse -1 DeclareStmt Type id DeclareStmtl
+428 rbrace Reduse -1 DeclareStmt Type id DeclareStmtl
+429 epsilon Shift 16  
+429 kwchar Shift 3  
+429 kwint Shift 4  
+429 rpar Reduse -1 ParamList epsilon
+430 num Shift 445  
+431 semicolon Shift 446  
+432 rpar Shift 447  
+433 id Reduse -1 IOp kwin id semicolon
+433 kwcase Reduse -1 IOp kwin id semicolon
+433 kwchar Reduse -1 IOp kwin id semicolon
+433 kwdefault Reduse -1 IOp kwin id semicolon
+433 kwfor Reduse -1 IOp kwin id semicolon
+433 kwif Reduse -1 IOp kwin id semicolon
+433 kwin Reduse -1 IOp kwin id semicolon
+433 kwint Reduse -1 IOp kwin id semicolon
+433 kwout Reduse -1 IOp kwin id semicolon
+433 kwreturn Reduse -1 IOp kwin id semicolon
+433 kwswitch Reduse -1 IOp kwin id semicolon
+433 kwwhile Reduse -1 IOp kwin id semicolon
+433 lbrace Reduse -1 IOp kwin id semicolon
+433 rbrace Reduse -1 IOp kwin id semicolon
+434 id Reduse -1 OOp kwout OOpl semicolon
+434 kwcase Reduse -1 OOp kwout OOpl semicolon
+434 kwchar Reduse -1 OOp kwout OOpl semicolon
+434 kwdefault Reduse -1 OOp kwout OOpl semicolon
+434 kwfor Reduse -1 OOp kwout OOpl semicolon
+434 kwif Reduse -1 OOp kwout OOpl semicolon
+434 kwin Reduse -1 OOp kwout OOpl semicolon
+434 kwint Reduse -1 OOp kwout OOpl semicolon
+434 kwout Reduse -1 OOp kwout OOpl semicolon
+434 kwreturn Reduse -1 OOp kwout OOpl semicolon
+434 kwswitch Reduse -1 OOp kwout OOpl semicolon
+434 kwwhile Reduse -1 OOp kwout OOpl semicolon
+434 lbrace Reduse -1 OOp kwout OOpl semicolon
+434 rbrace Reduse -1 OOp kwout OOpl semicolon
+435 id Reduse -1 Stmt kwreturn E semicolon
+435 kwcase Reduse -1 Stmt kwreturn E semicolon
+435 kwchar Reduse -1 Stmt kwreturn E semicolon
+435 kwdefault Reduse -1 Stmt kwreturn E semicolon
+435 kwfor Reduse -1 Stmt kwreturn E semicolon
+435 kwif Reduse -1 Stmt kwreturn E semicolon
+435 kwin Reduse -1 Stmt kwreturn E semicolon
+435 kwint Reduse -1 Stmt kwreturn E semicolon
+435 kwout Reduse -1 Stmt kwreturn E semicolon
+435 kwreturn Reduse -1 Stmt kwreturn E semicolon
+435 kwswitch Reduse -1 Stmt kwreturn E semicolon
+435 kwwhile Reduse -1 Stmt kwreturn E semicolon
+435 lbrace Reduse -1 Stmt kwreturn E semicolon
+435 rbrace Reduse -1 Stmt kwreturn E semicolon
+436 rpar Shift 448  
+437 rpar Shift 449  
+438 id Reduse -1 Stmt lbrace StmtList rbrace
+438 kwcase Reduse -1 Stmt lbrace StmtList rbrace
+438 kwchar Reduse -1 Stmt lbrace StmtList rbrace
+438 kwdefault Reduse -1 Stmt lbrace StmtList rbrace
+438 kwfor Reduse -1 Stmt lbrace StmtList rbrace
+438 kwif Reduse -1 Stmt lbrace StmtList rbrace
+438 kwin Reduse -1 Stmt lbrace StmtList rbrace
+438 kwint Reduse -1 Stmt lbrace StmtList rbrace
+438 kwout Reduse -1 Stmt lbrace StmtList rbrace
+438 kwreturn Reduse -1 Stmt lbrace StmtList rbrace
+438 kwswitch Reduse -1 Stmt lbrace StmtList rbrace
+438 kwwhile Reduse -1 Stmt lbrace StmtList rbrace
+438 lbrace Reduse -1 Stmt lbrace StmtList rbrace
+438 rbrace Reduse -1 Stmt lbrace StmtList rbrace
+439 rbrace Shift 450  
+440 rpar Shift 451  
+441 id Reduse -1 ElsePart kwelse Stmt
+441 kwchar Reduse -1 ElsePart kwelse Stmt
+441 kwelse Reduse -1 ElsePart kwelse Stmt
+441 kwfor Reduse -1 ElsePart kwelse Stmt
+441 kwif Reduse -1 ElsePart kwelse Stmt
+441 kwin Reduse -1 ElsePart kwelse Stmt
+441 kwint Reduse -1 ElsePart kwelse Stmt
+441 kwout Reduse -1 ElsePart kwelse Stmt
+441 kwreturn Reduse -1 ElsePart kwelse Stmt
+441 kwswitch Reduse -1 ElsePart kwelse Stmt
+441 kwwhile Reduse -1 ElsePart kwelse Stmt
+441 lbrace Reduse -1 ElsePart kwelse Stmt
+441 rbrace Reduse -1 ElsePart kwelse Stmt
+442 id Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwchar Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwelse Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwfor Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwif Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwin Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwint Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwout Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwreturn Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwswitch Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 kwwhile Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 lbrace Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+442 rbrace Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+443 id Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwcase Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwchar Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwdefault Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwfor Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwif Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwin Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwint Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwout Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwreturn Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwswitch Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 kwwhile Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 lbrace Reduse -1 DeclareStmtl DeclVarListl semicolon
+443 rbrace Reduse -1 DeclareStmtl DeclVarListl semicolon
+444 rpar Shift 452  
+445 comma Shift 8  
+445 epsilon Shift 9  
+445 semicolon Reduse -1 DeclVarListl epsilon
+446 epsilon Shift 228  
+446 id Shift 74  
+446 lpar Shift 75  
+446 num Shift 76  
+446 opinc Shift 77  
+446 opnot Shift 78  
+446 semicolon Reduse -1 ForExp epsilon
+447 id Shift 45  
+447 kwchar Shift 3  
+447 kwfor Shift 466  
+447 kwif Shift 467  
+447 kwin Shift 468  
+447 kwint Shift 4  
+447 kwout Shift 469  
+447 kwreturn Shift 470  
+447 kwswitch Shift 471  
+447 kwwhile Shift 472  
+447 lbrace Shift 473  
+448 lbrace Shift 474  
+449 id Shift 45  
+449 kwchar Shift 3  
+449 kwfor Shift 390  
+449 kwif Shift 391  
+449 kwin Shift 392  
+449 kwint Shift 4  
+449 kwout Shift 393  
+449 kwreturn Shift 394  
+449 kwswitch Shift 395  
+449 kwwhile Shift 396  
+449 lbrace Shift 397  
+450 id Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwchar Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwelse Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwfor Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwif Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwin Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwint Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwout Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwreturn Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwswitch Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 kwwhile Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 lbrace Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+450 rbrace Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+451 id Shift 45  
+451 kwchar Shift 3  
+451 kwfor Shift 240  
+451 kwif Shift 241  
+451 kwin Shift 242  
+451 kwint Shift 4  
+451 kwout Shift 243  
+451 kwreturn Shift 244  
+451 kwswitch Shift 245  
+451 kwwhile Shift 246  
+451 lbrace Shift 247  
+452 lbrace Shift 477  
+453 semicolon Shift 478  
+454 semicolon Shift 479  
+455 semicolon Shift 480  
+456 id Reduse -1 Stmt AssignOrCallOp
+456 kwcase Reduse -1 Stmt AssignOrCallOp
+456 kwchar Reduse -1 Stmt AssignOrCallOp
+456 kwdefault Reduse -1 Stmt AssignOrCallOp
+456 kwelse Reduse -1 Stmt AssignOrCallOp
+456 kwfor Reduse -1 Stmt AssignOrCallOp
+456 kwif Reduse -1 Stmt AssignOrCallOp
+456 kwin Reduse -1 Stmt AssignOrCallOp
+456 kwint Reduse -1 Stmt AssignOrCallOp
+456 kwout Reduse -1 Stmt AssignOrCallOp
+456 kwreturn Reduse -1 Stmt AssignOrCallOp
+456 kwswitch Reduse -1 Stmt AssignOrCallOp
+456 kwwhile Reduse -1 Stmt AssignOrCallOp
+456 lbrace Reduse -1 Stmt AssignOrCallOp
+456 rbrace Reduse -1 Stmt AssignOrCallOp
+457 id Reduse -1 Stmt DeclareStmt
+457 kwcase Reduse -1 Stmt DeclareStmt
+457 kwchar Reduse -1 Stmt DeclareStmt
+457 kwdefault Reduse -1 Stmt DeclareStmt
+457 kwelse Reduse -1 Stmt DeclareStmt
+457 kwfor Reduse -1 Stmt DeclareStmt
+457 kwif Reduse -1 Stmt DeclareStmt
+457 kwin Reduse -1 Stmt DeclareStmt
+457 kwint Reduse -1 Stmt DeclareStmt
+457 kwout Reduse -1 Stmt DeclareStmt
+457 kwreturn Reduse -1 Stmt DeclareStmt
+457 kwswitch Reduse -1 Stmt DeclareStmt
+457 kwwhile Reduse -1 Stmt DeclareStmt
+457 lbrace Reduse -1 Stmt DeclareStmt
+457 rbrace Reduse -1 Stmt DeclareStmt
+458 id Reduse -1 Stmt ForOp
+458 kwcase Reduse -1 Stmt ForOp
+458 kwchar Reduse -1 Stmt ForOp
+458 kwdefault Reduse -1 Stmt ForOp
+458 kwelse Reduse -1 Stmt ForOp
+458 kwfor Reduse -1 Stmt ForOp
+458 kwif Reduse -1 Stmt ForOp
+458 kwin Reduse -1 Stmt ForOp
+458 kwint Reduse -1 Stmt ForOp
+458 kwout Reduse -1 Stmt ForOp
+458 kwreturn Reduse -1 Stmt ForOp
+458 kwswitch Reduse -1 Stmt ForOp
+458 kwwhile Reduse -1 Stmt ForOp
+458 lbrace Reduse -1 Stmt ForOp
+458 rbrace Reduse -1 Stmt ForOp
+459 id Reduse -1 Stmt IOp
+459 kwcase Reduse -1 Stmt IOp
+459 kwchar Reduse -1 Stmt IOp
+459 kwdefault Reduse -1 Stmt IOp
+459 kwelse Reduse -1 Stmt IOp
+459 kwfor Reduse -1 Stmt IOp
+459 kwif Reduse -1 Stmt IOp
+459 kwin Reduse -1 Stmt IOp
+459 kwint Reduse -1 Stmt IOp
+459 kwout Reduse -1 Stmt IOp
+459 kwreturn Reduse -1 Stmt IOp
+459 kwswitch Reduse -1 Stmt IOp
+459 kwwhile Reduse -1 Stmt IOp
+459 lbrace Reduse -1 Stmt IOp
+459 rbrace Reduse -1 Stmt IOp
+460 id Reduse -1 Stmt IfOp
+460 kwcase Reduse -1 Stmt IfOp
+460 kwchar Reduse -1 Stmt IfOp
+460 kwdefault Reduse -1 Stmt IfOp
+460 kwelse Reduse -1 Stmt IfOp
+460 kwfor Reduse -1 Stmt IfOp
+460 kwif Reduse -1 Stmt IfOp
+460 kwin Reduse -1 Stmt IfOp
+460 kwint Reduse -1 Stmt IfOp
+460 kwout Reduse -1 Stmt IfOp
+460 kwreturn Reduse -1 Stmt IfOp
+460 kwswitch Reduse -1 Stmt IfOp
+460 kwwhile Reduse -1 Stmt IfOp
+460 lbrace Reduse -1 Stmt IfOp
+460 rbrace Reduse -1 Stmt IfOp
+461 id Reduse -1 Stmt OOp
+461 kwcase Reduse -1 Stmt OOp
+461 kwchar Reduse -1 Stmt OOp
+461 kwdefault Reduse -1 Stmt OOp
+461 kwelse Reduse -1 Stmt OOp
+461 kwfor Reduse -1 Stmt OOp
+461 kwif Reduse -1 Stmt OOp
+461 kwin Reduse -1 Stmt OOp
+461 kwint Reduse -1 Stmt OOp
+461 kwout Reduse -1 Stmt OOp
+461 kwreturn Reduse -1 Stmt OOp
+461 kwswitch Reduse -1 Stmt OOp
+461 kwwhile Reduse -1 Stmt OOp
+461 lbrace Reduse -1 Stmt OOp
+461 rbrace Reduse -1 Stmt OOp
+462 epsilon Shift 482  
+462 id Reduse -1 ElsePart epsilon
+462 kwcase Reduse -1 ElsePart epsilon
+462 kwchar Reduse -1 ElsePart epsilon
+462 kwdefault Reduse -1 ElsePart epsilon
+462 kwelse Shift 483  
+462 kwfor Reduse -1 ElsePart epsilon
+462 kwif Reduse -1 ElsePart epsilon
+462 kwin Reduse -1 ElsePart epsilon
+462 kwint Reduse -1 ElsePart epsilon
+462 kwout Reduse -1 ElsePart epsilon
+462 kwreturn Reduse -1 ElsePart epsilon
+462 kwswitch Reduse -1 ElsePart epsilon
+462 kwwhile Reduse -1 ElsePart epsilon
+462 lbrace Reduse -1 ElsePart epsilon
+462 rbrace Reduse -1 ElsePart epsilon
+463 id Reduse -1 Stmt SwitchOp
+463 kwcase Reduse -1 Stmt SwitchOp
+463 kwchar Reduse -1 Stmt SwitchOp
+463 kwdefault Reduse -1 Stmt SwitchOp
+463 kwelse Reduse -1 Stmt SwitchOp
+463 kwfor Reduse -1 Stmt SwitchOp
+463 kwif Reduse -1 Stmt SwitchOp
+463 kwin Reduse -1 Stmt SwitchOp
+463 kwint Reduse -1 Stmt SwitchOp
+463 kwout Reduse -1 Stmt SwitchOp
+463 kwreturn Reduse -1 Stmt SwitchOp
+463 kwswitch Reduse -1 Stmt SwitchOp
+463 kwwhile Reduse -1 Stmt SwitchOp
+463 lbrace Reduse -1 Stmt SwitchOp
+463 rbrace Reduse -1 Stmt SwitchOp
+464 id Shift 484  
+465 id Reduse -1 Stmt WhileOp
+465 kwcase Reduse -1 Stmt WhileOp
+465 kwchar Reduse -1 Stmt WhileOp
+465 kwdefault Reduse -1 Stmt WhileOp
+465 kwelse Reduse -1 Stmt WhileOp
+465 kwfor Reduse -1 Stmt WhileOp
+465 kwif Reduse -1 Stmt WhileOp
+465 kwin Reduse -1 Stmt WhileOp
+465 kwint Reduse -1 Stmt WhileOp
+465 kwout Reduse -1 Stmt WhileOp
+465 kwreturn Reduse -1 Stmt WhileOp
+465 kwswitch Reduse -1 Stmt WhileOp
+465 kwwhile Reduse -1 Stmt WhileOp
+465 lbrace Reduse -1 Stmt WhileOp
+465 rbrace Reduse -1 Stmt WhileOp
+466 lpar Shift 485  
+467 lpar Shift 486  
+468 id Shift 487  
+469 id Shift 74  
+469 lpar Shift 75  
+469 num Shift 76  
+469 opinc Shift 77  
+469 opnot Shift 78  
+469 str Shift 79  
+470 id Shift 74  
+470 lpar Shift 75  
+470 num Shift 76  
+470 opinc Shift 77  
+470 opnot Shift 78  
+471 lpar Shift 490  
+472 lpar Shift 491  
+473 epsilon Shift 44  
+473 id Shift 45  
+473 kwchar Shift 3  
+473 kwfor Shift 46  
+473 kwif Shift 47  
+473 kwin Shift 48  
+473 kwint Shift 4  
+473 kwout Shift 49  
+473 kwreturn Shift 50  
+473 kwswitch Shift 51  
+473 kwwhile Shift 52  
+473 lbrace Shift 53  
+473 rbrace Reduse -1 StmtList epsilon
+474 epsilon Shift 321  
+474 kwcase Shift 322  
+474 kwdefault Shift 323  
+474 rbrace Reduse -1 Cases epsilon
+475 id Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwcase Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwchar Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwdefault Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwfor Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwif Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwin Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwint Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwout Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwreturn Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwswitch Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 kwwhile Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 lbrace Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+475 rbrace Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+476 id Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwchar Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwelse Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwfor Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwif Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwin Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwint Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwout Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwreturn Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwswitch Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 kwwhile Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 lbrace Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+476 rbrace Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+477 epsilon Shift 44  
+477 id Shift 45  
+477 kwchar Shift 3  
+477 kwfor Shift 46  
+477 kwif Shift 47  
+477 kwin Shift 48  
+477 kwint Shift 4  
+477 kwout Shift 49  
+477 kwreturn Shift 50  
+477 kwswitch Shift 51  
+477 kwwhile Shift 52  
+477 lbrace Shift 53  
+477 rbrace Reduse -1 StmtList epsilon
+478 id Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwcase Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwchar Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwdefault Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwfor Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwif Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwin Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwint Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwout Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwreturn Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwswitch Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 kwwhile Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 lbrace Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+478 rbrace Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+479 epsilon Shift 332  
+479 id Shift 333  
+479 opinc Shift 334  
+479 rpar Reduse -1 ForLoop epsilon
+480 id Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwcase Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwchar Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwdefault Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwelse Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwfor Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwif Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwin Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwint Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwout Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwreturn Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwswitch Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 kwwhile Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 lbrace Reduse -1 AssignOrCallOp AssignOrCall semicolon
+480 rbrace Reduse -1 AssignOrCallOp AssignOrCall semicolon
+481 id Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwcase Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwchar Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwdefault Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwfor Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwif Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwin Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwint Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwout Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwreturn Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwswitch Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 kwwhile Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 lbrace Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+481 rbrace Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+482 id Reduse -1 ElsePart epsilon
+482 kwcase Reduse -1 ElsePart epsilon
+482 kwchar Reduse -1 ElsePart epsilon
+482 kwdefault Reduse -1 ElsePart epsilon
+482 kwfor Reduse -1 ElsePart epsilon
+482 kwif Reduse -1 ElsePart epsilon
+482 kwin Reduse -1 ElsePart epsilon
+482 kwint Reduse -1 ElsePart epsilon
+482 kwout Reduse -1 ElsePart epsilon
+482 kwreturn Reduse -1 ElsePart epsilon
+482 kwswitch Reduse -1 ElsePart epsilon
+482 kwwhile Reduse -1 ElsePart epsilon
+482 lbrace Reduse -1 ElsePart epsilon
+482 rbrace Reduse -1 ElsePart epsilon
+483 id Shift 45  
+483 kwchar Shift 3  
+483 kwfor Shift 390  
+483 kwif Shift 391  
+483 kwin Shift 392  
+483 kwint Shift 4  
+483 kwout Shift 393  
+483 kwreturn Shift 394  
+483 kwswitch Shift 395  
+483 kwwhile Shift 396  
+483 lbrace Shift 397  
+484 comma Shift 8  
+484 epsilon Shift 9  
+484 lpar Shift 499  
+484 opassign Shift 500  
+484 semicolon Reduse -1 DeclVarListl epsilon
+485 epsilon Shift 107  
+485 id Shift 45  
+485 semicolon Reduse -1 ForInit epsilon
+486 id Shift 116  
+486 lpar Shift 117  
+486 num Shift 118  
+486 opinc Shift 119  
+486 opnot Shift 120  
+487 semicolon Shift 503  
+488 semicolon Shift 504  
+489 semicolon Shift 505  
+490 id Shift 116  
+490 lpar Shift 117  
+490 num Shift 118  
+490 opinc Shift 119  
+490 opnot Shift 120  
+491 id Shift 116  
+491 lpar Shift 117  
+491 num Shift 118  
+491 opinc Shift 119  
+491 opnot Shift 120  
+492 rbrace Shift 508  
+493 rbrace Shift 509  
+494 rbrace Shift 510  
+495 rpar Shift 511  
+496 id Reduse -1 ElsePart kwelse Stmt
+496 kwcase Reduse -1 ElsePart kwelse Stmt
+496 kwchar Reduse -1 ElsePart kwelse Stmt
+496 kwdefault Reduse -1 ElsePart kwelse Stmt
+496 kwfor Reduse -1 ElsePart kwelse Stmt
+496 kwif Reduse -1 ElsePart kwelse Stmt
+496 kwin Reduse -1 ElsePart kwelse Stmt
+496 kwint Reduse -1 ElsePart kwelse Stmt
+496 kwout Reduse -1 ElsePart kwelse Stmt
+496 kwreturn Reduse -1 ElsePart kwelse Stmt
+496 kwswitch Reduse -1 ElsePart kwelse Stmt
+496 kwwhile Reduse -1 ElsePart kwelse Stmt
+496 lbrace Reduse -1 ElsePart kwelse Stmt
+496 rbrace Reduse -1 ElsePart kwelse Stmt
+497 semicolon Shift 512  
+498 id Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwcase Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwchar Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwdefault Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwelse Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwfor Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwif Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwin Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwint Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwout Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwreturn Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwswitch Reduse -1 DeclareStmt Type id DeclareStmtl
+498 kwwhile Reduse -1 DeclareStmt Type id DeclareStmtl
+498 lbrace Reduse -1 DeclareStmt Type id DeclareStmtl
+498 rbrace Reduse -1 DeclareStmt Type id DeclareStmtl
+499 epsilon Shift 16  
+499 kwchar Shift 3  
+499 kwint Shift 4  
+499 rpar Reduse -1 ParamList epsilon
+500 num Shift 514  
+501 semicolon Shift 515  
+502 rpar Shift 516  
+503 id Reduse -1 IOp kwin id semicolon
+503 kwcase Reduse -1 IOp kwin id semicolon
+503 kwchar Reduse -1 IOp kwin id semicolon
+503 kwdefault Reduse -1 IOp kwin id semicolon
+503 kwelse Reduse -1 IOp kwin id semicolon
+503 kwfor Reduse -1 IOp kwin id semicolon
+503 kwif Reduse -1 IOp kwin id semicolon
+503 kwin Reduse -1 IOp kwin id semicolon
+503 kwint Reduse -1 IOp kwin id semicolon
+503 kwout Reduse -1 IOp kwin id semicolon
+503 kwreturn Reduse -1 IOp kwin id semicolon
+503 kwswitch Reduse -1 IOp kwin id semicolon
+503 kwwhile Reduse -1 IOp kwin id semicolon
+503 lbrace Reduse -1 IOp kwin id semicolon
+503 rbrace Reduse -1 IOp kwin id semicolon
+504 id Reduse -1 OOp kwout OOpl semicolon
+504 kwcase Reduse -1 OOp kwout OOpl semicolon
+504 kwchar Reduse -1 OOp kwout OOpl semicolon
+504 kwdefault Reduse -1 OOp kwout OOpl semicolon
+504 kwelse Reduse -1 OOp kwout OOpl semicolon
+504 kwfor Reduse -1 OOp kwout OOpl semicolon
+504 kwif Reduse -1 OOp kwout OOpl semicolon
+504 kwin Reduse -1 OOp kwout OOpl semicolon
+504 kwint Reduse -1 OOp kwout OOpl semicolon
+504 kwout Reduse -1 OOp kwout OOpl semicolon
+504 kwreturn Reduse -1 OOp kwout OOpl semicolon
+504 kwswitch Reduse -1 OOp kwout OOpl semicolon
+504 kwwhile Reduse -1 OOp kwout OOpl semicolon
+504 lbrace Reduse -1 OOp kwout OOpl semicolon
+504 rbrace Reduse -1 OOp kwout OOpl semicolon
+505 id Reduse -1 Stmt kwreturn E semicolon
+505 kwcase Reduse -1 Stmt kwreturn E semicolon
+505 kwchar Reduse -1 Stmt kwreturn E semicolon
+505 kwdefault Reduse -1 Stmt kwreturn E semicolon
+505 kwelse Reduse -1 Stmt kwreturn E semicolon
+505 kwfor Reduse -1 Stmt kwreturn E semicolon
+505 kwif Reduse -1 Stmt kwreturn E semicolon
+505 kwin Reduse -1 Stmt kwreturn E semicolon
+505 kwint Reduse -1 Stmt kwreturn E semicolon
+505 kwout Reduse -1 Stmt kwreturn E semicolon
+505 kwreturn Reduse -1 Stmt kwreturn E semicolon
+505 kwswitch Reduse -1 Stmt kwreturn E semicolon
+505 kwwhile Reduse -1 Stmt kwreturn E semicolon
+505 lbrace Reduse -1 Stmt kwreturn E semicolon
+505 rbrace Reduse -1 Stmt kwreturn E semicolon
+506 rpar Shift 517  
+507 rpar Shift 518  
+508 id Reduse -1 Stmt lbrace StmtList rbrace
+508 kwcase Reduse -1 Stmt lbrace StmtList rbrace
+508 kwchar Reduse -1 Stmt lbrace StmtList rbrace
+508 kwdefault Reduse -1 Stmt lbrace StmtList rbrace
+508 kwelse Reduse -1 Stmt lbrace StmtList rbrace
+508 kwfor Reduse -1 Stmt lbrace StmtList rbrace
+508 kwif Reduse -1 Stmt lbrace StmtList rbrace
+508 kwin Reduse -1 Stmt lbrace StmtList rbrace
+508 kwint Reduse -1 Stmt lbrace StmtList rbrace
+508 kwout Reduse -1 Stmt lbrace StmtList rbrace
+508 kwreturn Reduse -1 Stmt lbrace StmtList rbrace
+508 kwswitch Reduse -1 Stmt lbrace StmtList rbrace
+508 kwwhile Reduse -1 Stmt lbrace StmtList rbrace
+508 lbrace Reduse -1 Stmt lbrace StmtList rbrace
+508 rbrace Reduse -1 Stmt lbrace StmtList rbrace
+509 id Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwcase Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwchar Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwdefault Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwfor Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwif Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwin Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwint Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwout Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwreturn Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwswitch Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 kwwhile Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 lbrace Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+509 rbrace Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+510 id Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwcase Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwchar Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwdefault Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwfor Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwif Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwin Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwint Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwout Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwreturn Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwswitch Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 kwwhile Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 lbrace Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+510 rbrace Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+511 id Shift 45  
+511 kwchar Shift 3  
+511 kwfor Shift 390  
+511 kwif Shift 391  
+511 kwin Shift 392  
+511 kwint Shift 4  
+511 kwout Shift 393  
+511 kwreturn Shift 394  
+511 kwswitch Shift 395  
+511 kwwhile Shift 396  
+511 lbrace Shift 397  
+512 id Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwcase Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwchar Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwdefault Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwelse Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwfor Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwif Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwin Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwint Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwout Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwreturn Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwswitch Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 kwwhile Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 lbrace Reduse -1 DeclareStmtl DeclVarListl semicolon
+512 rbrace Reduse -1 DeclareStmtl DeclVarListl semicolon
+513 rpar Shift 520  
+514 comma Shift 8  
+514 epsilon Shift 9  
+514 semicolon Reduse -1 DeclVarListl epsilon
+515 epsilon Shift 228  
+515 id Shift 74  
+515 lpar Shift 75  
+515 num Shift 76  
+515 opinc Shift 77  
+515 opnot Shift 78  
+515 semicolon Reduse -1 ForExp epsilon
+516 id Shift 45  
+516 kwchar Shift 3  
+516 kwfor Shift 466  
+516 kwif Shift 467  
+516 kwin Shift 468  
+516 kwint Shift 4  
+516 kwout Shift 469  
+516 kwreturn Shift 470  
+516 kwswitch Shift 471  
+516 kwwhile Shift 472  
+516 lbrace Shift 473  
+517 lbrace Shift 524  
+518 id Shift 45  
+518 kwchar Shift 3  
+518 kwfor Shift 466  
+518 kwif Shift 467  
+518 kwin Shift 468  
+518 kwint Shift 4  
+518 kwout Shift 469  
+518 kwreturn Shift 470  
+518 kwswitch Shift 471  
+518 kwwhile Shift 472  
+518 lbrace Shift 473  
+519 id Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwcase Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwchar Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwdefault Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwfor Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwif Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwin Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwint Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwout Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwreturn Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwswitch Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 kwwhile Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 lbrace Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+519 rbrace Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+520 lbrace Shift 526  
+521 semicolon Shift 527  
+522 semicolon Shift 528  
+523 epsilon Shift 530  
+523 id Reduse -1 ElsePart epsilon
+523 kwcase Reduse -1 ElsePart epsilon
+523 kwchar Reduse -1 ElsePart epsilon
+523 kwdefault Reduse -1 ElsePart epsilon
+523 kwelse Shift 531  
+523 kwfor Reduse -1 ElsePart epsilon
+523 kwif Reduse -1 ElsePart epsilon
+523 kwin Reduse -1 ElsePart epsilon
+523 kwint Reduse -1 ElsePart epsilon
+523 kwout Reduse -1 ElsePart epsilon
+523 kwreturn Reduse -1 ElsePart epsilon
+523 kwswitch Reduse -1 ElsePart epsilon
+523 kwwhile Reduse -1 ElsePart epsilon
+523 lbrace Reduse -1 ElsePart epsilon
+523 rbrace Reduse -1 ElsePart epsilon
+524 epsilon Shift 321  
+524 kwcase Shift 322  
+524 kwdefault Shift 323  
+524 rbrace Reduse -1 Cases epsilon
+525 id Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwcase Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwchar Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwdefault Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwelse Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwfor Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwif Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwin Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwint Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwout Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwreturn Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwswitch Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 kwwhile Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 lbrace Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+525 rbrace Reduse -1 WhileOp kwwhile lpar E rpar Stmt
+526 epsilon Shift 44  
+526 id Shift 45  
+526 kwchar Shift 3  
+526 kwfor Shift 46  
+526 kwif Shift 47  
+526 kwin Shift 48  
+526 kwint Shift 4  
+526 kwout Shift 49  
+526 kwreturn Shift 50  
+526 kwswitch Shift 51  
+526 kwwhile Shift 52  
+526 lbrace Shift 53  
+526 rbrace Reduse -1 StmtList epsilon
+527 id Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwcase Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwchar Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwdefault Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwelse Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwfor Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwif Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwin Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwint Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwout Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwreturn Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwswitch Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 kwwhile Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 lbrace Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+527 rbrace Reduse -1 DeclareStmtl opassign num DeclVarListl semicolon
+528 epsilon Shift 332  
+528 id Shift 333  
+528 opinc Shift 334  
+528 rpar Reduse -1 ForLoop epsilon
+529 id Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwcase Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwchar Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwdefault Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwelse Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwfor Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwif Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwin Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwint Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwout Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwreturn Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwswitch Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 kwwhile Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 lbrace Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+529 rbrace Reduse -1 IfOp kwif lpar E rpar Stmt ElsePart
+530 id Reduse -1 ElsePart epsilon
+530 kwcase Reduse -1 ElsePart epsilon
+530 kwchar Reduse -1 ElsePart epsilon
+530 kwdefault Reduse -1 ElsePart epsilon
+530 kwelse Reduse -1 ElsePart epsilon
+530 kwfor Reduse -1 ElsePart epsilon
+530 kwif Reduse -1 ElsePart epsilon
+530 kwin Reduse -1 ElsePart epsilon
+530 kwint Reduse -1 ElsePart epsilon
+530 kwout Reduse -1 ElsePart epsilon
+530 kwreturn Reduse -1 ElsePart epsilon
+530 kwswitch Reduse -1 ElsePart epsilon
+530 kwwhile Reduse -1 ElsePart epsilon
+530 lbrace Reduse -1 ElsePart epsilon
+530 rbrace Reduse -1 ElsePart epsilon
+531 id Shift 45  
+531 kwchar Shift 3  
+531 kwfor Shift 466  
+531 kwif Shift 467  
+531 kwin Shift 468  
+531 kwint Shift 4  
+531 kwout Shift 469  
+531 kwreturn Shift 470  
+531 kwswitch Shift 471  
+531 kwwhile Shift 472  
+531 lbrace Shift 473  
+532 rbrace Shift 536  
+533 rbrace Shift 537  
+534 rpar Shift 538  
+535 id Reduse -1 ElsePart kwelse Stmt
+535 kwcase Reduse -1 ElsePart kwelse Stmt
+535 kwchar Reduse -1 ElsePart kwelse Stmt
+535 kwdefault Reduse -1 ElsePart kwelse Stmt
+535 kwelse Reduse -1 ElsePart kwelse Stmt
+535 kwfor Reduse -1 ElsePart kwelse Stmt
+535 kwif Reduse -1 ElsePart kwelse Stmt
+535 kwin Reduse -1 ElsePart kwelse Stmt
+535 kwint Reduse -1 ElsePart kwelse Stmt
+535 kwout Reduse -1 ElsePart kwelse Stmt
+535 kwreturn Reduse -1 ElsePart kwelse Stmt
+535 kwswitch Reduse -1 ElsePart kwelse Stmt
+535 kwwhile Reduse -1 ElsePart kwelse Stmt
+535 lbrace Reduse -1 ElsePart kwelse Stmt
+535 rbrace Reduse -1 ElsePart kwelse Stmt
+536 id Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwcase Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwchar Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwdefault Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwelse Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwfor Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwif Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwin Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwint Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwout Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwreturn Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwswitch Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 kwwhile Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 lbrace Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+536 rbrace Reduse -1 SwitchOp kwswitch lpar E rpar lbrace Cases rbrace
+537 id Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwcase Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwchar Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwdefault Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwelse Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwfor Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwif Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwin Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwint Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwout Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwreturn Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwswitch Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 kwwhile Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 lbrace Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+537 rbrace Reduse -1 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
+538 id Shift 45  
+538 kwchar Shift 3  
+538 kwfor Shift 466  
+538 kwif Shift 467  
+538 kwin Shift 468  
+538 kwint Shift 4  
+538 kwout Shift 469  
+538 kwreturn Shift 470  
+538 kwswitch Shift 471  
+538 kwwhile Shift 472  
+538 lbrace Shift 473  
+539 id Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwcase Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwchar Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwdefault Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwelse Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwfor Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwif Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwin Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwint Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwout Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwreturn Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwswitch Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 kwwhile Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 lbrace Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
+539 rbrace Reduse -1 ForOp kwfor lpar ForInit semicolon ForExp semicolon ForLoop rpar Stmt
