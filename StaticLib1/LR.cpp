@@ -10,6 +10,8 @@
 #include <fstream>
 #include <set>
 
+std::map<std::string, std::set<std::string>> cache_first = {};
+
 LR::LR()
 {
 	ReadTables();
@@ -318,6 +320,11 @@ std::set<std::string> LR::first(std::vector<std::string> terms) {
 		auto term = terms[i];
 		++i;
 
+		if (cache_first.find(term) != cache_first.end()) {
+			new_set.insert(cache_first[term].begin(), cache_first[term].end());
+			continue;
+		}
+
 		if (isTerminal(term)) {
 			new_set.insert(term);
 			return new_set;
@@ -330,6 +337,7 @@ std::set<std::string> LR::first(std::vector<std::string> terms) {
 			auto tempFirst = first(rule.getRight());
 			new_set.insert(tempFirst.begin(), tempFirst.end());
 		}
+		cache_first.insert({ term, new_set });
 	}
 	
 	return new_set;

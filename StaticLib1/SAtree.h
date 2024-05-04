@@ -20,7 +20,7 @@ public:
 protected:
 
 private:
-	void printNode(Node&, std::vector<std::pair<std::string, int>>, int, bool, std::ofstream&);
+	void printNode(Node&, std::vector<std::pair<std::string, int>>, std::ofstream&);
 	std::vector<Node> MakeNodesSon(Rule);
 	std::vector<Rule> queue;
 	std::vector<Node> Nodes;
