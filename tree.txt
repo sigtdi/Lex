@@ -2,58 +2,9 @@ Start
  └—————DeclareStmt
        ├———————————Type
        │           └————kwint
-       └———————————id DeclareStmtl
-                   ├———————————————lpar ParamList
-                   │               └——————————————epsilon
-                   ├———————————————rpar lbrace StmtList
-                   │               ├————————————————————Stmt
-                   │               │                    └————ForOp
-                   │               │                         ├—————kwfor lpar ForInit
-                   │               │                         │     └——————————————————AssignOrCall
-                   │               │                         │                        └————————————id AssignOrCalll
-                   │               │                         │                                     └————————————————opassign E
-                   │               │                         │                                                      └——————————E7
-                   │               │                         │                                                                 └——E6
-                   │               │                         │                                                                    └——E5
-                   │               │                         │                                                                       └——E4
-                   │               │                         │                                                                          └——E3
-                   │               │                         │                                                                             └——E2
-                   │               │                         │                                                                                └——E1
-                   │               │                         │                                                                                   └——num
-                   │               │                         ├—————semicolon ForExp
-                   │               │                         │     └————————————————E
-                   │               │                         │                      └—E7
-                   │               │                         │                        └——E6
-                   │               │                         │                           └——E5
-                   │               │                         │                              ├——E4
-                   │               │                         │                              │  └——E3
-                   │               │                         │                              │     └——E2
-                   │               │                         │                              │        └——E1
-                   │               │                         │                              │           └——id
-                   │               │                         │                              └——oplt E4
-                   │               │                         │                                 └———————E3
-                   │               │                         │                                         └——E2
-                   │               │                         │                                            └——E1
-                   │               │                         │                                               └——id
-                   │               │                         ├—————semicolon ForLoop
-                   │               │                         │     ├—————————————————id
-                   │               │                         │     └—————————————————opinc
-                   │               │                         └—————rpar Stmt
-                   │               │                               ├—————————lbrace StmtList
-                   │               │                               │         ├———————————————Stmt
-                   │               │                               │         │               ├————kwreturn E
-                   │               │                               │         │               │    └——————————E7
-                   │               │                               │         │               │               └——E6
-                   │               │                               │         │               │                  └——E5
-                   │               │                               │         │               │                     └——E4
-                   │               │                               │         │               │                        └——E3
-                   │               │                               │         │               │                           └——E2
-                   │               │                               │         │               │                              └——E1
-                   │               │                               │         │               │                                 └——id
-                   │               │                               │         │               └————semicolon 
-                   │               │                               │         └———————————————StmtList
-                   │               │                               │                         └————————epsilon
-                   │               │                               └—————————rbrace 
-                   │               └————————————————————StmtList
-                   │                                    └————————epsilon
-                   └———————————————rbrace 
+       ├———————————id(a) DeclareStmtl
+       │           ├——————————————————opassign num(0) DeclVarListl
+       │           │                  └————————————————————————————epsilon
+       │           └——————————————————semicolon 
+       └———————————DeclareStmt_
+                   └————————————epsilon

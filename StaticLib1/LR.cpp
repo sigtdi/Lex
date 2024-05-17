@@ -279,6 +279,7 @@ bool LR::Analysis(std::istream& stream) {
 	Lexem l = lex.getNextLexem();
 	std::vector<int> states = { 0 };
 	std::vector<std::string> elem_stack = {};
+	std::vector<Lexem> lexList = {};
 
 	while (true) {
 		auto action = action_table[{states[states.size() - 1], l.first}];
@@ -286,6 +287,9 @@ bool LR::Analysis(std::istream& stream) {
 			states.push_back(action.shift);
 			elem_stack.push_back(l.first);
 			l = lex.getNextLexem();
+			if (l.second != "") {
+				lexList.push_back(l);
+			}
 		}
 		else if (action.act == "Reduce") {
 			if (action.reduce.getRight()[0] != "epsilon") {
@@ -296,7 +300,7 @@ bool LR::Analysis(std::istream& stream) {
 			}
 			elem_stack.push_back(action.reduce.getLeft());
 			states.push_back(goto_graph[{states[states.size() - 1], action.reduce.getLeft()}]);
-			tree.addNodes(action.reduce);
+			tree.addNodes(addLexemToActionReduce(lexList, action));
 		}
 		else if (action.act == "Accept") {
 			tree.addNodes(action.reduce);
@@ -351,4 +355,18 @@ std::vector<std::string> LR::getTermsAfter(Item item) {
 		++i;
 	}
 	return res;
+}
+
+Rule LR::addLexemToActionReduce(std::vector<Lexem>& lexList, Action& action) {
+	std::vector<std::string> resRight = {};
+	for (int i = 0; i < action.reduce.getRight().size(); ++i) {
+		std::string temp = action.reduce.getRight()[i];
+		if (action.reduce.getRight()[i] == "id" || action.reduce.getRight()[i] == "str" || action.reduce.getRight()[i] == "num") {
+			temp += "(" + lexList[lexList.size() - 1].second + ")";
+			lexList.pop_back();
+		}
+		resRight.push_back(temp);
+	}
+	Rule resRule(action.reduce.getLeft(), resRight);
+	return resRule;
 }

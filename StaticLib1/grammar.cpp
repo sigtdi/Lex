@@ -41,7 +41,7 @@ bool isNonTerminal(std::string elem) {
 };
 
 bool isTerminal(std::string elem) {
-    if (std::find(nonterms.begin(), nonterms.end(), elem) == nonterms.end() && std::find(gramm_elems.begin(), gramm_elems.end(), elem) != gramm_elems.end()) {
+    if (std::find(nonterms.begin(), nonterms.end(), elem) == nonterms.end()) {
         return true;
     }
     return false;

@@ -27,7 +27,9 @@ ArgList E ArgListl
 ArgList epsilon
 ArgListl comma E ArgListl
 Arglistl epsilon
-DeclareStmt Type id DeclareStmtl
+DeclareStmt Type id DeclareStmtl DeclareStmt_
+DeclareStmt_ DeclareStmt
+DeclareStmt_ epsilon
 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
 DeclareStmtl opassign num DeclVarListl semicolon
 DeclareStmtl DeclVarListl semicolon
@@ -81,4 +83,3 @@ IOp kwin id semicolon
 OOp kwout OOpl semicolon
 OOpl E
 OOpl str
-E1 id
