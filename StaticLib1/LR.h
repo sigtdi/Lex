@@ -45,6 +45,7 @@ private:
     std::set<std::string> first(std::vector<std::string>);
     void ReadTables();
     std::vector<std::string> getTermsAfter(Item);
+    Rule addLexemToActionReduce(std::vector<Lexem>& lexList, Action& action);
 };
 
 
