@@ -277,6 +277,7 @@ bool LR::Analysis(std::istream& stream) {
 	Lexem l = lex.getNextLexem();
 	std::vector<int> states = { 0 };
 	std::vector<std::string> elem_stack = {};
+	std::vector<Lexem> lexList = {};
 
 	while (true) {
 		auto action = action_table[{states[states.size() - 1], l.first}];
@@ -284,6 +285,9 @@ bool LR::Analysis(std::istream& stream) {
 			states.push_back(action.shift);
 			elem_stack.push_back(l.first);
 			l = lex.getNextLexem();
+			if (l.second != "") {
+				lexList.push_back(l);
+			}
 		}
 		else if (action.act == "Reduce") {
 			if (action.reduce.getRight()[0] != "epsilon") {

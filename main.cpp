@@ -15,7 +15,7 @@ int main()
 
     MakeGramm();
     LR spasite;
-    spasite.MakeTables();
+    //spasite.MakeTables();
     spasite.Analysis(std::cin);
 
     return 0;

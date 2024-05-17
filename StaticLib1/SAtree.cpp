@@ -107,6 +107,7 @@ std::vector<Node> Tree::MakeNodesSon(Rule rule) {
 			Node node{ term };
 			nodess.push_back(node);
 		}
+		std::reverse(nodess.begin(), nodess.end());
 	}
 	else {
 		auto tempRight = rule.getRight();
