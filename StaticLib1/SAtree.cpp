@@ -10,20 +10,21 @@
 #include <algorithm>
 
 
-void Tree::printNode(Node& node, std::vector<std::pair<std::string, int>> is_need_print, int tabs, bool is_last_son, std::ofstream& fout) {
-	for (int _ = 0; _ < tabs; ++_) {
-		fout << " "; //пробелы перед первой вертикальной линией
-	}
-
+void Tree::printNode(Node& node, std::vector<std::pair<std::string, int>> is_need_print, std::ofstream& fout) {
 	for (int i = 0; i < is_need_print.size(); ++i) {
 		auto p = is_need_print[i];
 		fout << p.first;
+		if (p.first == " ") {
+			for (int _ = 0; _ < p.second; ++_) {
+				fout << " "; //пробелы перед первой вертикальной линией
+			}
+		}
 		if (p.first == "\xE2\x94\x94") {
 			for (int _ = 0; _ < p.second; ++_) {
 				fout << "\xe2\x80\x94"; //горизонтальные линии после вертикальной уголком 
 			}
 			is_need_print.pop_back();
-			tabs += p.second  + 1;
+			is_need_print[i - 1].second += p.second + 1;
 		}
 		else if (p.first == "\xE2\x94\x9C") {
 			for (int _ = 0; _ < p.second; ++_) {
@@ -49,10 +50,10 @@ void Tree::printNode(Node& node, std::vector<std::pair<std::string, int>> is_nee
 		if (i == node.sons.size() - 1) {
 			is_need_print.pop_back();
 			is_need_print.push_back({ "\xE2\x94\x94" , node.lenght });
-			printNode(node.sons[i], is_need_print, tabs, true, fout);
+			printNode(node.sons[i], is_need_print, fout);
 		}
 		else {
-			printNode(node.sons[i], is_need_print, tabs, false, fout);
+			printNode(node.sons[i], is_need_print, fout);
 		}
 	}
 }
@@ -63,9 +64,9 @@ void Tree::printTree() {
 	Node root = Nodes[0];
 	fout << "Start" << std::endl;
 	root.lenght = root.elem1.size() + root.name.size();
-	std::vector<std::pair<std::string, int>> is_need_print = { {"\xE2\x94\x94", root.lenght} };
-	
-	printNode(root.sons[0], is_need_print, 0, true, fout);
+	std::vector<std::pair<std::string, int>> is_need_print = { {" ", 0}, {"\xE2\x94\x94", root.lenght} };
+
+	printNode(root.sons[0], is_need_print, fout);
 }
 
 void printError() {
