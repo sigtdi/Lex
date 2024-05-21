@@ -141,3 +141,7 @@ std::vector<Node> Tree::MakeNodesSon(Rule rule) {
 	}
 	return nodess;
 }
+
+Node Tree::getRoot() {
+	return Nodes[0];
+}

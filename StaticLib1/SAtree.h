@@ -16,6 +16,7 @@ public:
 	void addNodes(Rule);
 	void MakeTree();
 	void printTree();
+	Node getRoot();
 
 protected:
 

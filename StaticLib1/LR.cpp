@@ -6,11 +6,10 @@
 #include <map>
 #include "lexer.h"
 #include "grammar.h"
+#include "Atoms.h"
 #include "SAtree.h"
 #include <fstream>
 #include <set>
-
-std::map<std::string, std::set<std::string>> cache_first = {};
 
 LR::LR()
 {
@@ -280,6 +279,9 @@ bool LR::Analysis(std::istream& stream) {
 	std::vector<int> states = { 0 };
 	std::vector<std::string> elem_stack = {};
 	std::vector<Lexem> lexList = {};
+	if (l.second != "") {
+		lexList.push_back(l);
+	}
 
 	while (true) {
 		auto action = action_table[{states[states.size() - 1], l.first}];
@@ -306,6 +308,7 @@ bool LR::Analysis(std::istream& stream) {
 			tree.addNodes(action.reduce);
 			tree.MakeTree();
 			tree.printTree();
+			AtomGen atoms(tree);
 			return true;
 		}
 		else {
@@ -318,20 +321,15 @@ bool LR::Analysis(std::istream& stream) {
 std::set<std::string> LR::first(std::vector<std::string> terms) {
 	std::set<std::string> new_set = { "epsilon" };
 	int i = 0;
-
+	
 	while (new_set.contains("epsilon")) {
 		new_set.erase("epsilon");
 		auto term = terms[i];
 		++i;
 
-		if (cache_first.find(term) != cache_first.end()) {
-			new_set.insert(cache_first[term].begin(), cache_first[term].end());
-			continue;
-		}
-
 		if (isTerminal(term)) {
 			new_set.insert(term);
-			return new_set;
+			break;
 		}
 
 		for (auto& rule : rules) {
@@ -341,9 +339,7 @@ std::set<std::string> LR::first(std::vector<std::string> terms) {
 			auto tempFirst = first(rule.getRight());
 			new_set.insert(tempFirst.begin(), tempFirst.end());
 		}
-		cache_first.insert({ term, new_set });
 	}
-
 	return new_set;
 }
 
@@ -361,7 +357,7 @@ Rule LR::addLexemToActionReduce(std::vector<Lexem>& lexList, Action& action) {
 	std::vector<std::string> resRight = {};
 	for (int i = 0; i < action.reduce.getRight().size(); ++i) {
 		std::string temp = action.reduce.getRight()[i];
-		if (action.reduce.getRight()[i] == "id" || action.reduce.getRight()[i] == "str" || action.reduce.getRight()[i] == "num") {
+		if (action.reduce.getRight()[i] == "id" || action.reduce.getRight()[i] == "str" || action.reduce.getRight()[i] == "num" || action.reduce.getRight()[i] == "char") {
 			temp += "(" + lexList[lexList.size() - 1].second + ")";
 			lexList.pop_back();
 		}

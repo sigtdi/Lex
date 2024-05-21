@@ -26,17 +26,18 @@ E1 id lpar ArgList rpar
 ArgList E ArgListl
 ArgList epsilon
 ArgListl comma E ArgListl
-Arglistl epsilon
+ArgListl epsilon
 DeclareStmt Type id DeclareStmtl
 DeclareStmtl lpar ParamList rpar lbrace StmtList rbrace
 DeclareStmtl opassign num DeclVarListl semicolon
+DeclareStmtl opassign char DeclVarListl semicolon
 DeclareStmtl DeclVarListl semicolon
 Type kwchar
 Type kwint
 DeclVarListl comma id InitVar DeclVarListl
 DeclVarListl epsilon
 InitVar opassign num
-InitVar opassign kwchar
+InitVar opassign char
 InitVar epsilon
 ParamList Type id ParamListl
 ParamList epsilon
@@ -54,6 +55,8 @@ Stmt IOp
 Stmt OOp
 Stmt lbrace StmtList rbrace
 Stmt kwreturn E semicolon
+Stmt kwbreak semicolon
+Stmt semicolon
 AssignOrCallOp AssignOrCall semicolon
 AssignOrCall id AssignOrCalll
 AssignOrCalll opassign E
@@ -81,4 +84,3 @@ IOp kwin id semicolon
 OOp kwout OOpl semicolon
 OOpl E
 OOpl str
-E1 id

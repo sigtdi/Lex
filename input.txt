@@ -1,0 +1,12 @@
+int a = 0, b = 6, c;
+int main(int a, char b){
+	b = b * 10;
+	for (i = 0; i < b; ++i){
+		if (i < a) {
+			a = a++;
+		}
+		else {
+			b = b + a;
+		}
+	}
+}

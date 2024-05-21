@@ -9,7 +9,7 @@ using namespace std;
 Lexem lex = {"", ""};
 string value_str = "";
 map<char, string> dict1 = { {'(', "lpar"}, {')', "rpar"}, {'{', "lbrace"}, {'}', "rbrace"}, {'>', "opgt"}, {'*', "opmul"}, {';', "semicolon"}, {':', "colon"}, {',', "comma"} };
-map<string, string> dict2 = { {"int", "kwint"}, {"char", "kwchar"}, {"if", "kwif"}, {"else", "kwelse"}, {"switch", "kwswitch"}, {"case", "kwcase"}, {"while", "kwwhile"}, {"for", "kwfor"}, {"return", "kwreturn"}, {"in", "kwin"}, {"out", "kwout"}, };
+map<string, string> dict2 = { {"int", "kwint"}, {"char", "kwchar"}, {"if", "kwif"}, {"else", "kwelse"}, {"break", "kwbreak"}, {"switch", "kwswitch"}, {"case", "kwcase"}, {"while", "kwwhile"}, {"for", "kwfor"}, {"return", "kwreturn"}, {"in", "kwin"}, {"out", "kwout"}, };
 
 void initFSM() {
      lex = { "", "" };
@@ -152,6 +152,7 @@ pair<int, Lexem> tick(int state, istream& stream, char& cache) {
             if (cache == '\'') {
                 return { 15, LEX_EMPTY };
             }
+            value_str = cache;
             read(cache, stream);
             return { 16, LEX_EMPTY };
         }, //14
@@ -160,7 +161,8 @@ pair<int, Lexem> tick(int state, istream& stream, char& cache) {
         }, //15
         [](char& cache, istream& stream)->pair<int, Lexem> {
             if (cache == '\'') {
-                lex = { std::string("char"), to_string(cache) };
+                lex = { std::string("char"), value_str };
+                value_str = "";
                 read(cache, stream);
                 return { 17, LEX_EMPTY };
             }

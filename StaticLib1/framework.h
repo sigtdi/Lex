@@ -7,3 +7,4 @@
 #include "sya.h"
 #include "LR.h"
 #include "SAtree.h"
+#include "Atoms.h"

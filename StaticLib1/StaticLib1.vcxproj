@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Atoms.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="fsm.h" />
     <ClInclude Include="grammar.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="sya.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Atoms.cpp" />
     <ClCompile Include="fsm.cpp" />
     <ClCompile Include="grammar.cpp" />
     <ClCompile Include="lexer.cpp" />
@@ -169,6 +171,7 @@
     <Text Include="..\citems.txt" />
     <Text Include="..\goto.txt" />
     <Text Include="..\gramm.txt" />
+    <Text Include="..\input.txt" />
     <Text Include="..\tree.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
