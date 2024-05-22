@@ -9,7 +9,7 @@ using namespace std;
 Lexem lex = {"", ""};
 string value_str = "";
 map<char, string> dict1 = { {'(', "lpar"}, {')', "rpar"}, {'{', "lbrace"}, {'}', "rbrace"}, {'>', "opgt"}, {'*', "opmul"}, {';', "semicolon"}, {':', "colon"}, {',', "comma"} };
-map<string, string> dict2 = { {"int", "kwint"}, {"char", "kwchar"}, {"if", "kwif"}, {"else", "kwelse"}, {"break", "kwbreak"}, {"switch", "kwswitch"}, {"case", "kwcase"}, {"while", "kwwhile"}, {"for", "kwfor"}, {"return", "kwreturn"}, {"in", "kwin"}, {"out", "kwout"}, };
+map<string, string> dict2 = { {"int", "kwint"}, {"char", "kwchar"}, {"if", "kwif"}, {"else", "kwelse"}, {"break", "kwbreak"}, {"switch", "kwswitch"}, {"case", "kwcase"}, {"while", "kwwhile"}, {"for", "kwfor"}, {"return", "kwreturn"}, {"in", "kwin"}, {"out", "kwout"}, {"default", "kwdefault"} };
 
 void initFSM() {
      lex = { "", "" };

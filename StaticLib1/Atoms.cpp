@@ -14,7 +14,6 @@ AtomGen::~AtomGen(){
 
 void AtomGen::genNewAtoms(Node& node) {
 	auto terms = node.elem1;
-	auto name = parsLexem(node.name);
 	size_t pos = 0;
 	std::string token;
 	std::vector<Lexem> lineVec = {};
@@ -23,174 +22,186 @@ void AtomGen::genNewAtoms(Node& node) {
 		lineVec.push_back(parsLexem(token));
 		terms.erase(0, pos + 1);
 	}
+	lineVec.push_back(parsLexem(node.name));
+	if (stateDict.find(lineVec[lineVec.size() - 1].first) != stateDict.end()) {
+		if (main_state != -1)
+			main_state = stateDict[lineVec[lineVec.size() - 1].first];
+	}
+	else {
+		main_state = -2;
+	}
 
-	switch (state) {
-	case 0://Рассматриваем StmtList или Stmt узел
-		if (moveFrom0.find(name.first) != moveFrom0.end()) {
-			state = moveFrom0[name.first];
+	switch (main_state) {
+	case 0: //StmtList узел
+		if (stack_states[stack_states.size() - 1] == 2) { //находимся внутри функции
+			table.setInit(scope, func_params); //устанавливаем количество параметров объявленной функции
+			func_params = 0;
 		}
 		break;
-	case 1: //рассматриваем DeclareStmt узел, определяем тип переменной или функции, которую создаем
-		if (name.first == "kwint") {
-			current_type = "int";
-			state = 2;
-		}
-		else if (name.first == "kwchar")
-		{
-			current_type = "char";
-			state = 2;
-		}
+	case 1:
 		break;
-	case 2: //Определяем имя объявляемой переменной или функции
-		if (!lineVec.empty() && name.first == "StmtList") {
-			current_type = "";
-			state = 0;
-			nested += 1;
-		}
-		else if (name.first == "StmtList") {
-			current_type = "";
-			state = 0;
-		}
-		else if (lineVec.empty()) {
-			break;
-		}
-		else if (lineVec[0].first == "id") {
-			stack_val.push_back(lineVec[0]); // в стек переменных записываем название
-			state = 3;
-		}
-		else if (lineVec[0].first == "comma") {
-			stack_val.push_back(lineVec[1]); //перед id может быть терминал comma 
-			state = 3;
-		}
-		else if (name.first == "semicolon") {
-			current_type = "";
-			state = 0;
-		} 
+	case 2: //Сморим DeclareStmt
+		stack_states.push_back(1); //объявляем переменную
 		break;
-	case 3: //определяем, объявляется функция или переменная
-		if (name.first == "ParamList") { //объявляем фунцкию
-			if (scope != -1) {
-				state = -1;
-				//вывести в файл ошибку создание функции внутри функции ---------------------------------------------------------------------------
-			}
-
-			scope = table.addFunc(stack_val[stack_val.size() - 1].second, current_type); //меняем область видимости
-			if (scope == -1) {
-				state = -1; //вывести в файл ошибку множественной инициализации --------------------------------------------------------
-				break;
-			}
-			stack_val.pop_back();
-			current_type = "";
-			state = 4;
-		}
-		else { // объявляем переменную
-			if (name.first == "epsilon") { //переменная объявляется, но не инициализируется
-				int check = table.addVar(stack_val[stack_val.size() - 1].second, scope, current_type);
-				if (check == -1) {
-					state = -1;
-					break;
-				}
-				stack_val.pop_back();
-				state = 2;
-			}
-			else if (lineVec.empty()) {
-				break;
-			}
-			else if (lineVec[0].first == "num" || lineVec[0].first == "char") {
-				int check = table.addVar(stack_val[stack_val.size() - 1].second, scope, current_type, lineVec[0].second);
-				if (check == -1) {
-					state = -1; //вывести в файл ошибку множественной инициализации --------------------------------------------------------
-					break;
-				}
-				stack_val.pop_back();
-				state = 2;
-			}
-			else if (lineVec[0].first == "opassign") {
-				int check = table.addVar(stack_val[stack_val.size() - 1].second, scope, current_type, lineVec[1].second);
-				if (check == -1) {
-					state = -1; //вывести в файл ошибку множественной инициализации --------------------------------------------------------
-					break;
-				}
-				stack_val.pop_back();
-				state = 2;
-			}
-		}
+	case 3: //AssignOrCallOp узел
+		stack_states.push_back(3); //находимся в ветке присваивания переменной или вызова функции
 		break;
-	case 4://считываем тип параметра функции
-		if (name.first == "kwint") {
-			current_type = "int";
-			state = 5;
-		}
-		else if (name.first == "kwchar")
-		{
-			current_type = "char";
-			state = 5;
-		}
-		else if (name.first == "epsilon") {
-			state = 2;
-		}
+	case 4:
 		break;
-	case 5: //считываем имя параметра
-		if (lineVec.empty()) {
-			break;
-		}
-		else if (lineVec[0].first == "id") {
-			int check = table.addVar(lineVec[0].second, scope, current_type);
-			if (check == -1) {
-				state = -1; //вывести в файл ошибку множественной инициализации --------------------------------------------------------
-				break;
-			}
-			state = 4;
-		}
-	case 6: //AssignOrCallOp узел, проверяем есть ли id в таблице символов
-		if (lineVec.empty()) {
-			break;
-		}
-		else if (lineVec[0].first == "id") { // имя переменной, которой присваеваем значение
-			if (!table.checkVar(lineVec[0].second, scope)) { //переменной нет в таблице символов
-				state = 7; 
-				break;
-			}
-			stack_val.push_back(lineVec[0]);
-			ExpPlace = "AssignOrCallOp";
-			state = 8;
-		}
+	case 5:
 		break;
-	case 7://проверяем, идет ли после id ArgList
-		if (name.first != "ArgList") {//id нет в таблице символов и это не функция
-			state = -1; //вывести ошибку неизвестная переменная ---------------------------------------------------------------------------
-			break;
-		}
-		state = 10;
+	case 6:
 		break;
-	case 8: //Разбираем выражение E
-		if (name.first == "num") {
-			stack_val.push_back(name);
-			state = 9;
-		}
-		else if (name.first == "id") {
-			if (!table.checkVar(lineVec[0].second, scope)) { //переменной нет в таблице символов
-				state = -1;//вывести ошибку неизвестная переменная ---------------------------------------------------------------------------
-				break;
-			}
-			stack_val.push_back(name);
-			state = 9;
-		}
-		else if (lineVec.empty()) {
-			break;
-		}
-		else if (lineVec[0].first == "opne") {
-			stack_ops.push_back("opne");
-			state = 9;
-		}
-		else if (lineVec[0].first == "opinc") {
-			stack_ops.push_back("opinc");
-			state = 9;
-		}
-
+	case 7:
+		break;
+	case 8:
+		break;
 	case 9:
 		break;
 	case 10:
+		break;
+	case 11: //Смотрим Type узел
+		break;
+	case 12: //Смотрим DeclareStmtl
+		val = lineVec[0]; //в стек переменных добавляем имя переменной 
+		break;
+	case 13: //ParamList узел
+		stack_states.pop_back();
+		stack_states.push_back(2); //объявляем функцию
+		scope = table.addFunc(val.second, current_type);
+		current_type = "";
+		val = LEX_EMPTY;
+		break;
+	case 14: //Смотрим DeclVarListl
+		if (lineVec.size() > 1) {
+			int temp = stringToint(lineVec[1].second);
+			table.addVar(val.second, scope, current_type, temp);
+			val = LEX_EMPTY;
+		}
+		break;
+	case 15: //Смотрим InitVar
+		val = lineVec[1]; //в стек переменных добавляем имя переменной 
+		break;
+	case 16: //ParamListl узел
+		table.addVar(val.second, scope, current_type);
+		current_type = "";
+		func_params++;
+		val = LEX_EMPTY;
+		break;
+	case 17:
+		break;
+	case 18: //AssignOrCalll узел
+		value = table.checkVar(lineVec[0].second, scope);
+		if (value == -1) {
+			wait_func = true;
+			val = lineVec[0];
+		}
+		else stack_val.push_back(value);
+		break;
+	case 19: //ArgList узел
+		wait_func = false;
+		stack_states.push_back(4); //передаем параметры функции
+		break;
+	case 20:
+		break;
+	case 21:
+		break;
+	case 22:
+		break;
+	case 23:
+		break;
+	case 24:
+		break;
+	case 25:
+		break;
+	case 26:
+		break;
+	case 27:
+		break;
+	case 28: //E узел
+		if (stack_states[stack_states.size() - 1] == 3 && wait_func) {
+			main_state = -1;
+			break; //неизвестная переменная id-------------------------------------------------------------------------------
+		}
+		else if (lineVec[0].first == "kwreturn") {
+			stack_states.push_back(5); //находимся в узле return E
+		}
+		exp.push_back(0); //считаем выражение
+		break;
+	case 29: //E7
+		break;
+	case 30: //E6
+		if (lineVec[0].first == "opor") {
+
+		}
+		break;
+	case 31: //E5
+		break;
+	case 32: //E4
+		break;
+	case 33: //E3
+		break;
+	case 34: //E2
+		break;
+	case 35: //E1
+		break;
+	case 36: //ArgListL узел
+		func_params++;
+		break;
+	case 37: //rpar узел
+		if (stack_states[stack_states.size() - 1] == 4) {//происходит вызов функции
+			int id = table.checkFunc(val.second, func_params);
+			if (id == -1) {
+				main_state = -1;
+				break; //функция не объявлена --------------------------------------------------------------------------------------------
+			}
+			func_params = 0;
+			val = LEX_EMPTY;
+			int r = table.alloc(scope);
+			result.push_back(Atom("CALL", id, -1, r)); //атом вызова функции
+			stack_val.push_back(r);
+		}
+		break;
+	case 38:
+		break;
+	case 39:
+		break;
+	case 40: // Смотрим epsilon узел
+		if (stack_states[stack_states.size() - 1] == 1 && val != LEX_EMPTY) {
+			table.addVar(val.second, scope, current_type);
+			val = LEX_EMPTY;
+		}
+		break;
+	case 41: //rbrace узел
+		if (stack_states[stack_states.size() - 1] == 2) {
+			stack_states.pop_back(); //вышли из функции
+			scope = -1;
+		}
+		break;
+	case 42: //semicolon узел
+		if (stack_states[stack_states.size() - 1] == 1) {
+			stack_states.pop_back(); //вышли из ветки объявления переменной
+			current_type = "";
+			result.push_back(Atom("RET", -1, -1, -1));
+		}
+		else if (stack_states[stack_states.size() - 1] == 3) {
+			stack_states.pop_back(); //вышли из ветки присваивания или вызова
+			result.push_back(Atom("MOV", stack_val[0], -1, stack_val[1]));
+			stack_val.clear();
+		}
+		break;
+	case 43: //kwchar узел
+		current_type = "char";
+		break;
+	case 44: //kwint узел
+		current_type = "int";
+		break;
+	case 45:
+		break;
+	case 46:
+		break;
+	case -1:
+		////конец всего, состояние ошибки
 		break;
 	default:
 		break;
@@ -202,6 +213,25 @@ void AtomGen::NLR(Node& node) {
 	genNewAtoms(node);
 	for (Node n : node.sons) {
 		NLR(n);
+	}
+}
+
+int stringToint(std::string elem) {
+	int res = 0;
+	bool flag = true;
+	for (auto ch : elem) {
+		if (std::isdigit(ch)) {
+			continue;
+		}
+		flag = false;
+		break;
+	}
+
+	if (flag) {
+		return std::stoi(elem);
+	}
+	else {
+		return int(elem[0]);
 	}
 }
 
@@ -232,17 +262,23 @@ int SymbTable::getIDByName(std::string name, int scope) {
 	}
 	return -1; 
 }
-std::string SymbTable::getTypeByName(std::string name, int scope) { return ""; }
-int SymbTable::getScopeByID(std::string) { return 0; }
-std::string SymbTable::getInitByName(std::string name, int scope) { 
+std::string SymbTable::getTypeByName(std::string name, int scope) { 
+	for (auto elem : table) {
+		if (elem.name == name && elem.scope == scope) {
+			return elem.type;
+		}
+	}
+	return "";
+}
+int SymbTable::getInitByName(std::string name, int scope) { 
 	for (auto elem : table) {
 		if (elem.name == name && elem.scope == scope) {
 			return elem.init;
 		}
 	}
-	return "";
+	return 0;
 }
-int SymbTable::addVar(std::string name, int scope, std::string type, std::string init) { 
+int SymbTable::addVar(std::string name, int scope, std::string type, int init) { 
 	int ID = -1;
 	if (getIDByName(name, scope) != -1) {
 		return -1;
@@ -270,19 +306,32 @@ int SymbTable::addFunc(std::string name, std::string type){
 	table.push_back(row);
 	return ID;
 }
-bool SymbTable::checkVar(std::string name, int scope){
-	if (getIDByName(name, scope) != -1 || getIDByName(name, -1) != -1) {
-		return true;
+int SymbTable::checkVar(std::string name, int scope){
+	int id = getIDByName(name, scope);
+	if (id != -1) {
+		if (getTypeByName(name, scope) == "var")
+			return id;
 	}
-	return false; 
+	id = getIDByName(name, -1);
+	if (id != -1) {
+		if (getTypeByName(name, -1) == "var")
+			return id;
+	}
+	return -1; 
 }
-bool SymbTable::checkFunc(std::string name, int len){
-	if (getIDByName(name, -1) == -1) {
-		return false;
+int SymbTable::checkFunc(std::string name, int len){
+	int id = getIDByName(name, -1);
+	if (id == -1) {
+		return -1;
 	}
-	if (std::stoi(getInitByName(name, -1)) != len) {
-		return false;
+	if (getTypeByName(name, -1) != "func") {
+		return -1;
 	}
-	return true;
+	if ((getInitByName(name, -1)) != len) {
+		return -1;
+	}
+	return id;
 }
-void SymbTable::setInit(std::string, int len){}
+void SymbTable::setInit(int id, int len){
+	table[0].init = len;
+}
