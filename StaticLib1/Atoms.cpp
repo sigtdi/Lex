@@ -91,12 +91,15 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 17:
 		break;
 	case 18: //AssignOrCalll узел
-		value = table.checkVar(lineVec[0].second, scope);
-		if (value == -1) {
+		if (scope == -1) {
+			main_state = -1;
+			break; //нельзя использовать вне функции------------------------------------------------------------------------------
+		}
+		if (table.checkVar(lineVec[0].second, scope) == -1) {
 			wait_func = true;
 			val = lineVec[0];
 		}
-		else stack_val.push_back(value);
+		else stack_val.push_back(table.checkVar(lineVec[0].second, scope));
 		break;
 	case 19: //ArgList узел
 		wait_func = false;
@@ -216,7 +219,7 @@ void AtomGen::NLR(Node& node) {
 	}
 }
 
-int stringToint(std::string elem) {
+int AtomGen::stringToint(std::string elem) {
 	int res = 0;
 	bool flag = true;
 	for (auto ch : elem) {

@@ -56,9 +56,8 @@ private:
 	int main_state = 0;
 	int func_params = 0;
 	bool wait_func = false;
-	int value = -1;
-	std::vector<int> stack_states = {};
-	std::vector<std::string> stack_ops = { 0 };
+	std::vector<int> stack_states = { 0 };
+	std::vector<std::string> stack_ops = {  };
 	std::vector<Atom> stack_atoms = {};
 	std::vector<int> exp = {};
 	Lexem val = LEX_EMPTY;
