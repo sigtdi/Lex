@@ -68,6 +68,7 @@ private:
 	Lexem val = LEX_EMPTY;
 	bool exp;
 	bool arg = false;
+	bool main_func = false;
 	std::string error = "";
 	std::vector<Lexem> stack_func_exp = {};
 	std::vector<int> stack_val = {};

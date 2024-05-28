@@ -1,16 +1,6 @@
-fdshfjksdhlf: 
-(RET, , , 0)
-main: 
-(PARAM, , , 5)
-Error: function not found
+Error: no main fuction
 
 
-Name          ID  Kind   Type  Lenght  Default  Scope  
-              0   const  int   none    0        -1     
-              1   const  int   none    1        -1     
-fdshfjksdhlf  2   func   int   1       none     -1     
-a             3   var    int   none    0        2      
-main          4   func   int   2       none     -1     
-a             5   var    int   none    0        4      
-b             6   var    int   none    0        4      
-0c            7   const  int   none    4        4      
+Name  ID  Kind   Type  Lenght  Default  Scope  
+      0   const  int   none    0        -1     
+      1   const  int   none    1        -1     

@@ -73,7 +73,10 @@ void AtomGen::genNewAtoms(Node& node) {
 		break;
 	}
 	case 30: //DeclareStmt внутри функции
-	case 38: //DeclareStmt внутри цикла
+	case 278: //внутри for
+	case 192:
+	case 173: //внутри while
+	case 255:
 	case 47: //DeclareStmt внутри if
 	case 5: //DeclareStmt вне функции
 	{
@@ -81,7 +84,10 @@ void AtomGen::genNewAtoms(Node& node) {
 		break;
 	}
 	case 39: //AssignOrCallOp внутри функции
-	case 48: //AssignOrCallOp внутри цикла
+	case 720: //AssignOrCallOp внутри цикла while
+	case 293: //AssignOrCallOp внутри однострочного цикла while
+	case 213: //AssignOrCallOp внутри цикла for
+	case 303: //AssignOrCallOp внутри однострочного цикла for
 	case 58: //AssignOrCallOp внутри if
 	{
 		stack_states.push_back(3); //находимся в ветке присваивания переменной или вызова функции
@@ -106,6 +112,7 @@ void AtomGen::genNewAtoms(Node& node) {
 		stack_states.pop_back();
 		stack_states.push_back(2); //объявляем функцию
 		scope = table.addFunc(val.second, current_type); //проверить есть ли функция
+		if (val.second == "main") main_func = true;
 		current_type = "";
 		func_params.push_back(0);
 		val = LEX_EMPTY;
@@ -127,6 +134,8 @@ void AtomGen::genNewAtoms(Node& node) {
 		func_params[func_params.size() - 1]++;
 		break;
 	}
+	case 579: //внутри ForLoop
+	case 483: //внутри ForExp
 	case 249: //AssignOrCalll
 	{
 		if (table.checkVar(lineVec[0].second, scope) == -1) {
@@ -174,16 +183,20 @@ void AtomGen::genNewAtoms(Node& node) {
 		break;
 	}
 	case 901: //epsilon, объявление переменной
-			table.addVar(val.second, scope, current_type);
-			val = LEX_EMPTY;
+	{
+		table.addVar(val.second, scope, current_type);
+		val = LEX_EMPTY;
 		break;
+	}
 	case 1122: //rbrace, в конце функции
+	{
 		stack_states.pop_back(); //вышли из функции
 		result.push_back(Atom("RET", -1, -1, 0));
 		big_result.insert({ table.getNameById(scope, -1), result });
 		scope = -1;
 		result.clear();
 		break;
+	}
 	case 1317: //semicolon после return
 	{
 		stack_states.pop_back();
@@ -422,6 +435,161 @@ void AtomGen::genNewAtoms(Node& node) {
 		stack_val.push_back(r);
 		break;
 	}
+	case 329: //внутри for
+	case 235:
+	case 214: //внутри while
+	case 304:
+	case 49: //WhileOp внутри функции
+	{
+		std::string l = newLable();
+		result.push_back(Atom("LBL", -1, -1, -1, l));
+		stack_lables.push_back(l);
+		stack_states.push_back(6);
+		break;
+	}
+	case 29: //Stmt после условия while
+	{
+		std::string l = newLable();
+		int id = stack_val[stack_val.size() - 1];
+		stack_val.pop_back();
+		result.push_back(Atom("EQ", id, 0, -1, l));
+		stack_lables.push_back(l);
+		stack_states.pop_back();
+		stack_states.push_back(20);
+		break;
+	}
+	case 232: //Stmt после однострочного while
+	case 1694: //rbrace в конце while
+	{
+		std::string end = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		std::string jmp = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		stack_states.pop_back();
+		result.push_back(Atom("JMP", -1, -1, -1, jmp));
+		result.push_back(Atom("LBL", -1, -1, -1, end));
+		break;
+	}
+	case 210: //StmtList в начале while -> while {} или конец однострочного
+	{
+		stack_states.pop_back();
+		if (lineVec.size() > 1)
+		{
+			stack_states.push_back(16);
+			break;
+		}
+		std::string end = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		std::string jmp = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		result.push_back(Atom("JMP", -1, -1, -1, jmp));
+		result.push_back(Atom("LBL", -1, -1, -1, end));
+		break;
+	}
+	case 236: //внутри while
+	case 330:
+	case 356: //внутри for
+	case 258:
+	case 60: //ForOp в функции
+	{
+		stack_states.push_back(15);
+		break;
+	}
+	case 650: //ForInit
+	{
+		break;
+	}
+	case 687: //ForExp
+	{
+		result.push_back(Atom("MOV", stack_val[stack_val.size() - 2], -1, stack_val[stack_val.size() - 1]));
+		stack_val.pop_back();
+		stack_val.pop_back();
+		std::string l = newLable();
+		result.push_back(Atom("LBL", -1, -1, -1, l));
+		stack_lables.push_back(l);
+		stack_states.push_back(11);
+		break;
+	}
+	case 583: //ForLoop
+	{
+		std::string l = newLable();
+		int id = stack_val[stack_val.size() - 1];
+		stack_val.pop_back();
+		result.push_back(Atom("EQ", id, 0, -1, l));
+		stack_lables.push_back(l);
+		l = newLable();
+		result.push_back(Atom("JMP", -1, -1, -1, l));
+		stack_lables.push_back(l);
+		l = newLable();
+		result.push_back(Atom("LBL", -1, -1, -1, l));
+		stack_lables.push_back(l);
+		stack_states.pop_back();
+		stack_states.push_back(12);
+		break;
+	}
+	case 1264: //opinc id в ForLoop 
+	{
+		int id = table.checkVar(lineVec[0].second, scope);
+		if (id == -1) {
+			main_state = -1; //неизвестная переменная id-------------------------------------------------------------------------------
+			error = "Error: variable is not declared";
+			break;
+		}
+		result.push_back(Atom("ADD", id, 1, id));
+		break;
+	}
+	case 1366: //eps в ForExp
+	{
+		stack_val.push_back(1);
+		break;
+	}
+	case 92: //Stmt после условия for
+	{
+		std::string jmpend = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		std::string beg = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		std::string end = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		std::string l = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		stack_lables.push_back(end);
+		stack_lables.push_back(jmpend);
+		result.push_back(Atom("JMP", -1, -1, -1, l));
+		result.push_back(Atom("LBL", -1, -1, -1, beg));
+		stack_states.pop_back();
+		stack_states.pop_back();
+		stack_states.push_back(21);
+		break;
+	}
+	case 231: //StmtList в начале for -> for {} или конец однострочного
+	{
+		stack_states.pop_back();
+		if (lineVec.size() > 1)
+		{
+			stack_states.push_back(17);
+			break;
+		}
+		std::string end = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		std::string jmp = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		result.push_back(Atom("JMP", -1, -1, -1, jmp));
+		result.push_back(Atom("LBL", -1, -1, -1, end));
+		break;
+	}
+	case 254: //Stmt после однострочного for
+	case 1752: //rbrace в конце for
+	{
+		std::string end = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		std::string jmp = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		stack_states.pop_back();
+		result.push_back(Atom("JMP", -1, -1, -1, jmp));
+		result.push_back(Atom("LBL", -1, -1, -1, end));
+		break;
+	}
 	case -1:
 	{
 		if (error.empty()) {
@@ -435,6 +603,7 @@ void AtomGen::genNewAtoms(Node& node) {
 		break;
 	}
 	
+	std::cout << main_state << " " << stack_states[stack_states.size() - 1] << std::endl;
 }
 
 void AtomGen::NLR(Node& node) {
@@ -507,9 +676,10 @@ std::pair<std::string, std::string> AtomGen::parsLexem(std::string str) {
 	return l;
 }
 
-
 SymbTable::SymbTable() {}
+
 SymbTable::~SymbTable() {}
+
 int SymbTable::getIDByName(std::string name, int scope) { 
 	for (auto elem : table) {
 		if (elem.name == name && elem.scope == scope) {
@@ -518,6 +688,7 @@ int SymbTable::getIDByName(std::string name, int scope) {
 	}
 	return -1; 
 }
+
 std::string SymbTable::getTypeByName(std::string name, int scope) { 
 	for (auto elem : table) {
 		if (elem.name == name && elem.scope == scope) {
@@ -530,6 +701,7 @@ std::string SymbTable::getTypeByName(std::string name, int scope) {
 std::string SymbTable::getNameById(int id, int scope) {
 	return table[id].name;
 }
+
 int SymbTable::getLenByName(std::string name, int scope) { 
 	for (auto elem : table) {
 		if (elem.name == name && elem.scope == scope) {
@@ -538,6 +710,7 @@ int SymbTable::getLenByName(std::string name, int scope) {
 	}
 	return 0;
 }
+
 int SymbTable::addVar(std::string name, int scope, std::string type, int init) { 
 	int ID = -1;
 	if (getIDByName(name, scope) != -1) {
@@ -550,11 +723,13 @@ int SymbTable::addVar(std::string name, int scope, std::string type, int init) {
 	table.push_back(row);
 	return ID; 
 }
+
 int SymbTable::alloc(int scope) { 
 	int id = addVar(std::to_string(tempVarNum) + "t", scope, "int");
 	tempVarNum++;
 	return id;
 }
+
 int SymbTable::addFunc(std::string name, std::string type){ 
 	int ID = -1;
 	if (getIDByName(name, -1) != -1) {
@@ -566,6 +741,7 @@ int SymbTable::addFunc(std::string name, std::string type){
 	table.push_back(row);
 	return ID;
 }
+
 int SymbTable::checkVar(std::string name, int scope){
 	int id = getIDByName(name, scope);
 	if (id != -1) {
@@ -579,6 +755,7 @@ int SymbTable::checkVar(std::string name, int scope){
 	}
 	return -1; 
 }
+
 int SymbTable::checkFunc(std::string name, int len){
 	int id = getIDByName(name, -1);
 	if (id == -1) {
@@ -592,6 +769,7 @@ int SymbTable::checkFunc(std::string name, int len){
 	}
 	return id;
 }
+
 void SymbTable::setLen(int id, int len){
 	table[id].len = len;
 }
@@ -638,7 +816,10 @@ void AtomGen::printRes() {
 			fout << std::endl;
 		}
 	}
-	fout << error << std::endl;
+	if (main_func)
+		fout << error << std::endl;
+	else 
+		fout << "Error: no main fuction" << std::endl;
 	table.print(fout);
 }
 
