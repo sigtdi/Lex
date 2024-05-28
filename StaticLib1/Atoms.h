@@ -72,6 +72,7 @@ private:
 	std::string error = "";
 	std::vector<Lexem> stack_func_exp = {};
 	std::vector<int> stack_val = {};
+	std::vector<std::string> lbl_end = {};
 	std::map<std::string, int> stateDict = { {"StmtList", 0}, {"Stmt", 1},  {"DeclareStmt", 2}, {"AssignOrCallOp", 3}, {"WhileOp", 4}, {"ForOp", 5}, 
 											{"IfOp", 6},  {"SwitchOp", 7}, {"IOp", 8}, {"OOp", 9}, {"kwbreak", 10}, {"Type", 11}, {"DeclareStmtl", 12}, 
 											{"ParamList", 13}, {"DeclVarListl", 14},  {"InitVar", 15}, {"ParamListl", 16}, {"AssignOrCall", 17}, {"AssignOrCalll", 18},

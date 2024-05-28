@@ -1,1 +1,8 @@
-;;;;
+int main(){
+int a, b, c;
+if (a < b) {
+a = a + c;
+}
+else
+a = b;
+}

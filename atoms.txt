@@ -1,6 +1,25 @@
-Error: no main fuction
+main: 
+(MOV, 1, , 6)
+(LT, 3, 4, L1)
+(MOV, 0, , 6)
+(LBL, , , L1)
+(EQ, 7, 0, L2)
+(ADD, 3, 5, 7)
+(MOV, 3, , 6)
+(JMP, , , L3)
+(LBL, , , L2)
+(MOV, 4, , 3)
+(LBL, , , L3)
+(RET, , , 0)
+
 
 
 Name  ID  Kind   Type  Lenght  Default  Scope  
       0   const  int   none    0        -1     
       1   const  int   none    1        -1     
+main  2   func   int   0       none     -1     
+a     3   var    int   none    0        2      
+b     4   var    int   none    0        2      
+c     5   var    int   none    0        2      
+0t    6   var    int   none    0        2      
+1t    7   var    int   none    0        2      

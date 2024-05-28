@@ -77,6 +77,10 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 192:
 	case 173: //внутри while
 	case 255:
+	case 302: //внури if
+	case 327: 
+	case 353: //внутри else
+	case 380:
 	case 47: //DeclareStmt внутри if
 	case 5: //DeclareStmt вне функции
 	{
@@ -88,6 +92,10 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 293: //AssignOrCallOp внутри однострочного цикла while
 	case 213: //AssignOrCallOp внутри цикла for
 	case 303: //AssignOrCallOp внутри однострочного цикла for
+	case 354: //внутри if
+	case 358: 
+	case 381: //внутри else
+	case 409:
 	case 58: //AssignOrCallOp внутри if
 	{
 		stack_states.push_back(3); //находимся в ветке присваивания переменной или вызова функции
@@ -105,13 +113,27 @@ void AtomGen::genNewAtoms(Node& node) {
 			table.addVar(val.second, scope, current_type, temp);
 			val = LEX_EMPTY;
 		}
+		else if (val != LEX_EMPTY){
+			table.addVar(val.second, scope, current_type);
+			val = LEX_EMPTY;
+		}
 		break;
 	}
 	case 118: //ParamList
 	{
 		stack_states.pop_back();
 		stack_states.push_back(2); //объявляем функцию
+		if (scope != -1) {
+			error = "function inside a function";
+			main_state = -1;
+			break;
+		}
 		scope = table.addFunc(val.second, current_type); //проверить есть ли функция
+		if (scope == -1) {
+			error = "there is already a function with this name";
+			main_state = -1;
+			break;
+		}
 		if (val.second == "main") main_func = true;
 		current_type = "";
 		func_params.push_back(0);
@@ -184,6 +206,7 @@ void AtomGen::genNewAtoms(Node& node) {
 	}
 	case 901: //epsilon, объявление переменной
 	{
+		if (val == LEX_EMPTY) break;
 		table.addVar(val.second, scope, current_type);
 		val = LEX_EMPTY;
 		break;
@@ -209,6 +232,11 @@ void AtomGen::genNewAtoms(Node& node) {
 		stack_states.pop_back(); //вышли из ветки присваивания
 		result.push_back(Atom("MOV", stack_val[1], -1, stack_val[0]));
 		stack_val.clear();
+		break;
+	}
+	case 988: //semicolon после объявления
+	{
+		stack_states.pop_back();
 		break;
 	}
 	case 1033: //kwchar в объявлении переменной
@@ -439,6 +467,10 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 235:
 	case 214: //внутри while
 	case 304:
+	case 355: //внутри if
+	case 382:
+	case 439: //внутри else
+	case 410:
 	case 49: //WhileOp внутри функции
 	{
 		std::string l = newLable();
@@ -490,6 +522,10 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 330:
 	case 356: //внутри for
 	case 258:
+	case 383: //внутри if
+	case 411:
+	case 440: //внутри else
+	case 470:
 	case 60: //ForOp в функции
 	{
 		stack_states.push_back(15);
@@ -587,6 +623,73 @@ void AtomGen::genNewAtoms(Node& node) {
 		stack_lables.pop_back();
 		stack_states.pop_back();
 		result.push_back(Atom("JMP", -1, -1, -1, jmp));
+		result.push_back(Atom("LBL", -1, -1, -1, end));
+		break;
+	}
+	case 384: //внутри for
+	case 282:
+	case 357: //внутри while
+	case 259:
+	case 412: //внутри if
+	case 441:
+	case 471: //внутри else
+	case 502:
+	case 72: //IfOp внутри функции
+	{
+		stack_states.push_back(7);
+		break;
+	}
+	case 37: //Stmt после условия if
+	{
+		int id = stack_states[stack_states.size() - 1];
+		stack_states.pop_back();
+		std::string l = newLable();
+		result.push_back(Atom("EQ", id, 0, -1, l));
+		stack_lables.push_back(l);
+		stack_states.push_back(22);
+		break;
+	}
+	case 253: //StmtList в начале if -> if {}
+	{
+		if (lineVec.size() > 1)
+		{
+			stack_states.pop_back();
+			stack_states.push_back(23);
+			break;
+		}
+		break;
+	}
+	case 1058: //ElsePart после однострочного if
+	case 2121: //rbrace после if {}
+	{
+		std::string jmp = newLable();
+		std::string elseL = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		stack_lables.push_back(jmp);
+		result.push_back(Atom("JMP", -1, -1, -1, jmp));
+		result.push_back(Atom("LBL", -1, -1, -1, elseL));
+		stack_states.pop_back();
+		stack_states.push_back(24);
+		break;
+	}
+	case 300: //StmtList в начале else -> else {} конец однострочного
+	{
+		stack_states.pop_back();
+		if (lineVec.size() > 1)
+		{
+			stack_states.push_back(25);
+			break;
+		}
+		std::string end = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		result.push_back(Atom("LBL", -1, -1, -1, end));
+		break;
+	}
+	case 2120: //epsilon в ElsePart
+	{
+		stack_states.pop_back();
+		std::string end = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
 		result.push_back(Atom("LBL", -1, -1, -1, end));
 		break;
 	}

@@ -8,12 +8,6 @@ using namespace std;
 
 int main()
 {
-    //string expression = "out";
-    //stringstream stream{ expression };
-    //Lexer lex(stream);
-    //auto l = lex.getNextLexem().first;
-    //cout << l;
-
     MakeGramm();
     LR spasite;
     ifstream fin;
