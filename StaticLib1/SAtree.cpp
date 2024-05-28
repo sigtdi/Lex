@@ -116,7 +116,13 @@ std::vector<Node> Tree::MakeNodesSon(Rule rule) {
 		for (int i = tempRight.size() - 1; i > -1 ; --i) {
 			auto term = tempRight[i];
 			if (isTerminal(term)) {
-				elem = term + " " + elem;
+				if (i == tempRight.size() - 1) {
+					elem = term;
+				}
+				else {
+					elem = term + " " + elem;
+				}
+				
 				if (flag) {
 					Node node;
 					node.name = elem;

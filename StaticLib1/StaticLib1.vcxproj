@@ -168,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\action.txt" />
+    <Text Include="..\atoms.txt" />
     <Text Include="..\citems.txt" />
     <Text Include="..\goto.txt" />
     <Text Include="..\gramm.txt" />

@@ -1,3 +1,7 @@
-int main(int a, char b){
-	a = a || b - 4 * 3 + 20;
+int f(int a){}
+
+int main(int a, int b){
+	b = 4 * f(a) - 12 * (4 + 5 * f(f(a)));
+	a = ++a;
+	return a;
 }

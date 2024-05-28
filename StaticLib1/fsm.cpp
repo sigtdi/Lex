@@ -68,7 +68,7 @@ pair<int, Lexem> tick(int state, istream& stream, char& cache) {
                     return { 10, LEX_EMPTY };
                 case '&':
                     read(cache, stream);
-                    return { 10, LEX_EMPTY };
+                    return { 12, LEX_EMPTY };
                 case '-':
                     read(cache, stream);
                     return { 22, LEX_EMPTY };

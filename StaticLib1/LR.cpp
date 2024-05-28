@@ -273,7 +273,6 @@ void LR::ACTION(Item item, int numOfSet) {
 
 bool LR::Analysis(std::istream& stream) {
 	Tree tree;
-	std::cout << "Input: " << std::endl;
 	Lexer lex(stream);
 	Lexem l = lex.getNextLexem();
 	std::vector<int> states = { 0 };
