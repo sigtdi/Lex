@@ -4,5 +4,6 @@ if (a < b) {
 a = a + c;
 }
 else
-a = b;
+	for ( a = 0; a < 4; a = a + 1) 
+		b = b + c;
 }

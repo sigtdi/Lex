@@ -610,8 +610,8 @@ void AtomGen::genNewAtoms(Node& node) {
 		stack_lables.pop_back();
 		std::string jmp = stack_lables[stack_lables.size() - 1];
 		stack_lables.pop_back();
-		result.push_back(Atom("JMP", -1, -1, -1, jmp));
-		result.push_back(Atom("LBL", -1, -1, -1, end));
+		result.push_back(Atom("JMP", -1, -1, -1, end));
+		result.push_back(Atom("LBL", -1, -1, -1, jmp));
 		break;
 	}
 	case 254: //Stmt после однострочного for
@@ -622,8 +622,8 @@ void AtomGen::genNewAtoms(Node& node) {
 		std::string jmp = stack_lables[stack_lables.size() - 1];
 		stack_lables.pop_back();
 		stack_states.pop_back();
-		result.push_back(Atom("JMP", -1, -1, -1, jmp));
-		result.push_back(Atom("LBL", -1, -1, -1, end));
+		result.push_back(Atom("JMP", -1, -1, -1, end));
+		result.push_back(Atom("LBL", -1, -1, -1, jmp));
 		break;
 	}
 	case 384: //внутри for
@@ -641,7 +641,8 @@ void AtomGen::genNewAtoms(Node& node) {
 	}
 	case 37: //Stmt после условия if
 	{
-		int id = stack_states[stack_states.size() - 1];
+		int id = stack_val[stack_val.size() - 1];
+		stack_val.pop_back();
 		stack_states.pop_back();
 		std::string l = newLable();
 		result.push_back(Atom("EQ", id, 0, -1, l));
