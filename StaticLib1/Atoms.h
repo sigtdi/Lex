@@ -72,19 +72,20 @@ private:
 	std::string error = "";
 	std::vector<Lexem> stack_func_exp = {};
 	std::vector<int> stack_val = {};
-	std::vector<std::string> lbl_end = {};
-	std::map<std::string, int> stateDict = { {"StmtList", 0}, {"Stmt", 1},  {"DeclareStmt", 2}, {"AssignOrCallOp", 3}, {"WhileOp", 4}, {"ForOp", 5}, 
-											{"IfOp", 6},  {"SwitchOp", 7}, {"IOp", 8}, {"OOp", 9}, {"kwbreak", 10}, {"Type", 11}, {"DeclareStmtl", 12}, 
+	std::vector<int> val_switch = {};
+	std::vector<std::string> lbl_ends = {};
+
+	std::map<std::string, int> stateDict = { {"StmtList", 0}, {"Stmt", 1},  {"DeclareStmt", 2}, {"AssignOrCallOp", 3}, {"WhileOp", 4}, {"ForOp", 5},
+											{"IfOp", 6},  {"SwitchOp", 7}, {"IOp", 8}, {"OOp", 9}, {"kwbreak", 10}, {"Type", 11}, {"DeclareStmtl", 12},
 											{"ParamList", 13}, {"DeclVarListl", 14},  {"InitVar", 15}, {"ParamListl", 16}, {"AssignOrCall", 17}, {"AssignOrCalll", 18},
-											{"ArgList", 19},  {"ForInit", 20}, {"ForExp", 21}, {"ForLoop", 22}, {"ElsePart", 23}, {"Cases", 24}, {"ACase", 25}, 
+											{"ArgList", 19},  {"ForInit", 20}, {"ForExp", 21}, {"ForLoop", 22}, {"ElsePart", 23}, {"Cases", 24}, {"ACase", 25},
 											{"Casesl", 26}, {"OOpl", 27},  {"E", 28}, {"E7", 29}, {"E6", 30}, {"E5", 31}, {"E4", 32}, {"E3", 33}, {"E2", 34},
 											{"E1", 35},  {"ArgListl", 36}, {"rpar", 37}, {"num", 38}, {"id", 39}, {"epsilon", 40}, {"rbrace", 41},
-											{"semicolon", 42}, {"kwchar", 43},  {"kwint", 44}, {"char", 45}, {"opassign", 46}, {"opinc", 47}};
+											{"semicolon", 42}, {"kwchar", 43},  {"kwint", 44}, {"char", 45}, {"opassign", 46}, {"opinc", 47}, {"str", 48} };
 	std::string current_type = "";
 	std::string newLable();
 	int stringToint(std::string);
 	void printRes();
-	void printError();
 
 protected:
 };

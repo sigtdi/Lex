@@ -81,6 +81,8 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 327: 
 	case 353: //внутри else
 	case 380:
+	case 437: //внутри switch
+	case 408:
 	case 47: //DeclareStmt внутри if
 	case 5: //DeclareStmt вне функции
 	{
@@ -96,6 +98,8 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 358: 
 	case 381: //внутри else
 	case 409:
+	case 438: //внутри switch
+	case 468:
 	case 58: //AssignOrCallOp внутри if
 	{
 		stack_states.push_back(3); //находимся в ветке присваивания переменной или вызова функции
@@ -471,6 +475,8 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 382:
 	case 439: //внутри else
 	case 410:
+	case 500: //внутри switch
+	case 469:
 	case 49: //WhileOp внутри функции
 	{
 		std::string l = newLable();
@@ -526,6 +532,8 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 411:
 	case 440: //внутри else
 	case 470:
+	case 501: //внутри switch
+	case 533:
 	case 60: //ForOp в функции
 	{
 		stack_states.push_back(15);
@@ -533,13 +541,24 @@ void AtomGen::genNewAtoms(Node& node) {
 	}
 	case 650: //ForInit
 	{
+		stack_states.push_back(10);
 		break;
 	}
-	case 687: //ForExp
+	case 517: //ForExp
 	{
+		stack_states.pop_back();
 		result.push_back(Atom("MOV", stack_val[stack_val.size() - 2], -1, stack_val[stack_val.size() - 1]));
 		stack_val.pop_back();
 		stack_val.pop_back();
+		std::string l = newLable();
+		result.push_back(Atom("LBL", -1, -1, -1, l));
+		stack_lables.push_back(l);
+		stack_states.push_back(11);
+		break;
+	}
+	case 1452:
+	{
+		stack_states.pop_back();
 		std::string l = newLable();
 		result.push_back(Atom("LBL", -1, -1, -1, l));
 		stack_lables.push_back(l);
@@ -552,6 +571,7 @@ void AtomGen::genNewAtoms(Node& node) {
 		int id = stack_val[stack_val.size() - 1];
 		stack_val.pop_back();
 		result.push_back(Atom("EQ", id, 0, -1, l));
+		lbl_ends.push_back(l);
 		stack_lables.push_back(l);
 		l = newLable();
 		result.push_back(Atom("JMP", -1, -1, -1, l));
@@ -577,6 +597,12 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 1366: //eps в ForExp
 	{
 		stack_val.push_back(1);
+		break;
+	}
+	case 1315: //eps в ForInit
+	{
+		stack_states.pop_back();
+		stack_states.push_back(32);
 		break;
 	}
 	case 92: //Stmt после условия for
@@ -612,6 +638,7 @@ void AtomGen::genNewAtoms(Node& node) {
 		stack_lables.pop_back();
 		result.push_back(Atom("JMP", -1, -1, -1, end));
 		result.push_back(Atom("LBL", -1, -1, -1, jmp));
+		lbl_ends.pop_back();
 		break;
 	}
 	case 254: //Stmt после однострочного for
@@ -622,6 +649,7 @@ void AtomGen::genNewAtoms(Node& node) {
 		std::string jmp = stack_lables[stack_lables.size() - 1];
 		stack_lables.pop_back();
 		stack_states.pop_back();
+		lbl_ends.pop_back();
 		result.push_back(Atom("JMP", -1, -1, -1, end));
 		result.push_back(Atom("LBL", -1, -1, -1, jmp));
 		break;
@@ -634,6 +662,8 @@ void AtomGen::genNewAtoms(Node& node) {
 	case 441:
 	case 471: //внутри else
 	case 502:
+	case 567: //внутри switch
+	case 534:
 	case 72: //IfOp внутри функции
 	{
 		stack_states.push_back(7);
@@ -694,6 +724,208 @@ void AtomGen::genNewAtoms(Node& node) {
 		result.push_back(Atom("LBL", -1, -1, -1, end));
 		break;
 	}
+	case 307: //внутри for
+	case 413:
+	case 283: //внутри while
+	case 385:
+	case 442: //внутри if
+	case 472:
+	case 503: //внутри else
+	case 535:
+	case 568: //внутри switch
+	case 602:
+	case 85: //SwitchOp внутри функции
+	{
+		stack_states.push_back(9);
+		break;
+	}
+	case 585: //Cases после SwitchOp
+	{
+		stack_states.pop_back();
+		stack_states.push_back(26);
+		std::string end = newLable();
+		stack_lables.push_back(end);
+		break;
+	}
+	case 1456: //ACase (второй и далее)
+	{
+		stack_states.pop_back();
+		break;
+	}
+	case 1351://ACase
+	{
+		int p = stack_val[stack_val.size() - 1];
+		stack_val.pop_back();
+		val_switch.push_back(p);
+		break;
+	}
+	case 351: //StmtList внутри case без default
+	{
+		if (lineVec.size() == 4) {
+			int p = val_switch[val_switch.size() - 1];
+			std::string next = newLable();
+			stack_lables.push_back(next);
+			int id = table.addConst(scope, "int", stringToint(lineVec[1].second));
+			result.push_back(Atom("NE", p, id, -1, next));
+		}
+		else if (lineVec.size() == 3){
+			std::string next = newLable();
+			std::string def = newLable();
+			stack_lables.push_back(def);
+			stack_lables.push_back(next);
+			result.push_back(Atom("JMP", -1, -1, -1, next));
+			result.push_back(Atom("LBL", -1, -1, -1, def));
+			stack_states.pop_back();
+			stack_states.push_back(27);
+		}
+		break;
+	}
+	case 378: //StmtList внутри case с default
+	{
+		if (lineVec.size() == 4) {
+			int p = stack_val[stack_val.size() - 1];
+			std::string next = newLable();
+			stack_lables.push_back(next);
+			int id = table.addConst(scope, "int", stringToint(lineVec[1].second));
+			result.push_back(Atom("NE", p, id, -1, next));
+		}
+		else if (lineVec.size() == 3){
+			error = "Too much defualts";
+			main_state = -1;
+			break;
+		}
+		break;
+	}
+	case 1404: //Casesl без default
+	{
+		std::string next = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		std::string end = stack_lables[stack_lables.size() - 1];
+		result.push_back(Atom("JMP", -1, -1, -1, end));
+		result.push_back(Atom("LBL", -1, -1, -1, next));
+		stack_states.push_back(28);
+		break;
+	}
+	case 1457: //Casesl с default
+	{
+		std::string next = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		std::string end = stack_lables[stack_lables.size() - 2];
+		result.push_back(Atom("JMP", -1, -1, -1, end));
+		result.push_back(Atom("LBL", -1, -1, -1, next));
+		stack_states.push_back(28);
+		break;
+	}
+	case 2386:
+	{
+		stack_states.pop_back();
+		int state = stack_states[stack_states.size() - 1];
+		std::string end = stack_lables[stack_lables.size() - 1];
+		result.push_back(Atom("JMP", -1, -1, -1, end));
+		if (state == 27) {
+			stack_lables.pop_back();
+		}
+		break;
+	}
+	case 2319: //rbrace в конце switch
+	case 2387:
+	{
+		std::string end = stack_lables[stack_lables.size() - 1];
+		stack_lables.pop_back();
+		stack_states.pop_back();
+		result.push_back(Atom("LBL", -1, -1, -1, end));
+		val_switch.pop_back();
+		break;
+	}
+	case 9:
+	case 14:
+	case 20:
+	case 27:
+	case 35:
+	{
+		error = "Error: Operator should be inside function";
+		main_state = -1;
+		break;
+	}
+	case 333: //внутри for
+	case 443:
+	case 308: //внутри while
+	case 414:
+	case 473: //внутри if
+	case 504:
+	case 536: //внутри else
+	case 569:
+	case 603: //внутри switch
+	case 638:
+	case 99: //IOp внутри функции
+	{
+		stack_states.push_back(29);
+		break;
+	}
+	case 360: //внутри for
+	case 444:
+	case 334: //внутри while
+	case 474:
+	case 505: //внутри if
+	case 537:
+	case 570: //внутри else
+	case 604:
+	case 639: //внутри switch
+	case 675:
+	case 114: //OOp внутри функции
+	{
+		stack_states.push_back(30);
+		break;
+	}
+	case 2385: //id в IOp
+	{
+		int id = table.checkVar(lineVec[0].second, scope);
+		if (id == -1) {
+			main_state = -1;
+			error = "Error: variable is not declared";
+			break;
+		}
+		result.push_back(Atom("IN", -1, -1, id, ""));
+		break;
+	}
+	case 3129: //str в OOp
+	{
+		result.push_back(Atom("OUT", -1, -1, -1, lineVec[0].second));
+		stack_states.pop_back();
+		stack_states.push_back(31);
+		break;
+	}
+	case 2743:
+	case 2498:
+	{
+		stack_states.pop_back();
+		break;
+	}
+	case 2670:
+	{
+		stack_states.pop_back();
+		int id = stack_val[stack_val.size() - 1];
+		stack_val.pop_back();
+		result.push_back(Atom("OUT", -1, -1, id));
+		break;
+	}
+	case 388:
+	case 506:
+	case 538:
+	case 571:
+	case 605:
+	case 640:
+	case 676:
+	case 130:
+	case 713: //kwbreak
+	{
+		if (lbl_ends.empty()) {
+			main_state = -1;
+			break;
+		}
+		result.push_back(Atom("JMP", -1, -1, -1, lbl_ends[lbl_ends.size() - 1]));
+		break;
+	}
 	case -1:
 	{
 		if (error.empty()) {
@@ -707,7 +939,7 @@ void AtomGen::genNewAtoms(Node& node) {
 		break;
 	}
 	
-	std::cout << main_state << " " << stack_states[stack_states.size() - 1] << std::endl;
+	//std::cout << main_state << " " << stack_states[stack_states.size() - 1] << std::endl;
 }
 
 void AtomGen::NLR(Node& node) {

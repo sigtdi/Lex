@@ -1,46 +1,24 @@
 main: 
-(MOV, 1, , 6)
-(LT, 3, 4, L1)
-(MOV, 0, , 6)
 (LBL, , , L1)
-(EQ, 6, 0, L2)
-(ADD, 3, 5, 7)
-(MOV, 7, , 3)
-(JMP, , , L3)
+(MOV, 1, , 5)
+(LT, 3, 4, L2)
+(MOV, 0, , 5)
 (LBL, , , L2)
-(MOV, 3, , 8)
-(LBL, , , L4)
-(MOV, 1, , 10)
-(LT, 3, 9, L5)
-(MOV, 0, , 10)
-(LBL, , , L5)
-(EQ, 10, 0, L6)
-(JMP, , , L7)
-(LBL, , , L8)
-(ADD, 3, 11, 12)
+(EQ, 5, 0, L3)
 (JMP, , , L4)
-(LBL, , , L7)
-(ADD, 4, 5, 13)
-(MOV, 12, , 3)
-(JMP, , , L8)
-(LBL, , , L6)
+(LBL, , , L5)
+(JMP, , , L1)
+(LBL, , , L4)
+(JMP, , , L3)
+(JMP, , , L5)
 (LBL, , , L3)
-(RET, , , 0)
-
+Error
 
 
 Name  ID  Kind   Type  Lenght  Default  Scope  
       0   const  int   none    0        -1     
       1   const  int   none    1        -1     
 main  2   func   int   0       none     -1     
-a     3   var    int   none    0        2      
-b     4   var    int   none    0        2      
-c     5   var    int   none    0        2      
-0t    6   var    int   none    0        2      
-1t    7   var    int   none    0        2      
-2c    8   const  int   none    0        2      
-3c    9   const  int   none    4        2      
-4t    10  var    int   none    0        2      
-5c    11  const  int   none    1        2      
-6t    12  var    int   none    0        2      
-7t    13  var    int   none    0        2      
+0c    3   const  int   none    4        2      
+1c    4   const  int   none    2        2      
+2t    5   var    int   none    0        2      

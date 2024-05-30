@@ -1,9 +1,6 @@
 int main(){
-int a, b, c;
-if (a < b) {
-a = a + c;
-}
-else
-	for ( a = 0; a < 4; a = a + 1) 
-		b = b + c;
+		for (; 4 < 2;){
+		break;
+		}
+		break;
 }
