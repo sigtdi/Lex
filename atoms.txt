@@ -1,24 +1,108 @@
 main: 
+(ADD, 10, 2, 11)
+(MUL, 11, 3, 12)
+(MOV, 12, , 6)
+(ADD, 13, 6, 14)
+(ADD, 3, 15, 16)
+(MUL, 14, 16, 17)
+(MOV, 17, , 7)
+(ADD, 22, 5, 23)
+(ADD, 2, 24, 25)
+(MUL, 23, 25, 26)
+(MOV, 26, , 20)
+(ADD, 27, 2, 28)
+(SUB, 20, 29, 30)
+(MUL, 28, 30, 31)
+(MOV, 31, , 21)
+(MOV, 18, , 32)
 (LBL, , , L1)
-(MOV, 1, , 5)
-(LT, 3, 4, L2)
-(MOV, 0, , 5)
+(MOV, 1, , 33)
+(LT, 18, 19, L2)
+(MOV, 0, , 33)
 (LBL, , , L2)
-(EQ, 5, 0, L3)
+(EQ, 33, 0, L3)
 (JMP, , , L4)
 (LBL, , , L5)
+(ADD, 18, 1, 18)
 (JMP, , , L1)
 (LBL, , , L4)
-(JMP, , , L3)
+(MUL, 34, 2, 35)
+(ADD, 20, 35, 36)
+(ADD, 20, 21, 37)
+(MOV, 1, , 38)
+(LE, 36, 37, L6)
+(MOV, 0, , 38)
+(LBL, , , L6)
+(EQ, 38, 0, L7)
+(ADD, 39, 2, 40)
+(MUL, 40, 20, 41)
+(MOV, 41, , 20)
+(JMP, , , L8)
+(LBL, , , L7)
+(SUB, 3, 2, 42)
+(MOV, 42, , 20)
+(ADD, 2, 43, 44)
+(MUL, 44, 45, 46)
+(MOV, 46, , 21)
+(LBL, , , L8)
+(ADD, 8, 2, 47)
+(ADD, 47, 4, 48)
+(ADD, 48, 3, 49)
+(MOV, 49, , 8)
 (JMP, , , L5)
 (LBL, , , L3)
-Error
+(RET, , , 0)
+
 
 
 Name  ID  Kind   Type  Lenght  Default  Scope  
       0   const  int   none    0        -1     
       1   const  int   none    1        -1     
-main  2   func   int   0       none     -1     
-0c    3   const  int   none    4        2      
-1c    4   const  int   none    2        2      
-2t    5   var    int   none    0        2      
+b     2   var    int   none    0        -1     
+a     3   var    int   none    0        -1     
+c     4   var    int   none    0        -1     
+z     5   var    int   none    0        -1     
+x     6   var    int   none    0        -1     
+y     7   var    int   none    0        -1     
+s     8   var    int   none    0        -1     
+main  9   func   int   0       none     -1     
+0c    10  const  int   none    2        9      
+1t    11  var    int   none    0        9      
+2t    12  var    int   none    0        9      
+3c    13  const  int   none    5        9      
+4t    14  var    int   none    0        9      
+5c    15  const  int   none    2        9      
+6t    16  var    int   none    0        9      
+7t    17  var    int   none    0        9      
+i     18  var    int   none    0        9      
+n     19  var    int   none    4        9      
+x     20  var    int   none    0        9      
+y     21  var    int   none    0        9      
+8c    22  const  int   none    8        9      
+9t    23  var    int   none    0        9      
+10c   24  const  int   none    3        9      
+11t   25  var    int   none    0        9      
+12t   26  var    int   none    0        9      
+13c   27  const  int   none    8        9      
+14t   28  var    int   none    0        9      
+15c   29  const  int   none    9        9      
+16t   30  var    int   none    0        9      
+17t   31  var    int   none    0        9      
+18c   32  const  int   none    0        9      
+19t   33  var    int   none    0        9      
+20c   34  const  int   none    8        9      
+21t   35  var    int   none    0        9      
+22t   36  var    int   none    0        9      
+23t   37  var    int   none    0        9      
+24t   38  var    int   none    0        9      
+25c   39  const  int   none    5        9      
+26t   40  var    int   none    0        9      
+27t   41  var    int   none    0        9      
+28t   42  var    int   none    0        9      
+29c   43  const  int   none    9        9      
+30t   44  var    int   none    0        9      
+31c   45  const  int   none    5        9      
+32t   46  var    int   none    0        9      
+33t   47  var    int   none    0        9      
+34t   48  var    int   none    0        9      
+35t   49  var    int   none    0        9      

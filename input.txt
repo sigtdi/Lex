@@ -1,6 +1,28 @@
+int b = 0;
+int a = 0;
+int c = 0;
+int z = 0;
+int x = 0;
+int y = 0;
+int s = 0;
+
 int main(){
-		for (; 4 < 2;){
-		break;
+	x = ( 2 + b ) * a;
+	y = (5 + x) * (a + 2);
+	int i = 0;
+	int n = 4;
+	int x = 0;
+	int y = 0;
+	x = (8 + z) * (b + 3);
+	y = (8 + b) * (x - 9);
+	for (i = 0; i < n; ++i) {
+		if (x + 8 * b <= x + y) {
+			x = (5 + b) * x;
 		}
-		break;
+		else {
+			x = a - b;
+			y = (b + 9) * 5;
+		}
+	s = s + b + c + a;
+	}
 }

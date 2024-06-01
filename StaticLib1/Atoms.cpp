@@ -161,14 +161,16 @@ void AtomGen::genNewAtoms(Node& node) {
 		break;
 	}
 	case 579: //внутри ForLoop
-	case 483: //внутри ForExp
+	case 424: //внутри ForInit
 	case 249: //AssignOrCalll
 	{
 		if (table.checkVar(lineVec[0].second, scope) == -1) {
 			wait_func = true;
 			val = lineVec[0];
+			
 		}
 		else stack_val.push_back(table.checkVar(lineVec[0].second, scope));
+		std::cout << val.second << std::endl;
 		break;
 	}
 	case 272: //ArgList в AssignOrCall
@@ -583,7 +585,7 @@ void AtomGen::genNewAtoms(Node& node) {
 		stack_states.push_back(12);
 		break;
 	}
-	case 1264: //opinc id в ForLoop 
+	case 1365: //opinc id в ForLoop 
 	{
 		int id = table.checkVar(lineVec[0].second, scope);
 		if (id == -1) {
@@ -716,6 +718,7 @@ void AtomGen::genNewAtoms(Node& node) {
 		result.push_back(Atom("LBL", -1, -1, -1, end));
 		break;
 	}
+	case 2252: //rbrace после else {}
 	case 2120: //epsilon в ElsePart
 	{
 		stack_states.pop_back();

@@ -276,32 +276,28 @@ bool LR::Analysis(std::istream& stream) {
 	Lexer lex(stream);
 	Lexem l = lex.getNextLexem();
 	std::vector<int> states = { 0 };
-	std::vector<std::string> elem_stack = {};
+	std::vector<Lexem> elem_stack = {};
 	std::vector<Lexem> lexList = {};
-	if (l.second != "") {
-		lexList.push_back(l);
-	}
 
 	while (true) {
 		auto action = action_table[{states[states.size() - 1], l.first}];
 		if (action.act == "Shift") {
 			states.push_back(action.shift);
-			elem_stack.push_back(l.first);
+			elem_stack.push_back(l);
 			l = lex.getNextLexem();
-			if (l.second != "") {
-				lexList.push_back(l);
-			}
 		}
 		else if (action.act == "Reduce") {
 			if (action.reduce.getRight()[0] != "epsilon") {
 				for (int i = 0; i < action.reduce.getRightSize(); ++i) {
 					states.pop_back();
+					lexList.push_back(elem_stack[elem_stack.size() - 1]);
 					elem_stack.pop_back();
 				}
 			}
-			elem_stack.push_back(action.reduce.getLeft());
+			elem_stack.push_back({ action.reduce.getLeft(), "" });
 			states.push_back(goto_graph[{states[states.size() - 1], action.reduce.getLeft()}]);
 			tree.addNodes(addLexemToActionReduce(lexList, action));
+			lexList.clear();
 		}
 		else if (action.act == "Accept") {
 			tree.addNodes(action.reduce);
@@ -358,8 +354,9 @@ Rule LR::addLexemToActionReduce(std::vector<Lexem>& lexList, Action& action) {
 		std::string temp = action.reduce.getRight()[i];
 		if (action.reduce.getRight()[i] == "id" || action.reduce.getRight()[i] == "str" || action.reduce.getRight()[i] == "num" || action.reduce.getRight()[i] == "char") {
 			temp += "(" + lexList[lexList.size() - 1].second + ")";
-			lexList.pop_back();
 		}
+		if (!lexList.empty())
+			lexList.pop_back();
 		resRight.push_back(temp);
 	}
 	Rule resRule(action.reduce.getLeft(), resRight);
